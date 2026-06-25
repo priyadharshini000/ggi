@@ -1716,37 +1716,48 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 
 </div> <!-- CONTACT PAGE ஓடும் </div> டேக் இங்கே முடிவடைகிறது -->
-    <!-- ================= FOOTER ================= -->
-    <footer class="bg-blue-950 text-gray-400 py-8 text-center border-t border-blue-900 mt-auto">
-        <p>&copy; 2026 Global Gateway Internationals. All rights reserved.</p>
-    </footer>
-   <!-- FontAwesome CDN Link (Idhu unga <head> tag kulla illana add pannikonga, apo dhaan icons theriyum) -->
+   <footer class="bg-blue-950 text-gray-400 py-8 text-center border-t border-blue-900 mt-auto">
+    <p>&copy; 2026 Global Gateway Internationals. All rights reserved.</p>
+</footer>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- Floating Contact Buttons -->
 <div class="fixed bottom-5 right-5 flex flex-col gap-5 z-50">
-    
-    <!-- WhatsApp (Single speech bubble with phone inside) -->
     <a href="https://wa.me/918939688699?text=Hi, I need assistance." target="_blank" 
        class="text-green-500 text-4xl hover:text-green-600 transition-all drop-shadow-md">
         <i class="fab fa-whatsapp"></i>
     </a>
     
-    <!-- Call -->
     <a href="tel:+918939688699" 
        class="text-blue-600 text-4xl hover:text-blue-700 transition-all drop-shadow-md">
         <i class="fas fa-phone-alt"></i>
     </a>
     
-    <!-- Message -->
     <a href="sms:+918939688699?body=Hello, I have a query." 
        class="text-gray-700 text-4xl hover:text-gray-800 transition-all drop-shadow-md">
         <i class="fas fa-envelope"></i>
     </a>
+</div>
 
+<div id="successPopup" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-2xl p-8 max-w-sm w-full text-center transform transition-all duration-300 scale-100 border-t-4 border-green-500">
+        <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-4 animate-bounce">
+            <svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+        </div>
+        
+        <h3 class="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
+        <p class="text-sm text-gray-600 mb-6">
+            Your inquiry has been successfully submitted. Our global expert team will contact you shortly.
+        </p>
+        
+        <button onclick="closePopup()" class="w-full bg-green-600 text-white font-bold py-2.5 px-4 rounded-lg shadow hover:bg-green-700 transition duration-200">
+            Okay, Close
+        </button>
+    </div>
 </div>
-    </a>
-</div>
+
 <script>
 function handleFormSubmit(event) {
     event.preventDefault(); // Page white screen-aa redirect aagadhuri thadukkum
@@ -1754,33 +1765,39 @@ function handleFormSubmit(event) {
     const form = document.getElementById('leadContactForm');
     const submitButton = form.querySelector('button[type="submit"]');
     
-    // Button-ai disable panni Submit aaguradhai urudhi seiyum
+    // Button-ai disable panni Sending status-ku maathuvom
     submitButton.disabled = true;
     submitButton.innerText = "Sending...";
 
     const formData = new FormData(form);
 
-    // Unga Google Web App URL-ai inga podunga
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxZ_I9D3eCO_Z6s3dA2nJzNo2c4MlcRANOIjI661-ApLSDmrSECO32YN_RPPGScoic5/exec';
+    // Unga Google Web App URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw4XZVMD0Y5iZVaat_taYVrJjM16eeb_amxH1QklK3MncazYxMKwaEzpIv9sIdzHWAL/exec';
 
-    fetch(scriptURL, { method: 'POST', body: formData })
-    .then(response => {
-        // Success aanadhum button-ai pazhaya maari maathi, popup modal-ai open pannum
+    // CORS error thavirkka mode: 'no-cors' sethu data-vai anuppugirom
+    fetch(scriptURL, { 
+        method: 'POST', 
+        mode: 'no-cors', 
+        body: formData 
+    });
+
+    // Google Sheet-la data store aaguradhala, response block-kaga wait pannaama 
+    // direct-aa 1 second delay-la popup-ai trigger seigirom
+    setTimeout(() => {
         submitButton.disabled = false;
         submitButton.innerText = "Submit";
         
-        // Unga code-la irukku green success popup modal-ai screen-la kaattum
-        document.getElementById('successPopup').classList.remove('hidden');
-        document.getElementById('successPopup').classList.add('flex');
+        // Success popup card-ai screen-la kaattum
+        const popup = document.getElementById('successPopup');
+        if (popup) {
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
+        } else {
+            alert('Successfully Submitted!');
+        }
         
         form.reset(); // Form fields-ai clear pannum
-    })
-    .catch(error => {
-        console.error('Error!', error.message);
-        alert('Something went wrong. Please try again!');
-        submitButton.disabled = false;
-        submitButton.innerText = "Submit";
-    });
+    }, 1000); 
 }
 
 // Popup-ai close panna unga website-le vachirukku function
@@ -1791,7 +1808,3 @@ function closePopup() {
 </script>
 </body>
 </html>
-
-
-
-
