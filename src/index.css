@@ -1,26 +1,61 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Global Reset */
+* {
   margin: 0;
-
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-
-    sans-serif;
-
-  -webkit-font-smoothing: antialiased;
-
-  -moz-osx-font-smoothing: grayscale;
-
+  padding: 0;
+  box-sizing: border-box;
 }
 
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100vh; /* 100%க்கு பதிலா 100vh குடுத்தா மொபைல்ல ஸ்க்ரோல் பிரச்சனை வராது */
+  overflow-x: hidden;
+}
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f9fafb;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+}
 
 code {
-
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
 
-} 
+  /* 2. மொபைலில் லோகோ அளவை சீரமைக்க */
+  nav img, header img {
+    max-height: 35px !important; 
+    width: auto !important;
+  }
 
+  /* 3. மெனு லிங்க்குகள் நெருக்கடி இல்லாம இடைவெளி விட */
+  nav a, header a {
+    padding: 5px 10px !important;
+    font-size: 14px !important;
+    display: inline-block !important;
+  }
+
+  /* 4. அந்த ப்ளூ கலர் ஹீரோ செக்ஷன் மொபைல்ல ஃபுல் வித் (100%) ஆக */
+  .hero-section, main > div, section {
+    width: 100% !important;
+    max-width: 100% !important;
+  }

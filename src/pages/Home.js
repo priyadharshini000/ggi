@@ -1,84 +1,116 @@
-import React from 'react';
+import React from "react";
+import companyLogo from "../asset/WhatsApp Image 2026-06-20 at 3.53.37 PM.jpeg";
 
 export default function Home({ setCurrentPage }) {
   return (
     <div className="bg-gray-50 min-h-screen">
+
       {/* Hero Section */}
-      <div className="bg-gradient-to-r py-24 px-4 text-center bg-blue-900 text-white">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6">
+      <div className="bg-blue-900 text-white py-20 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+
+          <img
+  src={companyLogo}
+  alt="Global Gateway Internationals"
+  className="w-32 md:w-44 mx-auto mb-6"
+/>
+
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
             Make a Step Towards Your Global Opportunity
           </h1>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Pursue your job opportunities in major global hubs with our expert immigration guidance.
+
+          <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto mb-8">
+            Pursue your job opportunities in major global hubs with our expert
+            immigration guidance.
           </p>
-          <button 
-            onClick={() => setCurrentPage('contact')}
-            className="bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold px-8 py-4 rounded-lg shadow-lg uppercase transition-all"
+
+          <button
+            onClick={() => setCurrentPage("contact")}
+            className="bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold px-8 py-4 rounded-lg shadow-lg transition-all"
           >
             Book Your Consultation
           </button>
         </div>
       </div>
 
-      {/* About Us Section */}
-      <div className="max-w-5xl mx-auto py-16 px-4">
-        <div className="bg-white p-8 md:p-12 rounded-xl shadow-sm border border-gray-100">
-          <h2 className="text-3xl font-bold text-blue-900 mb-6 text-center">Who we are?</h2>
-          <div className="text-gray-600 space-y-4 leading-relaxed text-lg">
-            <p>
-              At <strong>Global Gateway Internationals</strong>, we are a premier global immigration consultancy. 
-              Our core expertise lies in providing Work Visa solutions, helping skilled professionals relocate 
-              and secure careers in top destinations like Canada, Australia, Europe, the UK, New Zealand, Singapore, and the Gulf.
-            </p>
-            <p>
-              Alongside our primary work immigration services, we also provide streamlined Study Visa pathways for 
-              students looking to transition from world-class education into successful global careers. From work 
-              permits to university placements, we simplify the journey to your international future.
-            </p>
-          </div>
+      {/* About Section */}
+      <div className="max-w-6xl mx-auto py-16 px-4">
+        <div className="bg-white rounded-xl shadow-lg p-8 md:p-12">
+
+          <h2 className="text-3xl font-bold text-blue-900 text-center mb-8">
+            Who We Are
+          </h2>
+
+          <p className="text-gray-700 leading-8 mb-6 text-justify">
+            At <strong>Global Gateway Internationals</strong>, we are a premier
+            global immigration consultancy. Our expertise lies in Work Visa,
+            Study Visa, Visit Visa, Migration and Dependent Family Visa
+            solutions for leading destinations such as Canada, Australia,
+            Europe, the UK, New Zealand, Singapore and the Gulf.
+          </p>
+
+          <p className="text-gray-700 leading-8 text-justify">
+            Our experienced team simplifies every step of the immigration
+            process, providing complete guidance from documentation to visa
+            approval, helping you confidently build your future abroad.
+          </p>
+
         </div>
       </div>
 
-      {/* Services Grid Section */}
-      <div className="bg-gray-100 py-16 px-4">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-blue-900 mb-12">Our Core Services</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Service 1 */}
-            <div className="bg-white p-8 rounded-xl shadow-sm border-t-4 border-blue-900 flex flex-col justify-between">
-              <div>
-                <h3 className="text-2xl font-bold text-blue-900 mb-4">Work Visa</h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  Land your dream job abroad. Get expert help with employer-sponsored visas, skilled worker permits, and legal relocation for your family.
-                </p>
-              </div>
-              <button 
-                onClick={() => setCurrentPage('work')}
-                className="text-blue-900 font-semibold hover:text-amber-500 flex items-center gap-2 transition-colors mt-4"
+      {/* Services */}
+      <div className="bg-gray-100 py-16">
+        <div className="max-w-6xl mx-auto px-4">
+
+          <h2 className="text-3xl font-bold text-center text-blue-900 mb-12">
+            Our Core Services
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            {/* Work Visa */}
+            <div className="bg-white rounded-xl shadow-lg p-8 border-t-4 border-blue-900">
+              <h3 className="text-2xl font-bold text-blue-900 mb-4">
+                Work Visa
+              </h3>
+
+              <p className="text-gray-600 mb-6 leading-7">
+                Land your dream job abroad with our professional Work Visa
+                guidance and documentation support.
+              </p>
+
+              <button
+                onClick={() => setCurrentPage("work")}
+                className="bg-blue-900 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-semibold"
               >
-                Explore Destinations &rarr;
+                Explore Destinations →
               </button>
             </div>
 
-            {/* Service 2 */}
-            <div className="bg-white p-8 rounded-xl shadow-sm border-t-4 border-amber-500 flex flex-col justify-between">
-              <div>
-                <h3 className="text-2xl font-bold text-blue-900 mb-4">Study Visa</h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  Unlock your academic potential. From university selection to visa approval, we guide you toward the best global education paths.
-                </p>
-              </div>
-              <button 
-                onClick={() => setCurrentPage('study')}
-                className="text-blue-900 font-semibold hover:text-amber-500 flex items-center gap-2 transition-colors mt-4"
+            {/* Study Visa */}
+            <div className="bg-white rounded-xl shadow-lg p-8 border-t-4 border-amber-500">
+              <h3 className="text-2xl font-bold text-blue-900 mb-4">
+                Study Visa
+              </h3>
+
+              <p className="text-gray-600 mb-6 leading-7">
+                Start your international education journey with our expert
+                admission and visa assistance.
+              </p>
+
+              <button
+                onClick={() => setCurrentPage("study")}
+                className="bg-amber-500 hover:bg-amber-600 text-blue-950 px-6 py-3 rounded-lg font-semibold"
               >
-                Explore Academic Paths &rarr;
+                Explore Academic Paths →
               </button>
             </div>
+
           </div>
+
         </div>
       </div>
+
     </div>
   );
 }
