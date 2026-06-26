@@ -7,10 +7,10 @@ import WorkVisa from './pages/WorkVisa';
 import StudyVisa from './pages/StudyVisa';
 import Contact from './pages/Contact';
 
-// புதுசா சேர்க்கப்பட்ட 3 பக்கங்களின் இம்போர்ட்ஸ் (ஃபைல் பெயர்களை செக் செய்து கொள்ளவும்)
+// ஃபைல் பெயர்களை சரியாக இம்போர்ட் செய்கிறோம்
 import Migrate from './pages/Migrate'; 
 import VisitVisa from './pages/VisitVisa'; 
-import DependentFamily from './pages/DependentFamily'; 
+import DependentFamily from './pages/Dependent-Family'; // இங்கே மைனஸ் (-) சேர்க்கப்பட்டுள்ளது!
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -20,15 +20,15 @@ export default function App() {
       case 'home':
         return <Home setCurrentPage={setCurrentPage} />;
       case 'migrate':
-        return <Migrate />; // புது பக்கம் 1
+        return <Migrate />; 
       case 'work':
         return <WorkVisa />;
       case 'study':
         return <StudyVisa />;
       case 'visit':
-        return <VisitVisa />; // புது பக்கம் 2
+        return <VisitVisa />; 
       case 'dependent':
-        return <DependentFamily />; // புது பக்கம் 3
+        return <DependentFamily />; 
       case 'contact':
         return <Contact />;
       default:
