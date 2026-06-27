@@ -18,8 +18,8 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 w-full">
           
-          {/* LEFT SIDE: LOGO & COMPANY NAME */}
-          <div className="flex items-center space-x-2 min-w-0 flex-shrink">
+          {/* LEFT SIDE: LOGO & NORMAL COMPANY NAME (No Scroll) */}
+          <div className="flex items-center space-x-2 min-w-0 max-w-[70%]">
             <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center overflow-hidden rounded bg-gray-100">
               <img 
                 src="logo1.jpeg" 
@@ -40,7 +40,7 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
             </div>
           </div>
 
-          {/* DESKTOP MENU (Hidden on Mobile screens completely) */}
+          {/* DESKTOP MENU (Hidden completely on mobile) */}
           <div className="hidden lg:flex space-x-6 flex-shrink-0">
             {navLinks.map((link, index) => (
               <button 
@@ -55,8 +55,8 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
             ))}
           </div>
 
-          {/* MOBILE HAMBURGER BUTTON (Forced block view on smaller screens) */}
-          <div className="flex lg:hidden flex-shrink-0 ml-2">
+          {/* MOBILE HAMBURGER BUTTON (Top Right side-la கச்சிதமா நிக்கும்) */}
+          <div className="flex lg:hidden flex-shrink-0">
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
