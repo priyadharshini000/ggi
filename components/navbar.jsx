@@ -3,71 +3,73 @@ import React, { useState } from 'react';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Ungaloda pages list inga potukkoonga
   const navLinks = [
     { title: 'Home', path: '/' },
-    { title: 'About Us', path: '/about' },
-    { title: 'Services', path: '/services' },
-    { title: 'Contact', path: '/contact' }
+    { title: 'Visit Visa', path: '/Visitvisa' },
+    { title: 'Migrate', path: '/Migrate' },
+    { title: 'Work Visa', path: '/WorkVisa' },
+    { title: 'Study Visa', path: '/StudyVisa' },
+    { title: 'Dependent', path: '/Dependent-Family' },
+    { title: 'Contact', path: '/Contact' }
   ];
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50 w-full">
+    <nav className="bg-white shadow-md sticky top-0 z-50 w-full block">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        {/* FIXED: items-center and flex-row forced, overflow protected */}
+        <div className="flex justify-between items-center h-20 w-full overflow-hidden">
           
           {/* LEFT SIDE: LOGO & COMPANY NAME */}
-          <div className="flex items-center space-x-3">
-            {/* Logo image handling - image correct path kudunga, load aagalana initial text kaatum */}
-            <div className="w-12 h-12 flex items-center justify-center overflow-hidden rounded">
+          <div className="flex items-center space-x-2 min-w-0 max-w-[75%]">
+            <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center overflow-hidden rounded bg-gray-100">
               <img 
-                src="/logo.png" // Path correct ah check pannikonga (e.g., assets folder or public folder)
+                // FIXED: GitHub Pages sub-folder route handle panna relative image path set panniyachu
+                src="logo1.jpeg" 
                 alt="Global Gateway Logo" 
                 className="w-full h-full object-contain"
                 onError={(e) => {
-                  // Image path thappa irundha error varama text-ah flat panradhuku shortcut
                   e.target.style.display = 'none';
                 }}
               />
             </div>
-            <div>
-              <h1 className="text-blue-900 font-bold text-lg leading-tight tracking-wide uppercase">
+            {/* FIXED: text wrap restricted so it won't break layout on tiny mobile screens */}
+            <div className="truncate">
+              <h1 className="text-blue-900 font-bold text-sm md:text-base leading-tight tracking-wide uppercase truncate">
                 Global Gateway
               </h1>
-              <span className="text-gray-500 text-xs block tracking-widest uppercase">
+              <span className="text-gray-500 text-[10px] block tracking-widest uppercase truncate">
                 Internationals
               </span>
             </div>
           </div>
 
-          {/* DESKTOP MENU (Hidden on Mobile) */}
-          <div className="hidden md:flex space-x-8">
+          {/* DESKTOP MENU (Only shows on wide screens) */}
+          <div className="hidden lg:flex space-x-6 flex-shrink-0">
             {navLinks.map((link, index) => (
               <a 
                 key={index} 
                 href={link.path} 
-                className="text-gray-700 hover:text-blue-900 font-medium transition duration-200"
+                className="text-gray-700 hover:text-blue-900 font-medium text-sm transition duration-200 whitespace-nowrap"
               >
                 {link.title}
               </a>
             ))}
           </div>
 
-          {/* MOBILE HAMBURGER BUTTON (Right Side) */}
-          <div className="flex md:hidden">
+          {/* MOBILE HAMBURGER BUTTON (Forced block view on mobile/tablet resolutions) */}
+          <div className="flex lg:hidden flex-shrink-0">
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="text-gray-700 hover:text-blue-900 focus:outline-none p-2 border border-gray-300 rounded-lg bg-gray-50"
+              className="text-gray-700 hover:text-blue-900 focus:outline-none p-2 border border-gray-300 rounded-lg bg-gray-50 transition-all z-50"
               aria-label="Toggle menu"
             >
-              {/* Conditional Menu Icon (Hamburger / Close Cross) */}
               {!isOpen ? (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               ) : (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               )}
@@ -79,14 +81,14 @@ const Navbar = () => {
 
       {/* MOBILE DROPDOWN PAGES MENU */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 shadow-inner animate-fadeIn">
-          <div className="px-4 pt-2 pb-4 space-y-2">
+        <div className="lg:hidden bg-white border-t border-gray-100 shadow-inner w-full absolute left-0 top-20 z-40 block">
+          <div className="px-4 pt-2 pb-4 space-y-1 bg-white">
             {navLinks.map((link, index) => (
               <a
                 key={index}
                 href={link.path}
-                className="block px-3 py-2.5 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-900 transition duration-150"
-                onClick={() => setIsOpen(false)} // Page select panna menu auto close aagidum
+                className="block px-4 py-3 rounded-md text-base font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-900 transition duration-150"
+                onClick={() => setIsOpen(false)}
               >
                 {link.title}
               </a>
