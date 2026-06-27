@@ -1,5 +1,4 @@
 import React from "react";
-import companyLogo from "../asset/WhatsApp Image 2026-06-20 at 3.53.37 PM.jpeg";
 
 export default function Home({ setCurrentPage }) {
   return (
@@ -9,11 +8,15 @@ export default function Home({ setCurrentPage }) {
       <div className="bg-blue-900 text-white py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
 
+          {/* 💻 FIXED: Direct path to public folder and error handling included */}
           <img
-  src={companyLogo}
-  alt="Global Gateway Internationals"
-  className="w-32 md:w-44 mx-auto mb-6"
-/>
+            src="/logo1.jpeg"
+            alt="Global Gateway Internationals"
+            className="w-32 md:w-44 mx-auto mb-6 object-contain"
+            onError={(e) => {
+              e.target.style.display = 'none'; // Safe fail case
+            }}
+          />
 
           <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
             Make a Step Towards Your Global Opportunity

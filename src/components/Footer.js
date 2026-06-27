@@ -1,35 +1,61 @@
 import React from 'react';
 
-export default function Footer({ setCurrentPage }) {
-  // Footer-லும் அதே 7 பேஜுகள் லிங்க் செய்யப்பட்டுள்ளது
+const Footer = ({ setCurrentPage }) => {
   const footerItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'migrate', label: 'Migrate' },
-    { id: 'work', label: 'Work Visa' },
-    { id: 'study', label: 'Study Visa' },
-    { id: 'visit', label: 'Visit Visa' },
-    { id: 'dependent', label: 'Dependent Family' },
-    { id: 'contact', label: 'Contact Us' }
+    { id: '/', label: 'Home' },
+    { id: '/Visitvisa', label: 'Visit Visa' },
+    { id: '/Migrate', label: 'Migrate' },
+    { id: '/WorkVisa', label: 'Work Visa' },
+    { id: '/StudyVisa', label: 'Study Visa' },
+    { id: '/Dependent-Family', label: 'Dependent Family' },
+    { id: '/Contact', label: 'Contact Us' }
   ];
 
   return (
-    <footer className="bg-blue-950 text-gray-400 py-8 border-t border-blue-900 text-sm w-full">
-      <div className="max-w-7xl mx-auto px-4 text-center space-y-4">
-        <p className="text-gray-300 font-medium">Global Gateway Internationals &bull; Professional Immigration Consultants</p>
-        
-        {/* மொபைல் ஸ்கிரீனிலும் 7 லிங்குகளும் கட் ஆகாமல் வளைந்து கொடுக்கும்படி flex-wrap செய்யப்பட்டுள்ளது */}
-        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs">
-          {footerItems.map((item) => (
-            <button 
-              key={item.id}
-              onClick={() => setCurrentPage(item.id)} 
-              className="hover:text-amber-400 transition-colors duration-200"
-            >
-              {item.label}
-            </button>
-          ))}
+    <footer className="bg-blue-950 text-white py-12 mt-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          {/* Company Info */}
+          <div>
+            <h3 className="text-xl font-bold mb-4 text-amber-500">Global Gateway</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Your trusted partner in international immigration, study visas, and global career opportunities.
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4 text-amber-500">Quick Links</h4>
+            <ul className="space-y-2">
+              {footerItems.map((item) => (
+                <li key={item.id}>
+                  <a
+                    href={item.id}
+                    className="text-gray-300 hover:text-white transition duration-150 text-sm"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4 text-amber-500">Contact Us</h4>
+            <p className="text-gray-300 text-sm mb-2">Email: info@globalgateway.com</p>
+            <p className="text-gray-300 text-sm">Support: Available 24/7</p>
+          </div>
+
+        </div>
+
+        <div className="border-t border-blue-900 mt-8 pt-6 text-center text-gray-400 text-xs">
+          &copy; {new Date().getFullYear()} Global Gateway Internationals. All rights reserved.
         </div>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;
