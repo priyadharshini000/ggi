@@ -2,12 +2,12 @@ import React from 'react';
 
 export default function Home({ setCurrentPage }) {
   return (
-    // 💡 FIXED: w-full max-w-full overflow-x-hidden தான் பக்கவாட்டு ஸ்க்ரோலை வராமல் தடுக்கும்
-    <div className="w-full max-w-full overflow-x-hidden bg-gray-50 min-h-screen">
+    // 💡 FIXED: w-full, max-w-full மக்னீசம் மூலம் லாக் செய்யப்பட்டுள்ளது
+    <div className="w-full max-w-full overflow-hidden bg-gray-50 min-h-screen block">
       
       {/* Hero Section */}
-      {/* 💡 FIXED: bg-gradient-to-r உடன் திசையைச் சேர்த்துள்ளேன், அத்துடன் padding அளவுகளை மொபைலுக்குக் குறைத்துள்ளேன் */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-800 py-16 sm:py-24 px-4 text-center text-white w-full">
+      {/* 💡 FIXED: bg-gradient பிரச்சனையை நீக்கி, சுத்தமான bg-blue-900 மற்றும் மொபைல் padding செட் செய்யப்பட்டுள்ளது */}
+      <div className="bg-blue-900 text-white py-16 sm:py-24 px-4 text-center w-full block overflow-hidden">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 leading-tight">
             Make a Step Towards Your Global Opportunity
@@ -25,7 +25,7 @@ export default function Home({ setCurrentPage }) {
       </div>
 
       {/* About Us Section */}
-      <div className="max-w-5xl mx-auto py-12 sm:py-16 px-4">
+      <div className="max-w-5xl mx-auto py-12 sm:py-16 px-4 block overflow-hidden">
         <div className="bg-white p-6 md:p-12 rounded-xl shadow-sm border border-gray-100">
           <h2 className="text-2xl sm:text-3xl font-bold text-blue-900 mb-6 text-center">Who we are?</h2>
           <div className="text-gray-600 space-y-4 leading-relaxed text-base sm:text-lg">
@@ -44,10 +44,9 @@ export default function Home({ setCurrentPage }) {
       </div>
 
       {/* Services Grid Section */}
-      <div className="bg-gray-100 py-12 sm:py-16 px-4">
+      <div className="bg-gray-100 py-12 sm:py-16 px-4 block overflow-hidden">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-bold text-center text-blue-900 mb-10">Our Core Services</h2>
-          {/* 💡 FIXED: grid மற்றும் gap மொபைல் திரைக்கு ஏற்ப மாற்றப்பட்டுள்ளது */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             
             {/* Service 1 */}
