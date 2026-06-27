@@ -43,18 +43,26 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* DESKTOP MENU (Only shows on wide screens) */}
-          <div className="hidden lg:flex space-x-6 flex-shrink-0">
-            {navLinks.map((link, index) => (
-              <a 
-                key={index} 
-                href={link.path} 
-                className="text-gray-700 hover:text-blue-900 font-medium text-sm transition duration-200 whitespace-nowrap"
-              >
-                {link.title}
-              </a>
-            ))}
-          </div>
+          {/* DESKTOP MENU (Navbar.js kulla replace panna vendiyadhu) */}
+<div className="hidden lg:flex space-x-6">
+  {navLinks.map((link, index) => (
+    <button 
+      key={index} 
+      onClick={() => {
+        if(link.title === 'Home') setCurrentPage('home');
+        if(link.title === 'Visit Visa') setCurrentPage('visit');
+        if(link.title === 'Migrate') setCurrentPage('migrate');
+        if(link.title === 'Work Visa') setCurrentPage('work');
+        if(link.title === 'Study Visa') setCurrentPage('study');
+        if(link.title === 'Dependent') setCurrentPage('dependent');
+        if(link.title === 'Contact') setCurrentPage('contact');
+      }}
+      className={`font-medium text-sm transition duration-200 whitespace-nowrap ${currentPage === link.title.toLowerCase() ? 'text-blue-900 font-bold' : 'text-gray-700 hover:text-blue-900'}`}
+    >
+      {link.title}
+    </button>
+  ))}
+</div>
 
           {/* MOBILE HAMBURGER BUTTON (Forced block view on mobile/tablet resolutions) */}
           <div className="flex lg:hidden flex-shrink-0">
