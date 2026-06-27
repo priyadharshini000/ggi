@@ -1,29 +1,27 @@
 import React, { useState } from 'react';
 
-const Navbar = () => {
+const Navbar = ({ currentPage, setCurrentPage }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { title: 'Home', path: '/' },
-    { title: 'Visit Visa', path: '/Visitvisa' },
-    { title: 'Migrate', path: '/Migrate' },
-    { title: 'Work Visa', path: '/WorkVisa' },
-    { title: 'Study Visa', path: '/StudyVisa' },
-    { title: 'Dependent', path: '/Dependent-Family' },
-    { title: 'Contact', path: '/Contact' }
+    { title: 'Home', path: 'home' },
+    { title: 'Visit Visa', path: 'visit' },
+    { title: 'Migrate', path: 'migrate' },
+    { title: 'Work Visa', path: 'work' },
+    { title: 'Study Visa', path: 'study' },
+    { title: 'Dependent', path: 'dependent' },
+    { title: 'Contact', path: 'contact' }
   ];
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50 w-full block">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* FIXED: items-center and flex-row forced, overflow protected */}
         <div className="flex justify-between items-center h-20 w-full overflow-hidden">
           
           {/* LEFT SIDE: LOGO & COMPANY NAME */}
           <div className="flex items-center space-x-2 min-w-0 max-w-[75%]">
             <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center overflow-hidden rounded bg-gray-100">
               <img 
-                // FIXED: GitHub Pages sub-folder route handle panna relative image path set panniyachu
                 src="logo1.jpeg" 
                 alt="Global Gateway Logo" 
                 className="w-full h-full object-contain"
@@ -32,7 +30,6 @@ const Navbar = () => {
                 }}
               />
             </div>
-            {/* FIXED: text wrap restricted so it won't break layout on tiny mobile screens */}
             <div className="truncate">
               <h1 className="text-blue-900 font-bold text-sm md:text-base leading-tight tracking-wide uppercase truncate">
                 Global Gateway
@@ -43,20 +40,22 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* DESKTOP MENU (Only shows on wide screens) */}
+          {/* DESKTOP MENU */}
           <div className="hidden lg:flex space-x-6 flex-shrink-0">
             {navLinks.map((link, index) => (
-              <a 
+              <button 
                 key={index} 
-                href={link.path} 
-                className="text-gray-700 hover:text-blue-900 font-medium text-sm transition duration-200 whitespace-nowrap"
+                onClick={() => setCurrentPage(link.path)}
+                className={`font-medium text-sm transition duration-200 whitespace-nowrap ${
+                  currentPage === link.path ? 'text-blue-900 font-bold border-b-2 border-blue-900' : 'text-gray-700 hover:text-blue-900'
+                }`}
               >
                 {link.title}
-              </a>
+              </button>
             ))}
           </div>
 
-          {/* MOBILE HAMBURGER BUTTON (Forced block view on mobile/tablet resolutions) */}
+          {/* MOBILE HAMBURGER BUTTON */}
           <div className="flex lg:hidden flex-shrink-0">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -84,14 +83,18 @@ const Navbar = () => {
         <div className="lg:hidden bg-white border-t border-gray-100 shadow-inner w-full absolute left-0 top-20 z-40 block">
           <div className="px-4 pt-2 pb-4 space-y-1 bg-white">
             {navLinks.map((link, index) => (
-              <a
+              <button
                 key={index}
-                href={link.path}
-                className="block px-4 py-3 rounded-md text-base font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-900 transition duration-150"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setCurrentPage(link.path);
+                  setIsOpen(false);
+                }}
+                className={`block w-full text-left px-4 py-3 rounded-md text-base font-semibold transition duration-150 ${
+                  currentPage === link.path ? 'bg-blue-50 text-blue-900 font-bold' : 'text-gray-700 hover:bg-gray-50'
+                }`}
               >
                 {link.title}
-              </a>
+              </button>
             ))}
           </div>
         </div>
