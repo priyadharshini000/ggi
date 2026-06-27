@@ -2,19 +2,22 @@ import React from 'react';
 
 export default function Home({ setCurrentPage }) {
   return (
-    <div className="bg-gray-50 min-h-screen">
+    // 💡 FIXED: w-full max-w-full overflow-x-hidden தான் பக்கவாட்டு ஸ்க்ரோலை வராமல் தடுக்கும்
+    <div className="w-full max-w-full overflow-x-hidden bg-gray-50 min-h-screen">
+      
       {/* Hero Section */}
-      <div className="bg-gradient-to-r py-24 px-4 text-center bg-blue-900 text-white">
+      {/* 💡 FIXED: bg-gradient-to-r உடன் திசையைச் சேர்த்துள்ளேன், அத்துடன் padding அளவுகளை மொபைலுக்குக் குறைத்துள்ளேன் */}
+      <div className="bg-gradient-to-r from-blue-900 to-blue-800 py-16 sm:py-24 px-4 text-center text-white w-full">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6">
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 leading-tight">
             Make a Step Towards Your Global Opportunity
           </h1>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Pursue your job opportunities in major global hubs with our expert immigration guidance.
           </p>
           <button 
             onClick={() => setCurrentPage('contact')}
-            className="bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold px-8 py-4 rounded-lg shadow-lg uppercase transition-all"
+            className="bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold px-6 py-3 sm:px-8 sm:py-4 rounded-lg shadow-lg uppercase text-sm sm:text-base transition-all"
           >
             Book Your Consultation
           </button>
@@ -22,10 +25,10 @@ export default function Home({ setCurrentPage }) {
       </div>
 
       {/* About Us Section */}
-      <div className="max-w-5xl mx-auto py-16 px-4">
-        <div className="bg-white p-8 md:p-12 rounded-xl shadow-sm border border-gray-100">
-          <h2 className="text-3xl font-bold text-blue-900 mb-6 text-center">Who we are?</h2>
-          <div className="text-gray-600 space-y-4 leading-relaxed text-lg">
+      <div className="max-w-5xl mx-auto py-12 sm:py-16 px-4">
+        <div className="bg-white p-6 md:p-12 rounded-xl shadow-sm border border-gray-100">
+          <h2 className="text-2xl sm:text-3xl font-bold text-blue-900 mb-6 text-center">Who we are?</h2>
+          <div className="text-gray-600 space-y-4 leading-relaxed text-base sm:text-lg">
             <p>
               At <strong>Global Gateway Internationals</strong>, we are a premier global immigration consultancy. 
               Our core expertise lies in providing Work Visa solutions, helping skilled professionals relocate 
@@ -41,44 +44,48 @@ export default function Home({ setCurrentPage }) {
       </div>
 
       {/* Services Grid Section */}
-      <div className="bg-gray-100 py-16 px-4">
+      <div className="bg-gray-100 py-12 sm:py-16 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-blue-900 mb-12">Our Core Services</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center text-blue-900 mb-10">Our Core Services</h2>
+          {/* 💡 FIXED: grid மற்றும் gap மொபைல் திரைக்கு ஏற்ப மாற்றப்பட்டுள்ளது */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            
             {/* Service 1 */}
-            <div className="bg-white p-8 rounded-xl shadow-sm border-t-4 border-blue-900 flex flex-col justify-between">
+            <div className="bg-white p-6 sm:p-8 rounded-xl shadow-sm border-t-4 border-blue-900 flex flex-col justify-between">
               <div>
-                <h3 className="text-2xl font-bold text-blue-900 mb-4">Work Visa</h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-blue-900 mb-4">Work Visa</h3>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-6">
                   Land your dream job abroad. Get expert help with employer-sponsored visas, skilled worker permits, and legal relocation for your family.
                 </p>
               </div>
               <button 
                 onClick={() => setCurrentPage('work')}
-                className="text-blue-900 font-semibold hover:text-amber-500 flex items-center gap-2 transition-colors mt-4"
+                className="text-blue-900 font-semibold hover:text-amber-500 flex items-center gap-2 transition-colors mt-4 text-sm sm:text-base"
               >
                 Explore Destinations &rarr;
               </button>
             </div>
 
             {/* Service 2 */}
-            <div className="bg-white p-8 rounded-xl shadow-sm border-t-4 border-amber-500 flex flex-col justify-between">
+            <div className="bg-white p-6 sm:p-8 rounded-xl shadow-sm border-t-4 border-amber-500 flex flex-col justify-between">
               <div>
-                <h3 className="text-2xl font-bold text-blue-900 mb-4">Study Visa</h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-blue-900 mb-4">Study Visa</h3>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-6">
                   Unlock your academic potential. From university selection to visa approval, we guide you toward the best global education paths.
                 </p>
               </div>
               <button 
                 onClick={() => setCurrentPage('study')}
-                className="text-blue-900 font-semibold hover:text-amber-500 flex items-center gap-2 transition-colors mt-4"
+                className="text-blue-900 font-semibold hover:text-amber-500 flex items-center gap-2 transition-colors mt-4 text-sm sm:text-base"
               >
                 Explore Academic Paths &rarr;
               </button>
             </div>
+
           </div>
         </div>
       </div>
+
     </div>
   );
 }
