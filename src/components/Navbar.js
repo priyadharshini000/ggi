@@ -68,15 +68,14 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
                 <svg className="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
-              )
-            )}
+              )}
             </button>
           </div>
 
         </div>
       </div>
 
-      {/* BACKGROUND OVERLAY (Menu open-aa irukkum podhu background-ai dark aakka) */}
+      {/* BACKGROUND OVERLAY */}
       {isOpen && (
         <div 
           className="fixed inset-0 bg-black bg-opacity-40 z-40 lg:hidden transition-opacity"
@@ -94,7 +93,7 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
               key={index}
               onClick={() => {
                 if (setCurrentPage) setCurrentPage(link.path);
-                setIsOpen(false); // Link click pannadhum drawer close aagidum
+                setIsOpen(false);
               }}
               className={`block w-full text-left px-4 py-3 rounded-md text-base font-semibold transition duration-150 ${
                 currentPage === link.path ? 'bg-blue-50 text-blue-900 font-bold' : 'text-gray-700 hover:bg-gray-50'
