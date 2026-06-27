@@ -18,25 +18,26 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 w-full overflow-hidden">
           
-          {/* LEFT SIDE: LOGO & COMPANY NAME */}
-          <div className="flex items-center space-x-2 min-w-0 max-w-[75%]">
+          {/* LEFT SIDE: LOGO & SCROLLING COMPANY NAME */}
+          <div className="flex items-center space-x-2 min-w-0 flex-1 max-w-[65%] sm:max-w-[75%]">
             <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center overflow-hidden rounded bg-gray-100">
               <img 
                 src="logo1.jpeg" 
-                alt="Global Gateway Logo" 
+                alt="Logo" 
                 className="w-full h-full object-contain"
                 onError={(e) => {
                   e.target.style.display = 'none';
                 }}
               />
             </div>
-            <div className="truncate">
-              <h1 className="text-blue-900 font-bold text-sm md:text-base leading-tight tracking-wide uppercase truncate">
-                Global Gateway
-              </h1>
-              <span className="text-gray-500 text-[10px] block tracking-widest uppercase truncate">
-                Internationals
-              </span>
+            
+            {/* 🔄 FIXED: Company Name Space-Saving Scrolling Area */}
+            <div className="flex-1 min-w-0 overflow-hidden w-full">
+              <div className="animate-marquee whitespace-nowrap inline-block text-left">
+                <h1 className="text-blue-900 font-bold text-sm sm:text-base leading-tight tracking-wide uppercase inline-block pr-4">
+                  Global Gateway Internationals
+                </h1>
+              </div>
             </div>
           </div>
 
@@ -56,7 +57,7 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
           </div>
 
           {/* MOBILE HAMBURGER BUTTON */}
-          <div className="flex lg:hidden flex-shrink-0">
+          <div className="flex lg:hidden flex-shrink-0 ml-2">
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
