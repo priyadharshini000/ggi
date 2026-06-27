@@ -31,7 +31,6 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
               />
             </div>
             
-            {/* 🔄 FIXED: Company Name Space-Saving Scrolling Area */}
             <div className="flex-1 min-w-0 overflow-hidden w-full">
               <div className="animate-marquee whitespace-nowrap inline-block text-left">
                 <h1 className="text-blue-900 font-bold text-sm sm:text-base leading-tight tracking-wide uppercase inline-block pr-4">
@@ -79,7 +78,7 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
         </div>
       </div>
 
-      {/* MOBILE DROPDOWN PAGES MENU */}
+      {/* FIXED: MOBILE DROPDOWN PAGES MENU (Now connected with state dynamic clicks) */}
       {isOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100 shadow-inner w-full absolute left-0 top-20 z-40 block">
           <div className="px-4 pt-2 pb-4 space-y-1 bg-white">
@@ -87,8 +86,8 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
               <button
                 key={index}
                 onClick={() => {
-                  setCurrentPage(link.path);
-                  setIsOpen(false);
+                  setCurrentPage(link.path); // 👈 இப்போ மொபைல்ல கிளிக் பண்ணா பேஜ் மாறும்!
+                  setIsOpen(false);         // 👈 பேஜ் மாறுனதும் மெனு ஆட்டோமேட்டிக்கா மூடிக்கும்!
                 }}
                 className={`block w-full text-left px-4 py-3 rounded-md text-base font-semibold transition duration-150 ${
                   currentPage === link.path ? 'bg-blue-50 text-blue-900 font-bold' : 'text-gray-700 hover:bg-gray-50'
