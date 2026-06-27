@@ -38,7 +38,7 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
             </div>
           </div>
 
-          {/* MIDDLE/RIGHT: DESKTOP MENU (Hidden completely on mobile) */}
+          {/* MIDDLE/RIGHT: DESKTOP MENU (Hidden on mobile) */}
           <div className="hidden lg:flex space-x-6 flex-shrink-0">
             {navLinks.map((link, index) => (
               <button 
@@ -53,12 +53,12 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
             ))}
           </div>
 
-          {/* RIGHT: MOBILE HAMBURGER BUTTON (Forced to stay at the right corner) */}
+          {/* RIGHT: MOBILE HAMBURGER BUTTON */}
           <div className="flex lg:hidden flex-shrink-0">
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="text-gray-700 hover:text-blue-900 focus:outline-none p-2 border border-gray-300 rounded-lg bg-gray-50 z-50"
+              className="text-gray-700 hover:text-blue-900 focus:outline-none p-2 border border-gray-300 rounded-lg bg-gray-50 z-50 relative"
             >
               {!isOpen ? (
                 <svg className="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -68,34 +68,43 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
                 <svg className="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
-              )}
+              )
+            )}
             </button>
           </div>
 
         </div>
       </div>
 
-      {/* MOBILE DROPDOWN MENU LIST */}
+      {/* BACKGROUND OVERLAY (Menu open-aa irukkum podhu background-ai dark aakka) */}
       {isOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 shadow-inner w-full absolute left-0 top-20 z-40 block">
-          <div className="px-4 pt-2 pb-4 space-y-1 bg-white">
-            {navLinks.map((link, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  if (setCurrentPage) setCurrentPage(link.path);
-                  setIsOpen(false); // Page மாறினதும் மெனு மூடிடும்
-                }}
-                className={`block w-full text-left px-4 py-3 rounded-md text-base font-semibold transition duration-150 ${
-                  currentPage === link.path ? 'bg-blue-50 text-blue-900 font-bold' : 'text-gray-700 hover:bg-gray-50'
-                }`}
-              >
-                {link.title}
-              </button>
-            ))}
-          </div>
-        </div>
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-40 z-40 lg:hidden transition-opacity"
+          onClick={() => setIsOpen(false)}
+        />
       )}
+
+      {/* MOBILE SIDE HAMBURGER MENU DRAWER */}
+      <div className={`fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-40 transform transition-transform duration-300 ease-in-out lg:hidden pt-24 ${
+        isOpen ? 'translate-x-0' : 'translate-x-full'
+      }`}>
+        <div className="px-4 space-y-2">
+          {navLinks.map((link, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                if (setCurrentPage) setCurrentPage(link.path);
+                setIsOpen(false); // Link click pannadhum drawer close aagidum
+              }}
+              className={`block w-full text-left px-4 py-3 rounded-md text-base font-semibold transition duration-150 ${
+                currentPage === link.path ? 'bg-blue-50 text-blue-900 font-bold' : 'text-gray-700 hover:bg-gray-50'
+              }`}
+            >
+              {link.title}
+            </button>
+          ))}
+        </div>
+      </div>
     </nav>
   );
 };
