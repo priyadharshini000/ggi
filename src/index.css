@@ -67,3 +67,21 @@ code {
     max-width: 100% !important;
   }
 }
+/* --- மொபைல் வியூவில் ஹேம்பர்கரை மட்டும் காட்டி, டெஸ்க்டாப் மெனுவை மறைக்க --- */
+@media (max-width: 1023px) {
+  .custom-desktop-menu {
+    display: none !important;
+  }
+  .custom-mobile-hamburger {
+    display: block !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .custom-desktop-menu {
+    display: flex !important;
+  }
+  .custom-mobile-hamburger {
+    display: none !important;
+  }
+}
