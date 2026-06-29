@@ -12,9 +12,10 @@
 html,
 body,
 #root {
-  width: 100%;
-  min-height: 100vh; /* 100%க்கு பதிலா 100vh குடுத்தா மொபைல்ல ஸ்க்ரோல் பிரச்சனை வராது */
-  overflow-x: hidden;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 100vh;
+  overflow-x: hidden !important; /* 💡 உலகளாவிய ரீதியில் பக்கவாட்டு ஸ்க்ரோலை அடியோடு தடுக்கும் */
 }
 
 body {
@@ -41,35 +42,26 @@ code {
     monospace;
 }
 
-/* --- மொபைல் லேஅவுட் பிக்ஸ் (மாற்றியமைக்கப்பட்டது) --- */
+/* --- மொபைல் லேஅவுட் பிக்ஸ் (ஸ்குரோல் மற்றும் ஹேம்பர்கர் கச்சிதமாக்கப்பட்டது) --- */
 @media (max-width: 768px) {
   
-  /* 1. ஹெட் பேனலை பக்கவாட்டில் தெரிய வைக்க (மெனு கட் ஆகாமல் தடுக்க) */
+  /* 💡 FIXED: 'overflow-x: auto' மற்றும் 'white-space: nowrap' நீக்கப்பட்டது! */
   nav, header {
-    flex-direction: row !important; /* 'column'-க்கு பதிலா 'row' மாத்தியாச்சு */
+    flex-direction: row !important;
     justify-content: space-between !important;
     align-items: center !important;
-    height: auto !important;
-    padding: 10px 15px !important;
-    gap: 15px;
-    overflow-x: auto; /* மெனு ஐட்டங்கள் அதிகமானால் பக்கவாட்டில் ஸ்க்ரோல் செய்ய */
-    white-space: nowrap; /* மெனு டெக்ஸ்ட் அடுத்த லைனுக்கு உடைந்து போகாமல் தடுக்க */
+    height: 80px !important; /* ஹெட் பார் கரெக்ட் ஹைட் */
+    padding: 0 16px !important;
+    overflow-x: hidden !important; /* ஸ்க்ரோல் லாக் */
   }
 
-  /* 2. மொபைலில் லோகோ அளவை சீரமைக்க */
+  /* மொபைலில் லோகோ அளவை சீரமைக்க */
   nav img, header img {
-    max-height: 35px !important; 
+    max-height: 40px !important; 
     width: auto !important;
   }
 
-  /* 3. மெனு லிங்க்குகள் நெருக்கடி இல்லாம இடைவெளி விட */
-  nav a, header a {
-    padding: 5px 10px !important;
-    font-size: 14px !important;
-    display: inline-block !important;
-  }
-
-  /* 4. அந்த ப்ளூ கலர் ஹீரோ செக்ஷன் மொபைல்ல ஃபுல் வித் (100%) ஆக */
+  /* ஹீரோ செக்ஷன் மற்றும் கார்டுகள் மொபைல்ல ஃபுல் வித் (100%) ஆக */
   .hero-section, main > div, section {
     width: 100% !important;
     max-width: 100% !important;

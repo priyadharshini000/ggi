@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Navbar = ({ currentPage, setCurrentPage }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
     { title: 'Home', path: 'home' },
@@ -38,7 +38,7 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
             </div>
           </div>
 
-          {/* MIDDLE/RIGHT: DESKTOP MENU (Hidden on mobile) */}
+          {/* DESKTOP MENU (Hidden on Mobile) */}
           <div className="hidden lg:flex space-x-6 flex-shrink-0">
             {navLinks.map((link, index) => (
               <button 
@@ -56,11 +56,11 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
           {/* RIGHT: MOBILE HAMBURGER BUTTON */}
           <div className="flex lg:hidden flex-shrink-0">
             <button
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               type="button"
-              className="text-gray-700 hover:text-blue-900 focus:outline-none p-2 border border-gray-300 rounded-lg bg-gray-50 z-50 relative"
+              className="text-gray-700 hover:text-blue-900 focus:outline-none p-2 border border-gray-300 rounded-lg bg-gray-50 z-50"
             >
-              {!isOpen ? (
+              {!mobileMenuOpen ? (
                 <svg className="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
@@ -75,35 +75,27 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
         </div>
       </div>
 
-      {/* BACKGROUND OVERLAY */}
-      {isOpen && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-40 z-40 lg:hidden transition-opacity"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
-
-      {/* MOBILE SIDE HAMBURGER MENU DRAWER */}
-      <div className={`fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-40 transform transition-transform duration-300 ease-in-out lg:hidden pt-24 ${
-        isOpen ? 'translate-x-0' : 'translate-x-full'
-      }`}>
-        <div className="px-4 space-y-2">
-          {navLinks.map((link, index) => (
-            <button
-              key={index}
-              onClick={() => {
-                if (setCurrentPage) setCurrentPage(link.path);
-                setIsOpen(false);
-              }}
-              className={`block w-full text-left px-4 py-3 rounded-md text-base font-semibold transition duration-150 ${
-                currentPage === link.path ? 'bg-blue-50 text-blue-900 font-bold' : 'text-gray-700 hover:bg-gray-50'
-              }`}
-            >
-              {link.title}
-            </button>
-          ))}
+      {/* MOBILE DROPDOWN LINKS MENU */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden bg-white border-t border-gray-100 shadow-inner w-full absolute left-0 top-20 z-40 block">
+          <div className="px-4 pt-2 pb-4 space-y-1 bg-white">
+            {navLinks.map((link, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  if (setCurrentPage) setCurrentPage(link.path);
+                  setMobileMenuOpen(false);
+                }}
+                className={`block w-full text-left px-4 py-3 rounded-md text-base font-semibold transition duration-150 ${
+                  currentPage === link.path ? 'bg-blue-50 text-blue-900 font-bold' : 'text-gray-700 hover:bg-gray-50'
+                }`}
+              >
+                {link.title}
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </nav>
   );
 };

@@ -70,6 +70,7 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
                 </svg>
               )
             )
+        
             </button>
           </div>
 
