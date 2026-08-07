@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Best Overseas Job Consultancy Chennai | Global Gateway Internationals</title>
+<meta content="Global Gateway Internationals is one of the best overseas job consultancy in Chennai offering Europe jobs, Singapore jobs, Gulf jobs, work visa assistance and international recruitment services." name="description"/>
+<!-- உங்க புதிய லோகோவிற்கான கோடு இதுதான் -->
+<link href="https://www.globalgatewayinternationals.com/logo.jpeg" rel="icon" sizes="48x48" type="image/x-icon"/>
+<!-- AOS Library CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- AOS Library JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+        // Smooth Page Routing Script
+       function showPage(pageId) {
+    const pages = document.querySelectorAll('.app-page');
+    pages.forEach(page => page.classList.add('hidden'));
+
+    const activePage = document.getElementById(pageId);
+    if (activePage) {
+        // 1. அந்தப் பக்கத்தில் உள்ள பழைய AOS அனிமேஷன் கிளாஸ்களை மொத்தமாக ரீசெட் செய்கிறோம்
+        const animatedElements = activePage.querySelectorAll('[data-aos]');
+        animatedElements.forEach(el => {
+            el.classList.remove('aos-animate');
+        });
+
+        // 2. பக்கத்தைக் கண்ணுக்குத் தெரிய வைக்கிறோம்
+        activePage.classList.remove('hidden');
+         history.pushState({ page: pageId }, "", "#" + pageId);
+    }
+            
+    // டிராப்டவுன்களை மூடுவது
+    if(document.getElementById('workDropdownMenu')) document.getElementById('workDropdownMenu').classList.add('hidden');
+    if(document.getElementById('studyDropdownMenu')) document.getElementById('studyDropdownMenu').classList.add('hidden');
+    if(document.getElementById('migrateDropdownMenu')) document.getElementById('migrateDropdownMenu').classList.add('hidden');
+    if(document.getElementById('visitDropdownMenu')) document.getElementById('visitDropdownMenu').classList.add('hidden');
+    if(document.getElementById('dependentDropdownMenu')) document.getElementById('dependentDropdownMenu').classList.add('hidden');
+            
+    window.scrollTo({top: 0, behavior: 'smooth'});
+
+    // 3. பக்கம் லோடானதும் அனிமேஷனை வலுக்கட்டாயமாக ரீ-ஸ்டார்ட் (Force Restart) செய்கிறோம்
+    setTimeout(function() {
+        AOS.refreshHard();
+    }, 100);
+}
+        // ================= PASTE PANNAPATTA IDAM =================
+        function handleMigrateClick(event) {
+            event.stopPropagation();
+            
+            // 1. Dropdown click panna udane Migrate Main Page open aagum
+            location.href='migrate.html'; 
+            
+            // 2. Madha ellam dropdown-aium close panradhu
+            if(document.getElementById('workDropdownMenu')) document.getElementById('workDropdownMenu').classList.add('hidden');
+            if(document.getElementById('studyDropdownMenu')) document.getElementById('studyDropdownMenu').classList.add('hidden');
+            if(document.getElementById('visitDropdownMenu')) document.getElementById('visitDropdownMenu').classList.add('hidden');
+            if(document.getElementById('dependentDropdownMenu')) document.getElementById('dependentDropdownMenu').classList.add('hidden');
+            
+            // 3. Migrate dropdown menu-va toggle (open/close) panradhu
+            document.getElementById('migrateDropdownMenu').classList.toggle('hidden');
+        }
+        // ========================================================
+        function handleWorkVisaClick(event) {
+            event.stopPropagation();
+            location.href='work-visa.html';
+            document.getElementById('studyDropdownMenu').classList.add('hidden');
+            document.getElementById('workDropdownMenu').classList.toggle('hidden');
+        }
+        function handleStudyVisaClick(event) {
+            event.stopPropagation();
+            location.href='study-visa.html';
+            document.getElementById('workDropdownMenu').classList.add('hidden');
+            document.getElementById('studyDropdownMenu').classList.toggle('hidden');
+        }
+       function handleVisitVisaClick(event) {
+    event.stopPropagation();
+    
+    // 1. Click panna udane direct-ah Visit Visa Main Page open aagum
+    location.href='visit-visa.html';
+    
+    // 2. Madha ellam active dropdowns-aium close panradhu
+    if(document.getElementById('workDropdownMenu')) document.getElementById('workDropdownMenu').classList.add('hidden');
+    if(document.getElementById('studyDropdownMenu')) document.getElementById('studyDropdownMenu').classList.add('hidden');
+    if(document.getElementById('migrateDropdownMenu')) document.getElementById('migrateDropdownMenu').classList.add('hidden');
+}
+function handleDependentClick(event) {
+    event.stopPropagation();
+    
+    // 1. Click panna udane direct-ah Dependent Visa Main Page open aagum
+    location.href='dependent-visa.html';
+    
+    // 2. Madha ellam active dropdowns-aium close panradhu
+    if(document.getElementById('workDropdownMenu')) document.getElementById('workDropdownMenu').classList.add('hidden');
+    if(document.getElementById('studyDropdownMenu')) document.getElementById('studyDropdownMenu').classList.add('hidden');
+    if(document.getElementById('migrateDropdownMenu')) document.getElementById('migrateDropdownMenu').classList.add('hidden');
+}
+
+        // Web3Forms AJAX Form Submission (Standard JSON Mode)
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            const submitBtn = form.querySelector('button[type="submit"]');
+            
+            // Button loading state
+            submitBtn.disabled = true;
+            submitBtn.innerText = "SENDING...";
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    // Success Popup Modal open aagum
+                    const popup = document.getElementById('successPopup');
+                    popup.classList.remove('hidden');
+                    popup.classList.add('flex');
+                    form.reset(); // Form clear seiya
+                } else {
+                    alert("Something went wrong: " + json.message);
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                alert("Form submission failed! Please check your internet connection.");
+            })
+            .then(() => {
+                // Button text reset
+                submitBtn.disabled = false;
+                submitBtn.innerText = "SUBMIT";
+            });
+        }
+
+        function closePopup() {
+            const popup = document.getElementById('successPopup');
+            popup.classList.add('hidden');
+            popup.classList.remove('flex');
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                document.getElementById('workDropdownMenu').classList.add('hidden');
+                document.getElementById('studyDropdownMenu').classList.add('hidden');
+                if(document.getElementById('migrateDropdownMenu')) {
+            document.getElementById('migrateDropdownMenu').classList.add('hidden');
+        }
+        if(document.getElementById('visitDropdownMenu')) document.getElementById('visitDropdownMenu').classList.add('hidden');
+        if(document.getElementById('dependentDropdownMenu')) document.getElementById('dependentDropdownMenu').classList.add('hidden');
+            }
+        }
+       // AOS Initialization & Page Reset
+document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+        duration: 800,
+        once: true     
+    });
+
+    const allAnimatedElements = document.querySelectorAll('[data-aos]');
+    allAnimatedElements.forEach(el => {
+        el.classList.remove('aos-animate');
+    });
+
+    setTimeout(function() {
+        AOS.refreshHard();
+    }, 200);
+});
+window.onpopstate = function (event) {
+    if (event.state && event.state.page) {
+        showPage(event.state.page);
+    } else {
+        showPage("homePage");
+    }
+};
+    </script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RM08RH5J8D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RM08RH5J8D');
+</script>
+<link href="https://www.globalgatewayinternationals.com/" rel="canonical"/>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col m-0 p-0 overflow-x-hidden">
+<nav class="bg-white text-blue-900 sticky top-0 z-50 shadow-md border-b border-gray-200 md:mb-0 mb-8" style="overflow: visible !important; height: 80px;">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+<div class="flex items-center justify-between h-full">
+<!-- 🏢 லோகோ மற்றும் கம்பெனி பெயர் இடது பக்கம் நகர்த்தப்பட்ட செக்ஷன் -->
+<div class="flex-shrink-0 cursor-pointer flex items-center gap-3 -ml-3 md:ml-0" onclick="location.href='index.html'">
+<!-- Logo Size Medium-ku Perusu Panniyachu (h-16) -->
+<img alt="Global Gateway Logo" class="h-16 w-auto object-contain rounded shadow-sm" src="logo.jpeg"/>
+<div style="font-family: 'Times New Roman', Times, serif;">
+<!-- Company Name "GLOBAL GATEWAY" Perusaakiyachu (text-xl from text-lg) -->
+<span class="font-bold text-xl md:text-2xl tracking-wider text-blue-950 block leading-tight">GLOBAL GATEWAY</span>
+<!-- Subtitle "INTERNATIONALS" Size-um Ratio-ku thandha madhiri perusaakiyachu -->
+<span class="block text-[11px] md:text-sm font-bold tracking-widest text-gray-600">INTERNATIONALS</span>
+</div>
+</div>
+<div class="hidden md:flex space-x-2 md:space-x-4 ml-auto items-center">
+<button class="px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors" onclick="location.href='index.html'">Home</button>
+<div class="relative inline-block text-left">
+<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="handleMigrateClick(event)">
+                        Migrate <span class="text-xs"> ▼ </span>
+</button>
+<div class="hidden absolute right-0 mt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="migrateDropdownMenu">
+<div class="py-1">
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='migrate/canada.html'"> 🇨🇦 Canada</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='migrate/australia.html'"> 🇦🇺 Australia</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='migrate/uk.html'"> 🇬🇧 United Kingdom</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='migrate/new-zealand.html'"> 🇳🇿 New Zealand</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium" onclick="location.href='migrate/europe.html'"> 🇪🇺 Germany / Europe</button>
+</div>
+</div>
+</div>
+<div class="relative inline-block text-left">
+<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="handleWorkVisaClick(event)">
+                        Work <span class="text-xs">▼</span>
+</button>
+<div class="hidden absolute right-0 mt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="workDropdownMenu">
+<div class="py-1">
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='work/canada.html'">🇨🇦 Canada</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='work/australia.html'">🇦🇺 Australia</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='work/europe.html'">🇪🇺 Europe</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='work/uk.html'">🇬🇧 United Kingdom</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='work/new-zealand.html'">🇳🇿 New Zealand</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='work/singapore.html'">🇸🇬 Singapore</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium" onclick="location.href='work/gulf.html'">🇶🇦 The Gulf</button>
+</div>
+</div>
+</div>
+<div class="relative inline-block text-left">
+<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="handleStudyVisaClick(event)">
+                        Study <span class="text-xs">▼</span>
+</button>
+<div class="hidden absolute right-0 mt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="studyDropdownMenu">
+<div class="py-1">
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='study/canada.html'">🇨🇦 Canada</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='study/australia.html'">🇦🇺 Australia</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='study/europe.html'">🇪🇺 Europe</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='study/uk.html'">🇬🇧 United Kingdom</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='study/new-zealand.html'">🇳🇿 New Zealand</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='study/singapore.html'">🇸🇬 Singapore</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium" onclick="location.href='study/gulf.html'">🇶🇦 The Gulf</button>
+</div>
+</div>
+</div>
+<button class="text-blue-900 hover:text-amber-500 font-semibold px-3 py-2 text-sm transition-colors duration-200" onclick="location.href='visit-visa.html'">Visit</button>
+<button class="text-blue-900 hover:text-amber-500 font-semibold px-3 py-2 text-sm transition-colors duration-200" onclick="handleDependentClick(event)">Dependent-Family</button>
+<button class="px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors" onclick="location.href='contact.html'">Contact Us</button>
+</div>
+<div class="md:hidden flex items-center ml-auto">
+<!-- ☰ மெனு சிம்பல் கச்சிதமான மீடியம் சைஸுக்கு மாற்றப்பட்டுள்ளது -->
+<button class="text-blue-900 focus:outline-none p-2 border-0 bg-transparent font-bold text-xl z-50" id="myMobileMenuBtn" onclick="toggleMyMobileMenu(event)">
+        ☰
+    </button>
+</div>
+</div>
+</div>
+<div class="md:hidden bg-white border-b border-gray-300 px-4 py-3 shadow-2xl w-full left-0 absolute z-[999] max-h-[calc(100vh-80px)] overflow-y-auto" id="myMobileMenuDropdown" style="display: none !important; flex-direction: column; gap: 2px; top: 80px;">
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm" onclick="closeMobileMenuFull(); location.href='index.html'">Home</button>
+<div>
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm flex justify-between items-center" onclick="toggleSubMenu(event, 'subMigrate')">
+                ▶ Migrate <span class="text-xs text-gray-400" id="arrow-subMigrate">▼</span>
+</button>
+<div class="bg-gray-50 pl-6 flex flex-col border-b border-gray-100" id="subMigrate" style="display: none;">
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='migrate/canada.html'">Canada</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='migrate/australia.html'">Australia</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='migrate/uk.html'">UK</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='migrate/new-zealand.html'">NZ</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='migrate/europe.html'">Europe</button>
+</div>
+</div>
+<div>
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm flex justify-between items-center" onclick="toggleSubMenu(event, 'subWork')">
+                ▶ Work Visa <span class="text-xs text-gray-400" id="arrow-subWork">▼</span>
+</button>
+<div class="bg-gray-50 pl-6 flex flex-col border-b border-gray-100" id="subWork" style="display: none;">
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='work/canada.html'">Canada</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='work/australia.html'">Australia</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='work/europe.html'">Europe</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='work/uk.html'">UK</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='work/new-zealand.html'">NZ</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='work/singapore.html'">Singapore</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='work/gulf.html'">Gulf</button>
+</div>
+</div>
+<div>
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm flex justify-between items-center" onclick="toggleSubMenu(event, 'subStudy')">
+                ▶ Study Visa <span class="text-xs text-gray-400" id="arrow-subStudy">▼</span>
+</button>
+<div class="bg-gray-50 pl-6 flex flex-col border-b border-gray-100" id="subStudy" style="display: none;">
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='study/canada.html'">Canada</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='study/australia.html'">Australia</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='study/europe.html'">Europe</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='study/uk.html'">UK</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='study/new-zealand.html'">NZ</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='study/singapore.html'">Singapore</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='study/gulf.html'">The Gulf</button>
+</div>
+</div>
+<!-- Visit Visa -->
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm block" onclick="closeMobileMenuFull(); location.href='visit-visa.html'">
+    Visit Visa
+</button>
+<!-- Dependent-Family -->
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm block" onclick="closeMobileMenuFull(); handleDependentClick(event)">
+    Dependent-Family
+</button>
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded text-sm" onclick="closeMobileMenuFull(); location.href='contact.html'">Contact</button>
+</div>
+</nav>
+<script>
+    window.toggleMyMobileMenu = function(e) {
+        if (e) e.stopPropagation();
+        var menuBtn = document.getElementById('myMobileMenuBtn');
+        var menuDropdown = document.getElementById('myMobileMenuDropdown');
+        
+        if (menuDropdown && menuBtn) {
+            if (menuDropdown.style.getPropertyValue('display') === 'none' || menuDropdown.style.display === 'none' || menuDropdown.style.display === '') {
+                menuDropdown.style.setProperty('display', 'flex', 'important');
+                menuBtn.innerHTML = '✕'; // மெனு ஓபன் ஆகும்போது பட்டன் மாறும்
+            } else {
+                closeMobileMenuFull();
+            }
+        }
+    }
+
+    window.toggleSubMenu = function(e, subId) {
+        if (e) e.stopPropagation();
+        var subMenu = document.getElementById(subId);
+        var arrow = document.getElementById('arrow-' + subId);
+        
+        if (subMenu) {
+            if (subMenu.style.display === 'none' || subMenu.style.display === '') {
+                subMenu.style.display = 'flex';
+                subMenu.style.flexDirection = 'column';
+                if(arrow) arrow.innerHTML = '▲'; // அம்பு குறி மேலே மாறும்
+            } else {
+                subMenu.style.display = 'none';
+                if(arrow) arrow.innerHTML = '▼'; // அம்பு குறி கீழே மாறும்
+            }
+        }
+    }
+
+    window.closeMobileMenuFull = function() {
+        var menuDropdown = document.getElementById('myMobileMenuDropdown');
+        var menuBtn = document.getElementById('myMobileMenuBtn');
+        
+        if (menuDropdown) {
+            menuDropdown.style.setProperty('display', 'none', 'important'); // மெனுவை மூடிவிடும்
+        }
+        if (menuBtn) {
+            menuBtn.innerHTML = '☰';
+        }
+        
+        // உள் மெனுக்கள் அனைத்தையும் ரீசெட் செய்யும்
+        var subMenus = ['subMigrate', 'subWork', 'subStudy'];
+        subMenus.forEach(function(id) {
+            var sub = document.getElementById(id);
+            var arrow = document.getElementById('arrow-' + id);
+            if(sub) sub.style.display = 'none';
+            if(arrow) arrow.innerHTML = '▼';
+        });
+    }
+</script>
+<div class="py-16 px-4 max-w-5xl mx-auto" id="contactPage">
+<!-- 1. FORM SECTION (ஃபார்ம் பகுதி) -->
+<div class="bg-white p-8 md:p-12 rounded-xl shadow-lg border border-gray-100 mb-12">
+<h2 class="text-3xl font-extrabold text-blue-900 mb-8 text-center tracking-wide uppercase">GET IN TOUCH</h2>
+<form class="space-y-6" id="leadContactForm" onsubmit="handleFormSubmit(event)">
+<!-- NAME FIELD -->
+<div>
+<label class="block text-sm font-bold text-gray-700 uppercase mb-2">NAME:</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none transition-all placeholder:text-gray-400" name="Client Name" placeholder="Enter your name" required="" type="text"/>
+</div>
+<!-- EMAIL FIELD -->
+<div>
+<label class="block text-sm font-bold text-gray-700 uppercase mb-2">EMAIL:</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none transition-all placeholder:text-gray-400" name="Client Email" placeholder="Enter your email address" required="" type="email"/>
+</div>
+<!-- PHONE NUMBER FIELD -->
+<div>
+<label class="block text-sm font-bold text-gray-700 uppercase mb-2">PHONE NUMBER:</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none transition-all placeholder:text-gray-400" name="Phone Number" placeholder="Enter your mobile number" required="" type="tel"/>
+</div>
+<!-- PREFERRED SERVICE DROPDOWN -->
+<div>
+<label class="block text-sm font-bold text-gray-700 uppercase mb-2">PREFERRED SERVICE:</label>
+<select class="w-full px-4 py-3 border border-gray-300 rounded-md bg-white focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none transition-all" name="Preferred Service" required="">
+<option disabled="" selected="" value="">Select Service</option>
+<option value="work visa">Work Visa</option>
+<option value="study visa">Study Visa</option>
+<option value="pr">PR</option>
+<option value="dependant\family visa">Dependant\Family Visa</option>
+<option value="visit visa">Visit Visa</option>
+<option value="jobseeker visa">Jobseeker Visa</option>
+<option value="others">Others</option>
+</select>
+</div>
+<!-- COUNTRY PREFERENCE DROPDOWNS -->
+<div class="mt-4">
+<label class="block text-sm font-bold text-gray-700 uppercase mb-2">COUNTRY PREFERENCE:</label>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<select class="w-full px-4 py-3 border border-gray-300 rounded-md bg-white focus:ring-2 focus:ring-blue-900 outline-none" name="Country_1" required="">
+<option disabled="" selected="" value="">Option 1</option>
+<option value="canada">Canada</option>
+<option value="australia">Australia</option>
+<option value="europe">Europe</option>
+<option value="united kingdom">United Kingdom</option>
+<option value="new zealand">New Zealand</option>
+<option value="singapore">Singapore</option>
+<option value="gulf">Gulf</option>
+<option value="ireland">Ireland</option>
+<option value="south korea">South Korea</option>
+<option value="usa">USA</option>
+<option value="japan">Japan</option>
+</select>
+<select class="w-full px-4 py-3 border border-gray-300 rounded-md bg-white focus:ring-2 focus:ring-blue-900 outline-none" name="Country_2" required="">
+<option disabled="" selected="" value="">Option 2</option>
+<option value="na">NA</option>
+<option value="canada">Canada</option>
+<option value="australia">Australia</option>
+<option value="europe">Europe</option>
+<option value="united kingdom">United Kingdom</option>
+<option value="new zealand">New Zealand</option>
+<option value="singapore">Singapore</option>
+<option value="gulf">Gulf</option>
+<option value="ireland">Ireland</option>
+<option value="south korea">South Korea</option>
+<option value="usa">USA</option>
+<option value="japan">Japan</option>
+</select>
+<select class="w-full px-4 py-3 border border-gray-300 rounded-md bg-white focus:ring-2 focus:ring-blue-900 outline-none" name="Country_3" required="">
+<option disabled="" selected="" value="">Option 3</option>
+<option value="na">NA</option>
+<option value="canada">Canada</option>
+<option value="australia">Australia</option>
+<option value="europe">Europe</option>
+<option value="united kingdom">United Kingdom</option>
+<option value="new zealand">New Zealand</option>
+<option value="singapore">Singapore</option>
+<option value="gulf">Gulf</option>
+<option value="ireland">Ireland</option>
+<option value="south korea">South Korea</option>
+<option value="usa">USA</option>
+<option value="japan">Japan</option>
+</select>
+</div>
+</div>
+<!-- MESSAGE FIELD -->
+<div>
+<label class="block text-sm font-bold text-gray-700 uppercase mb-2">MESSAGE:</label>
+<textarea class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none transition-all placeholder:text-gray-400" name="User Message" placeholder="Type your message here..." required="" rows="4"></textarea>
+</div>
+<!-- SUBMIT BUTTON -->
+<button class="w-full bg-blue-900 text-white font-bold py-3.5 rounded-md hover:bg-blue-950 shadow-md transition-all tracking-wide uppercase" type="submit">
+                Submit
+            </button>
+</form>
+</div>
+<!-- 2. COMPANY DETAILS CARDS (3 லேயர் கார்டுகள் - இனி இங்கேயே தான் இருக்கும்) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-700">
+<!-- Address Card -->
+<div class="bg-white p-6 rounded-xl shadow border border-gray-100 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-4 text-blue-900">
+<i class="fas fa-map-marked-alt text-2xl"></i>
+<h3 class="text-xl font-bold tracking-wide uppercase">Office Address</h3>
+</div>
+<h4 class="font-bold text-blue-900 text-lg leading-snug">Global Gateway Internationals</h4>
+<p class="text-xs font-semibold text-amber-600 tracking-wider mb-4">Overseas Jobs • Immigration • Visa Services</p>
+<p class="text-sm leading-relaxed text-gray-600 font-medium">
+                    No. 1220/2, 20th Main Road,<br/>
+                    Anna Nagar West,<br/>
+                    Chennai – 600040,<br/>
+                    Tamil Nadu, India.
+                </p>
+</div>
+</div>
+<!-- Contact & Hours Card -->
+<div class="bg-white p-6 rounded-xl shadow border border-gray-100 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-4 text-blue-900">
+<i class="fas fa-address-book text-2xl"></i>
+<h3 class="text-xl font-bold tracking-wide uppercase">Contact Details</h3>
+</div>
+<div class="space-y-3 text-sm font-medium text-gray-600">
+<p class="flex items-center gap-3"><i class="fas fa-phone-alt text-blue-900 w-4"></i> Mobile: <a class="hover:underline font-bold text-gray-900" href="tel:+918939688699">+91 8939 688 699</a></p>
+<p class="flex items-center gap-3"><i class="fas fa-phone text-blue-900 w-4"></i> Landline: <a class="hover:underline font-bold text-gray-900" href="tel:+914431722061">+91 44 3172 2061</a></p>
+<!-- பழைய Email வரியை நீக்கிவிட்டு இதை வைக்கவும் -->
+<p class="flex items-start gap-3"><i class="fas fa-envelope text-blue-900 w-4 mt-1 flex-shrink-0"></i> <span class="break-all">Email: <a class="hover:underline font-bold text-gray-900" href="mailto:info@globalgatewayinternationals.com">info@globalgatewayinternationals.com</a></span></p>
+<!-- பழைய Web வரியை நீக்கிவிட்டு இதை வைக்கவும் -->
+<p class="flex items-start gap-3"><i class="fas fa-globe text-blue-900 w-4 mt-1 flex-shrink-0"></i> <span class="break-all">Web: <a class="hover:underline font-bold text-blue-900" href="https://www.globalgatewayinternationals.com" target="_blank">www.globalgatewayinternationals.com</a></span></p>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-gray-100">
+<h5 class="font-bold text-sm text-gray-900 uppercase flex items-center gap-2 mb-2">
+<i class="fas fa-clock text-amber-600"></i> Business Hours
+                </h5>
+<p class="text-xs text-gray-600 font-medium">Mon – Sat: <span class="text-gray-900 font-bold">09:30 AM – 06:30 PM</span></p>
+<p class="text-xs text-red-600 font-bold mt-0.5">Sunday: Closed</p>
+</div>
+</div>
+<!-- Legal Info & Social Links -->
+<div class="bg-white p-6 rounded-xl shadow border border-gray-100 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-4 text-blue-900">
+<i class="fas fa-file-invoice text-2xl"></i>
+<h3 class="text-xl font-bold tracking-wide uppercase">Company Info</h3>
+</div>
+<div class="space-y-2 text-xs font-medium text-gray-600">
+<p><span class="font-bold text-gray-900 block mb-0.5">Proprietor:</span> Mrs. Subashini Mohan</p>
+<p><span class="font-bold text-gray-900 block mb-0.5">GSTIN:</span> 33AMAPP5311K2Z8</p>
+<p><span class="font-bold text-gray-900 block mb-0.5">MSME Reg No:</span> TN-02-0360302</p>
+<p><span class="font-bold text-gray-900 block mb-0.5">Years of Service:</span> Since 2024</p>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-gray-100">
+<h5 class="font-bold text-sm text-gray-900 uppercase mb-3 flex items-center gap-2">
+<i class="fas fa-share-nodes text-blue-900"></i> Connect With Us
+                </h5>
+<div class="flex flex-wrap gap-3">
+<a class="w-8 h-8 rounded-full bg-blue-700 text-white flex items-center justify-center hover:bg-blue-800 transition-all shadow" href="https://www.linkedin.com/in/global-gateway-internationals-md-64335541a" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+<a class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition-all shadow" href="https://www.facebook.com/profile.php?id=61591564100127" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+<a class="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-500 via-red-500 to-purple-600 text-white flex items-center justify-center hover:opacity-90 transition-all shadow" href="https://www.instagram.com/globalgatewayinternationals?igsh=MTNhOG5hMGR6YmVrYg==" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+<a class="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center hover:bg-green-600 transition-all shadow" href="https://wa.me/918939688699" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. DISCLAIMER & MAP SECTION -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 text-gray-700">
+<!-- Disclaimer -->
+<div class="bg-white p-6 rounded-xl shadow border border-gray-100 md:col-span-2 flex flex-col justify-center">
+<div class="flex items-center gap-3 mb-3 text-amber-600">
+<i class="fas fa-exclamation-triangle text-xl"></i>
+<h3 class="text-lg font-bold tracking-wide uppercase">Disclaimer</h3>
+</div>
+<p class="text-sm leading-relaxed text-gray-600 font-medium text-justify">
+<strong>Global Gateway Internationals</strong> operates as a talent sourcing and immigration support consultancy. Recruitment and deployment activities are carried out in compliance with applicable laws and through authorized partners wherever required.
+            </p>
+</div>
+<!-- Google Map -->
+<div class="bg-white p-4 rounded-xl shadow border border-gray-100 h-[220px]">
+<iframe allowfullscreen="" class="w-full h-full rounded-lg" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.1347079979737!2d80.2031175!3d13.0906233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52640277312abf%3A0x6b1988efbb978d30!2s20th%20Main%20Rd%2C%20Anna%20Nagar%20West%2C%20Anna%20Nagar%2C%20Chennai%2C%20Tamil%20Nadu%20600040!5e0!3m2!1sen!2sin!4v1719140000000!5m2!1sen!2sin">
+</iframe>
+</div>
+</div>
+<!-- ================= FOOTER SEO KEY LINKS (LIGHT BACKGROUND CONTAINER) ================= -->
+<div class="w-full bg-gray-100 border-b border-gray-300 py-6 mb-6 px-6 text-left max-w-7xl mx-auto rounded-lg">
+<!-- Heading-ah nalla Thallivana Black-ah maathittaen -->
+<h3 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-3">Key Links</h3>
+<!-- Links-ah nalla visible bright blue-ga maathittaen -->
+<div class="flex flex-wrap gap-x-6 gap-y-2 text-xs font-semibold text-blue-400">
+<a class="hover:text-amber-400 transition-colors duration-200" href="#" onclick="location.href='index.html'">Best Overseas Job Consultancy Chennai</a>
+<a class="hover:text-amber-400 transition-colors duration-200" href="#" onclick="location.href='index.html'">Global Company Gateway Internationals</a>
+<a class="hover:text-amber-400 transition-colors duration-200" href="#" onclick="location.href='index.html'">Overseas manpower consultancy Chennai</a>
+<a class="hover:text-amber-400 transition-colors duration-200" href="#" onclick="location.href='index.html'">Overseas recruitment agency Chennai</a>
+<a class="hover:text-amber-400 transition-colors duration-200" href="#" onclick="location.href='index.html'">Immigration Consultancy in Chennai</a>
+<a class="hover:text-amber-400 transition-colors duration-200" href="#" onclick="location.href='index.html'">Overseas placements in chennai</a>
+</div>
+</div>
+</div>
+None
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<div class="fixed bottom-5 right-5 flex flex-col gap-5 z-50">
+<a class="text-green-500 text-4xl hover:text-green-600 transition-all drop-shadow-md" href="https://wa.me/918939688699?text=Hi, I need assistance." target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+<a class="text-blue-600 text-4xl hover:text-blue-700 transition-all drop-shadow-md" href="tel:+918939688699">
+<i class="fas fa-phone-alt"></i>
+</a>
+<a class="text-gray-700 text-4xl hover:text-gray-800 transition-all drop-shadow-md" href="sms:+918939688699?body=Hello, I have a query.">
+<i class="fas fa-envelope"></i>
+</a>
+</div>
+<div class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 items-center justify-center p-4" id="successPopup">
+<div class="bg-white rounded-xl shadow-2xl p-8 max-w-sm w-full text-center transform transition-all duration-300 scale-100 border-t-4 border-green-500">
+<div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-4 animate-bounce">
+<svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
+<p class="text-sm text-gray-600 mb-6">
+            Your inquiry has been successfully submitted. Our global expert team will contact you shortly.
+        </p>
+<button class="w-full bg-green-600 text-white font-bold py-2.5 px-4 rounded-lg shadow hover:bg-green-700 transition duration-200" onclick="closePopup()">
+            Okay, Close
+        </button>
+</div>
+</div>
+<script>
+function handleFormSubmit(event) {
+    event.preventDefault(); // Page white screen-aa redirect aagadhuri thadukkum
+    
+    const form = document.getElementById('leadContactForm');
+    const submitButton = form.querySelector('button[type="submit"]');
+    
+    // Button-ai disable panni Sending status-ku maathuvom
+    submitButton.disabled = true;
+    submitButton.innerText = "Sending...";
+
+    const formData = new FormData(form);
+
+    // Unga Google Web App URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw4XZVMD0Y5iZVaat_taYVrJjM16eeb_amxH1QklK3MncazYxMKwaEzpIv9sIdzHWAL/exec';
+
+    // CORS error thavirkka mode: 'no-cors' sethu data-vai anuppugirom
+    fetch(scriptURL, { 
+        method: 'POST', 
+        mode: 'no-cors', 
+        body: formData 
+    });
+
+    // Google Sheet-la data store aaguradhala, response block-kaga wait pannaama 
+    // direct-aa 1 second delay-la popup-ai trigger seigirom
+    setTimeout(() => {
+        submitButton.disabled = false;
+        submitButton.innerText = "Submit";
+        
+        // Success popup card-ai screen-la kaattum
+        const popup = document.getElementById('successPopup');
+        if (popup) {
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
+        } else {
+            alert('Successfully Submitted!');
+        }
+        
+        form.reset(); // Form fields-ai clear pannum
+    }, 1000); 
+}
+
+// Popup-ai close panna unga website-le vachirukku function
+function closePopup() {
+    document.getElementById('successPopup').classList.remove('flex');
+    document.getElementById('successPopup').classList.add('hidden');
+}
+</script>
+</body>
+</html>
