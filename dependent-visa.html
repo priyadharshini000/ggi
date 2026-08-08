@@ -46,12 +46,28 @@
         AOS.refreshHard();
     }, 100);
 }
+        // ================= RELIABLE DROPDOWN CONTROL (mouseenter/mouseleave) =================
+        function closeAllNavDropdowns() {
+            ['migrateDropdownMenu','workDropdownMenu','studyDropdownMenu'].forEach(function(id){
+                var el = document.getElementById(id);
+                if (el) el.classList.add('hidden');
+            });
+        }
+        function showNavDropdown(id) {
+            closeAllNavDropdowns();
+            var el = document.getElementById(id);
+            if (el) el.classList.remove('hidden');
+        }
+        function hideNavDropdown(id) {
+            var el = document.getElementById(id);
+            if (el) el.classList.add('hidden');
+        }
+        // ========================================================
         // ================= PASTE PANNAPATTA IDAM =================
         function handleMigrateClick(event) {
             event.stopPropagation();
             
             // 1. Dropdown click panna udane Migrate Main Page open aagum
-            location.href='migrate.html'; 
             
             // 2. Madha ellam dropdown-aium close panradhu
             if(document.getElementById('workDropdownMenu')) document.getElementById('workDropdownMenu').classList.add('hidden');
@@ -65,13 +81,11 @@
         // ========================================================
         function handleWorkVisaClick(event) {
             event.stopPropagation();
-            location.href='work-visa.html';
             document.getElementById('studyDropdownMenu').classList.add('hidden');
             document.getElementById('workDropdownMenu').classList.toggle('hidden');
         }
         function handleStudyVisaClick(event) {
             event.stopPropagation();
-            location.href='study-visa.html';
             document.getElementById('workDropdownMenu').classList.add('hidden');
             document.getElementById('studyDropdownMenu').classList.toggle('hidden');
         }
@@ -211,49 +225,49 @@ window.onpopstate = function (event) {
 </div>
 <div class="hidden md:flex space-x-2 md:space-x-4 ml-auto items-center">
 <button class="px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors" onclick="location.href='index.html'">Home</button>
-<div class="relative inline-block text-left">
-<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="handleMigrateClick(event)">
-                        Migrate <span class="text-xs"> ▼ </span>
+<div class="relative inline-block text-left" onmouseenter="showNavDropdown('migrateDropdownMenu')" onmouseleave="hideNavDropdown('migrateDropdownMenu')">
+<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="location.href='migrate.html'"> Migrate <span class="text-xs"> ▼ </span>
 </button>
-<div class="hidden absolute right-0 mt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="migrateDropdownMenu">
+<div class="hidden absolute right-0 mt-0 pt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="migrateDropdownMenu">
 <div class="py-1">
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='migrate/canada.html'"> 🇨🇦 Canada</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='migrate/australia.html'"> 🇦🇺 Australia</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='migrate/uk.html'"> 🇬🇧 United Kingdom</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='migrate/new-zealand.html'"> 🇳🇿 New Zealand</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium" onclick="location.href='migrate/europe.html'"> 🇪🇺 Germany / Europe</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-blue-900 font-bold hover:bg-amber-50 border-b border-gray-200" onclick="location.href='migrate.html'"> All Migrate Options</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='migrate/canada.html'"> Canada</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='migrate/australia.html'"> Australia</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='migrate/uk.html'"> United Kingdom</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='migrate/new-zealand.html'"> New Zealand</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium" onclick="location.href='migrate/europe.html'"> Germany / Europe</button>
 </div>
 </div>
 </div>
-<div class="relative inline-block text-left">
-<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="handleWorkVisaClick(event)">
-                        Work <span class="text-xs">▼</span>
+<div class="relative inline-block text-left" onmouseenter="showNavDropdown('workDropdownMenu')" onmouseleave="hideNavDropdown('workDropdownMenu')">
+<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="location.href='work-visa.html'"> Work <span class="text-xs">▼</span>
 </button>
-<div class="hidden absolute right-0 mt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="workDropdownMenu">
+<div class="hidden absolute right-0 mt-0 pt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="workDropdownMenu">
 <div class="py-1">
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='work/canada.html'">🇨🇦 Canada</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='work/australia.html'">🇦🇺 Australia</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='work/europe.html'">🇪🇺 Europe</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='work/uk.html'">🇬🇧 United Kingdom</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='work/new-zealand.html'">🇳🇿 New Zealand</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='work/singapore.html'">🇸🇬 Singapore</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium" onclick="location.href='work/gulf.html'">🇶🇦 The Gulf</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-blue-900 font-bold hover:bg-amber-50 border-b border-gray-200" onclick="location.href='work-visa.html'"> All Work Visa Options</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='work/canada.html'"> Canada</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='work/australia.html'"> Australia</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='work/europe.html'"> Europe</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='work/uk.html'"> United Kingdom</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='work/new-zealand.html'"> New Zealand</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='work/singapore.html'"> Singapore</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium" onclick="location.href='work/gulf.html'"> The Gulf</button>
 </div>
 </div>
 </div>
-<div class="relative inline-block text-left">
-<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="handleStudyVisaClick(event)">
-                        Study <span class="text-xs">▼</span>
+<div class="relative inline-block text-left" onmouseenter="showNavDropdown('studyDropdownMenu')" onmouseleave="hideNavDropdown('studyDropdownMenu')">
+<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="location.href='study-visa.html'"> Study <span class="text-xs">▼</span>
 </button>
-<div class="hidden absolute right-0 mt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="studyDropdownMenu">
+<div class="hidden absolute right-0 mt-0 pt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="studyDropdownMenu">
 <div class="py-1">
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='study/canada.html'">🇨🇦 Canada</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='study/australia.html'">🇦🇺 Australia</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='study/europe.html'">🇪🇺 Europe</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='study/uk.html'">🇬🇧 United Kingdom</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='study/new-zealand.html'">🇳🇿 New Zealand</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='study/singapore.html'">🇸🇬 Singapore</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium" onclick="location.href='study/gulf.html'">🇶🇦 The Gulf</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-blue-900 font-bold hover:bg-amber-50 border-b border-gray-200" onclick="location.href='study-visa.html'"> All Study Visa Options</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='study/canada.html'"> Canada</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='study/australia.html'"> Australia</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='study/europe.html'"> Europe</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='study/uk.html'"> United Kingdom</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='study/new-zealand.html'"> New Zealand</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='study/singapore.html'"> Singapore</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium" onclick="location.href='study/gulf.html'"> The Gulf</button>
 </div>
 </div>
 </div>
@@ -312,12 +326,10 @@ window.onpopstate = function (event) {
 </div>
 </div>
 <!-- Visit Visa -->
-<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm block" onclick="closeMobileMenuFull(); location.href='visit-visa.html'">
-    Visit Visa
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm block" onclick="closeMobileMenuFull(); location.href='visit-visa.html'"> Visit Visa
 </button>
 <!-- Dependent-Family -->
-<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm block" onclick="closeMobileMenuFull(); handleDependentClick(event)">
-    Dependent-Family
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm block" onclick="closeMobileMenuFull(); handleDependentClick(event)"> Dependent-Family
 </button>
 <button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded text-sm" onclick="closeMobileMenuFull(); location.href='contact.html'">Contact</button>
 </div>
@@ -380,18 +392,14 @@ window.onpopstate = function (event) {
 <!-- Header Section - விசிட் விசா போன்றே மொபைலில் பக்கா ஹைட்டுடன் -->
 <header class="bg-blue-950 text-white min-h-[85vh] flex items-center justify-center py-16 px-6 text-center shadow-inner md:py-24" data-aos="fade-down" data-aos-duration="1000">
 <div class="max-w-4xl mx-auto pt-20 md:pt-0">
-<span class="text-amber-400 font-bold tracking-widest text-sm uppercase block mb-2" data-aos="fade-up" data-aos-delay="200">
-                Bring Your Loved Ones Closer
+<span class="text-amber-400 font-bold tracking-widest text-sm uppercase block mb-2" data-aos="fade-up" data-aos-delay="200"> Bring Your Loved Ones Closer
             </span>
-<h1 class="text-3xl md:text-5xl font-extrabold mb-6" data-aos="fade-up" data-aos-delay="400">
-                Connecting Your Loved Ones, Across Every Border
+<h1 class="text-3xl md:text-5xl font-extrabold mb-6" data-aos="fade-up" data-aos-delay="400"> Connecting Your Loved Ones, Across Every Border
             </h1>
-<p class="text-sm md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8 text-justify" data-aos="fade-up" data-aos-delay="600">
-                Why let miles separate you from the people who matter most? At Global Gateway Internationals, we take the complexity out of family sponsorship. Our sharp, precision-driven process ensures your paperwork is flawless, clearing the fastest path for your spouse, children, or parents to join you abroad.
+<p class="text-sm md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8 text-justify" data-aos="fade-up" data-aos-delay="600"> Why let miles separate you from the people who matter most? At Global Gateway Internationals, we take the complexity out of family sponsorship. Our sharp, precision-driven process ensures your paperwork is flawless, clearing the fastest path for your spouse, children, or parents to join you abroad.
             </p>
 <!-- பட்டன் மெதுவாக ஜூம் ஆகும் -->
-<button class="bg-amber-400 text-blue-950 font-bold px-8 py-3 rounded-md shadow hover:bg-amber-300 transition transform hover:scale-105 duration-300" data-aos="zoom-in" data-aos-delay="800" onclick="location.href='contact.html'">
-                Book Your Consultation
+<button class="bg-amber-400 text-blue-950 font-bold px-8 py-3 rounded-md shadow hover:bg-amber-300 transition transform hover:scale-105 duration-300" data-aos="zoom-in" data-aos-delay="800" onclick="location.href='contact.html'"> Book Your Consultation
             </button>
 </div>
 </header>
@@ -399,11 +407,9 @@ window.onpopstate = function (event) {
 <section class="py-12 px-6 max-w-5xl mx-auto">
 <div class="bg-white p-8 md:p-12 rounded-xl shadow-md border border-gray-100" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
 <h2 class="text-3xl font-bold text-blue-900 mb-6">What is a Dependent Visa?</h2>
-<p class="text-gray-600 leading-relaxed text-lg mb-6 text-justify">
-                A Family or Dependant Visa allows eligible family members such as spouses, children, parents, or other dependants to join their loved ones who are legally residing, studying, or working abroad.
+<p class="text-gray-600 leading-relaxed text-lg mb-6 text-justify"> A Family or Dependant Visa allows eligible family members such as spouses, children, parents, or other dependants to join their loved ones who are legally residing, studying, or working abroad.
             </p>
-<p class="text-gray-600 leading-relaxed text-lg text-justify">
-                Depending on the immigration regulations of the destination country, dependant visa holders may be permitted to live, study, and in some cases work during the validity of the principal applicant's visa. Family reunification requirements, financial support, and relationship evidence are generally mandatory for approval.
+<p class="text-gray-600 leading-relaxed text-lg text-justify"> Depending on the immigration regulations of the destination country, dependant visa holders may be permitted to live, study, and in some cases work during the validity of the principal applicant's visa. Family reunification requirements, financial support, and relationship evidence are generally mandatory for approval.
             </p>
 </div>
 </section>
@@ -450,11 +456,9 @@ None
 </svg>
 </div>
 <h3 class="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
-<p class="text-sm text-gray-600 mb-6">
-            Your inquiry has been successfully submitted. Our global expert team will contact you shortly.
+<p class="text-sm text-gray-600 mb-6"> Your inquiry has been successfully submitted. Our global expert team will contact you shortly.
         </p>
-<button class="w-full bg-green-600 text-white font-bold py-2.5 px-4 rounded-lg shadow hover:bg-green-700 transition duration-200" onclick="closePopup()">
-            Okay, Close
+<button class="w-full bg-green-600 text-white font-bold py-2.5 px-4 rounded-lg shadow hover:bg-green-700 transition duration-200" onclick="closePopup()"> Okay, Close
         </button>
 </div>
 </div>

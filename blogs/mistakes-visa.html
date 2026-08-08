@@ -46,12 +46,28 @@
         AOS.refreshHard();
     }, 100);
 }
+        // ================= RELIABLE DROPDOWN CONTROL (mouseenter/mouseleave) =================
+        function closeAllNavDropdowns() {
+            ['migrateDropdownMenu','workDropdownMenu','studyDropdownMenu'].forEach(function(id){
+                var el = document.getElementById(id);
+                if (el) el.classList.add('hidden');
+            });
+        }
+        function showNavDropdown(id) {
+            closeAllNavDropdowns();
+            var el = document.getElementById(id);
+            if (el) el.classList.remove('hidden');
+        }
+        function hideNavDropdown(id) {
+            var el = document.getElementById(id);
+            if (el) el.classList.add('hidden');
+        }
+        // ========================================================
         // ================= PASTE PANNAPATTA IDAM =================
         function handleMigrateClick(event) {
             event.stopPropagation();
             
             // 1. Dropdown click panna udane Migrate Main Page open aagum
-            location.href='../migrate.html'; 
             
             // 2. Madha ellam dropdown-aium close panradhu
             if(document.getElementById('workDropdownMenu')) document.getElementById('workDropdownMenu').classList.add('hidden');
@@ -65,13 +81,11 @@
         // ========================================================
         function handleWorkVisaClick(event) {
             event.stopPropagation();
-            location.href='../work-visa.html';
             document.getElementById('studyDropdownMenu').classList.add('hidden');
             document.getElementById('workDropdownMenu').classList.toggle('hidden');
         }
         function handleStudyVisaClick(event) {
             event.stopPropagation();
-            location.href='../study-visa.html';
             document.getElementById('workDropdownMenu').classList.add('hidden');
             document.getElementById('studyDropdownMenu').classList.toggle('hidden');
         }
@@ -211,49 +225,49 @@ window.onpopstate = function (event) {
 </div>
 <div class="hidden md:flex space-x-2 md:space-x-4 ml-auto items-center">
 <button class="px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors" onclick="location.href='../index.html'">Home</button>
-<div class="relative inline-block text-left">
-<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="handleMigrateClick(event)">
-                        Migrate <span class="text-xs"> ▼ </span>
+<div class="relative inline-block text-left" onmouseenter="showNavDropdown('migrateDropdownMenu')" onmouseleave="hideNavDropdown('migrateDropdownMenu')">
+<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="location.href='../migrate.html'"> Migrate <span class="text-xs"> ▼ </span>
 </button>
-<div class="hidden absolute right-0 mt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="migrateDropdownMenu">
+<div class="hidden absolute right-0 mt-0 pt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="migrateDropdownMenu">
 <div class="py-1">
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../migrate/canada.html'"> 🇨🇦 Canada</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../migrate/australia.html'"> 🇦🇺 Australia</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../migrate/uk.html'"> 🇬🇧 United Kingdom</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../migrate/new-zealand.html'"> 🇳🇿 New Zealand</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium" onclick="location.href='../migrate/europe.html'"> 🇪🇺 Germany / Europe</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-blue-900 font-bold hover:bg-amber-50 border-b border-gray-200" onclick="location.href='../migrate.html'"> All Migrate Options</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../migrate/canada.html'"> Canada</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../migrate/australia.html'"> Australia</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../migrate/uk.html'"> United Kingdom</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../migrate/new-zealand.html'"> New Zealand</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium" onclick="location.href='../migrate/europe.html'"> Germany / Europe</button>
 </div>
 </div>
 </div>
-<div class="relative inline-block text-left">
-<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="handleWorkVisaClick(event)">
-                        Work <span class="text-xs">▼</span>
+<div class="relative inline-block text-left" onmouseenter="showNavDropdown('workDropdownMenu')" onmouseleave="hideNavDropdown('workDropdownMenu')">
+<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="location.href='../work-visa.html'"> Work <span class="text-xs">▼</span>
 </button>
-<div class="hidden absolute right-0 mt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="workDropdownMenu">
+<div class="hidden absolute right-0 mt-0 pt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="workDropdownMenu">
 <div class="py-1">
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/canada.html'">🇨🇦 Canada</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/australia.html'">🇦🇺 Australia</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/europe.html'">🇪🇺 Europe</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/uk.html'">🇬🇧 United Kingdom</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/new-zealand.html'">🇳🇿 New Zealand</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/singapore.html'">🇸🇬 Singapore</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium" onclick="location.href='../work/gulf.html'">🇶🇦 The Gulf</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-blue-900 font-bold hover:bg-amber-50 border-b border-gray-200" onclick="location.href='../work-visa.html'"> All Work Visa Options</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/canada.html'"> Canada</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/australia.html'"> Australia</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/europe.html'"> Europe</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/uk.html'"> United Kingdom</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/new-zealand.html'"> New Zealand</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/singapore.html'"> Singapore</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium" onclick="location.href='../work/gulf.html'"> The Gulf</button>
 </div>
 </div>
 </div>
-<div class="relative inline-block text-left">
-<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="handleStudyVisaClick(event)">
-                        Study <span class="text-xs">▼</span>
+<div class="relative inline-block text-left" onmouseenter="showNavDropdown('studyDropdownMenu')" onmouseleave="hideNavDropdown('studyDropdownMenu')">
+<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="location.href='../study-visa.html'"> Study <span class="text-xs">▼</span>
 </button>
-<div class="hidden absolute right-0 mt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="studyDropdownMenu">
+<div class="hidden absolute right-0 mt-0 pt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="studyDropdownMenu">
 <div class="py-1">
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/canada.html'">🇨🇦 Canada</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/australia.html'">🇦🇺 Australia</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/europe.html'">🇪🇺 Europe</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/uk.html'">🇬🇧 United Kingdom</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/new-zealand.html'">🇳🇿 New Zealand</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/singapore.html'">🇸🇬 Singapore</button>
-<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium" onclick="location.href='../study/gulf.html'">🇶🇦 The Gulf</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-blue-900 font-bold hover:bg-amber-50 border-b border-gray-200" onclick="location.href='../study-visa.html'"> All Study Visa Options</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/canada.html'"> Canada</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/australia.html'"> Australia</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/europe.html'"> Europe</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/uk.html'"> United Kingdom</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/new-zealand.html'"> New Zealand</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/singapore.html'"> Singapore</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium" onclick="location.href='../study/gulf.html'"> The Gulf</button>
 </div>
 </div>
 </div>
@@ -312,12 +326,10 @@ window.onpopstate = function (event) {
 </div>
 </div>
 <!-- Visit Visa -->
-<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm block" onclick="closeMobileMenuFull(); location.href='../visit-visa.html'">
-    Visit Visa
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm block" onclick="closeMobileMenuFull(); location.href='../visit-visa.html'"> Visit Visa
 </button>
 <!-- Dependent-Family -->
-<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm block" onclick="closeMobileMenuFull(); handleDependentClick(event)">
-    Dependent-Family
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm block" onclick="closeMobileMenuFull(); handleDependentClick(event)"> Dependent-Family
 </button>
 <button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded text-sm" onclick="closeMobileMenuFull(); location.href='../contact.html'">Contact</button>
 </div>
@@ -386,8 +398,7 @@ window.onpopstate = function (event) {
         </button>
 <!-- Category -->
 <div class="mb-5">
-<span class="inline-block bg-amber-400 text-blue-950 px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider">
-                Visa Tips
+<span class="inline-block bg-amber-400 text-blue-950 px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider"> Visa Tips
             </span>
 </div>
 <!-- Title -->
@@ -411,53 +422,45 @@ window.onpopstate = function (event) {
 <!-- Remaining Blog Content -->
 <section class="max-w-5xl mx-auto px-6 py-12">
 <div class="mt-10 mb-10">
-<img alt="10 Common Visa Mistakes" class="w-full rounded-3xl shadow-xl" src="../visamistakes.png"/>
+<img alt="10 Common Visa Mistakes" class="w-full rounded-3xl shadow-xl" src="Picture1.jpg"/>
 </div>
 <!-- Quick Overview -->
 <div class="mt-12 bg-white rounded-3xl shadow-lg p-8 border border-gray-200">
 <h2 class="text-2xl font-bold text-blue-950 mb-4">
         💡 Quick Overview
     </h2>
-<p class="text-lg text-gray-700 leading-9">
-        Discover the 10 most common visa application mistakes that lead to delays and rejections — and learn practical steps to avoid them before submitting your application.
+<p class="text-lg text-gray-700 leading-9"> Discover the 10 most common visa application mistakes that lead to delays and rejections — and learn practical steps to avoid them before submitting your application.
     </p>
 </div>
 <!-- ================= INTRODUCTION ================= -->
 <div class="mt-12">
-<p class="text-lg text-gray-700 leading-9 mb-6">
-        Most visa applications aren't rejected because the person didn't qualify.
+<p class="text-lg text-gray-700 leading-9 mb-6"> Most visa applications aren't rejected because the person didn't qualify.
         More often, it's something small — a document that got left out, a date
         of birth that doesn't quite match between two forms, an SOP that reads
         like it was put together in a hurry.
     </p>
-<p class="text-lg text-gray-700 leading-9 mb-6">
-        We've seen this happen to applicants who, on paper, had a strong case.
+<p class="text-lg text-gray-700 leading-9 mb-6"> We've seen this happen to applicants who, on paper, had a strong case.
     </p>
-<p class="text-lg text-gray-700 leading-9">
-        The useful part is that these issues tend to repeat. Once you've looked
+<p class="text-lg text-gray-700 leading-9"> The useful part is that these issues tend to repeat. Once you've looked
         at enough applications, the same few problems keep showing up. So here
         are the ten we come across most, along with what usually fixes them.
     </p>
 </div>
 <!-- ================= WHY DO VISA APPLICATIONS GET REJECTED? ================= -->
 <div class="mt-16">
-<h2 class="text-3xl font-bold text-blue-950 mb-6">
-        Why Do Visa Applications Get Rejected?
+<h2 class="text-3xl font-bold text-blue-950 mb-6"> Why Do Visa Applications Get Rejected?
     </h2>
 <div class="bg-blue-50 border-l-4 border-blue-900 rounded-2xl p-8 shadow-md">
-<p class="text-lg text-gray-700 leading-9">
-            An officer typically spends just a few minutes on each file.
+<p class="text-lg text-gray-700 leading-9"> An officer typically spends just a few minutes on each file.
             They're not hunting for one big issue — they're checking whether
             things line up.
         </p>
-<p class="text-lg text-gray-700 leading-9 mt-6">
-            A date that's slightly off, an answer that feels vague,
+<p class="text-lg text-gray-700 leading-9 mt-6"> A date that's slightly off, an answer that feels vague,
             or a document that doesn't quite match the rest.
             None of it is serious by itself,
             but together it adds up to doubt.
         </p>
-<p class="text-lg text-gray-700 leading-9 mt-6">
-            And doubt, more often than any single mistake,
+<p class="text-lg text-gray-700 leading-9 mt-6"> And doubt, more often than any single mistake,
             is what tips a case toward rejection.
         </p>
 </div>
@@ -475,12 +478,10 @@ window.onpopstate = function (event) {
 <div class="w-12 h-12 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold text-xl">
             01
         </div>
-<h3 class="text-2xl font-bold text-blue-950">
-            Missing or Incomplete Documents
+<h3 class="text-2xl font-bold text-blue-950"> Missing or Incomplete Documents
         </h3>
 </div>
-<p class="text-gray-700 text-lg leading-9">
-        Still the most common one. A bank statement that didn't make it in,
+<p class="text-gray-700 text-lg leading-9"> Still the most common one. A bank statement that didn't make it in,
         a photo that's the wrong size, or a passport copy with a corner cut off.
         Small things, but often enough to get a file delayed or sent back.
     </p>
@@ -491,12 +492,10 @@ window.onpopstate = function (event) {
 <div class="w-12 h-12 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold text-xl">
             02
         </div>
-<h3 class="text-2xl font-bold text-blue-950">
-            Details That Don't Match Across Documents
+<h3 class="text-2xl font-bold text-blue-950"> Details That Don't Match Across Documents
         </h3>
 </div>
-<p class="text-gray-700 text-lg leading-9">
-        Your passport shows one date of birth while another appears on your application,
+<p class="text-gray-700 text-lg leading-9"> Your passport shows one date of birth while another appears on your application,
         or your name is spelled differently across documents.
         Even small inconsistencies can raise questions during the review process.
     </p>
@@ -507,12 +506,10 @@ window.onpopstate = function (event) {
 <div class="w-12 h-12 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold text-xl">
             03
         </div>
-<h3 class="text-2xl font-bold text-blue-950">
-            Financial Proof That Doesn't Hold Up
+<h3 class="text-2xl font-bold text-blue-950"> Financial Proof That Doesn't Hold Up
         </h3>
 </div>
-<p class="text-gray-700 text-lg leading-9">
-        Either the available balance is insufficient,
+<p class="text-gray-700 text-lg leading-9"> Either the available balance is insufficient,
         or the statement appears unclear due to poor-quality scans.
         Both situations may cause the application to be flagged for further review.
     </p>
@@ -523,12 +520,10 @@ window.onpopstate = function (event) {
 <div class="w-12 h-12 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold text-xl">
             04
         </div>
-<h3 class="text-2xl font-bold text-blue-950">
-            A Generic or Copy-Pasted SOP
+<h3 class="text-2xl font-bold text-blue-950"> A Generic or Copy-Pasted SOP
         </h3>
 </div>
-<p class="text-gray-700 text-lg leading-9">
-        An SOP should clearly explain your genuine purpose.
+<p class="text-gray-700 text-lg leading-9"> An SOP should clearly explain your genuine purpose.
         A statement that only lists facts without showing your motivation
         can weaken an otherwise strong application.
     </p>
@@ -539,12 +534,10 @@ window.onpopstate = function (event) {
 <div class="w-12 h-12 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold text-xl">
             05
         </div>
-<h3 class="text-2xl font-bold text-blue-950">
-            Providing False or Exaggerated Information
+<h3 class="text-2xl font-bold text-blue-950"> Providing False or Exaggerated Information
         </h3>
 </div>
-<p class="text-gray-700 text-lg leading-9">
-        Inflating a job title, overstating a salary,
+<p class="text-gray-700 text-lg leading-9"> Inflating a job title, overstating a salary,
         or providing inaccurate information can affect not only the current application
         but also future visa applications.
     </p>
@@ -555,12 +548,10 @@ window.onpopstate = function (event) {
 <div class="w-12 h-12 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold text-xl">
             06
         </div>
-<h3 class="text-2xl font-bold text-blue-950">
-            Applying Under the Wrong Visa Category
+<h3 class="text-2xl font-bold text-blue-950"> Applying Under the Wrong Visa Category
         </h3>
 </div>
-<p class="text-gray-700 text-lg leading-9">
-        More common than people expect — applying for a tourist visa when the
+<p class="text-gray-700 text-lg leading-9"> More common than people expect — applying for a tourist visa when the
         real plan is to work, or the reverse. Usually not intentional, but it's
         an easy way to get turned down.
     </p>
@@ -571,12 +562,10 @@ window.onpopstate = function (event) {
 <div class="w-12 h-12 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold text-xl">
             07
         </div>
-<h3 class="text-2xl font-bold text-blue-950">
-            Submitting Too Much Extra Paperwork
+<h3 class="text-2xl font-bold text-blue-950"> Submitting Too Much Extra Paperwork
         </h3>
 </div>
-<p class="text-gray-700 text-lg leading-9">
-        Adding more than what's asked for can work against you.
+<p class="text-gray-700 text-lg leading-9"> Adding more than what's asked for can work against you.
         A file that looks padded sometimes reads as an attempt
         to cover up a weak point.
     </p>
@@ -587,12 +576,10 @@ window.onpopstate = function (event) {
 <div class="w-12 h-12 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold text-xl">
             08
         </div>
-<h3 class="text-2xl font-bold text-blue-950">
-            Not Showing Enough Ties to Your Home Country
+<h3 class="text-2xl font-bold text-blue-950"> Not Showing Enough Ties to Your Home Country
         </h3>
 </div>
-<p class="text-gray-700 text-lg leading-9">
-        This matters more for tourist and study visas than people realize.
+<p class="text-gray-700 text-lg leading-9"> This matters more for tourist and study visas than people realize.
         A steady job, property, or family responsibilities all help show
         that you intend to return.
     </p>
@@ -603,12 +590,10 @@ window.onpopstate = function (event) {
 <div class="w-12 h-12 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold text-xl">
             09
         </div>
-<h3 class="text-2xl font-bold text-blue-950">
-            Missing Sponsor Documentation
+<h3 class="text-2xl font-bold text-blue-950"> Missing Sponsor Documentation
         </h3>
 </div>
-<p class="text-gray-700 text-lg leading-9">
-        If someone else is funding your trip, a bank statement on its own
+<p class="text-gray-700 text-lg leading-9"> If someone else is funding your trip, a bank statement on its own
         usually isn't enough. Proof of how they're related to you,
         and where their income comes from, is often the part that's missing.
     </p>
@@ -619,12 +604,10 @@ window.onpopstate = function (event) {
 <div class="w-12 h-12 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold text-xl">
             10
         </div>
-<h3 class="text-2xl font-bold text-blue-950">
-            Not Disclosing a Past Visa Refusal
+<h3 class="text-2xl font-bold text-blue-950"> Not Disclosing a Past Visa Refusal
         </h3>
 </div>
-<p class="text-gray-700 text-lg leading-9">
-        If you were refused before, even for a different country,
+<p class="text-gray-700 text-lg leading-9"> If you were refused before, even for a different country,
         it's usually better to mention it yourself.
         A refusal that surfaces later tends to look worse
         than the refusal itself.
@@ -632,8 +615,7 @@ window.onpopstate = function (event) {
 </div>
 <!-- ================= QUICK CHECKLIST ================= -->
 <div class="mt-20">
-<h2 class="text-4xl font-bold text-blue-950">
-        Quick Checklist: How to Avoid These Mistakes
+<h2 class="text-4xl font-bold text-blue-950"> Quick Checklist: How to Avoid These Mistakes
     </h2>
 <div class="w-28 h-1 bg-amber-400 rounded-full mt-3 mb-10"></div>
 <div class="space-y-6">
@@ -712,56 +694,46 @@ window.onpopstate = function (event) {
 <div class="space-y-4">
 <!-- FAQ 1 -->
 <details class="group bg-white rounded-xl shadow-md border border-gray-200 p-5">
-<summary class="cursor-pointer font-semibold text-lg text-blue-950 flex justify-between items-center">
-            What happens if my visa gets rejected?
+<summary class="cursor-pointer font-semibold text-lg text-blue-950 flex justify-between items-center"> What happens if my visa gets rejected?
             <span class="group-open:rotate-180 transition">▼</span>
 </summary>
-<p class="mt-4 text-gray-700 leading-8">
-            In most cases, you can reapply once you've addressed the reason for the rejection.
+<p class="mt-4 text-gray-700 leading-8"> In most cases, you can reapply once you've addressed the reason for the rejection.
             Some visa categories also allow an appeal within a set period.
         </p>
 </details>
 <!-- FAQ 2 -->
 <details class="group bg-white rounded-xl shadow-md border border-gray-200 p-5">
-<summary class="cursor-pointer font-semibold text-lg text-blue-950 flex justify-between items-center">
-            Can I reapply right away?
+<summary class="cursor-pointer font-semibold text-lg text-blue-950 flex justify-between items-center"> Can I reapply right away?
             <span class="group-open:rotate-180 transition">▼</span>
 </summary>
-<p class="mt-4 text-gray-700 leading-8">
-            Yes, but sending in the same application again usually doesn't help.
+<p class="mt-4 text-gray-700 leading-8"> Yes, but sending in the same application again usually doesn't help.
             It's better to identify what actually went wrong first.
         </p>
 </details>
 <!-- FAQ 3 -->
 <details class="group bg-white rounded-xl shadow-md border border-gray-200 p-5">
-<summary class="cursor-pointer font-semibold text-lg text-blue-950 flex justify-between items-center">
-            Does a rejection affect future applications?
+<summary class="cursor-pointer font-semibold text-lg text-blue-950 flex justify-between items-center"> Does a rejection affect future applications?
             <span class="group-open:rotate-180 transition">▼</span>
 </summary>
-<p class="mt-4 text-gray-700 leading-8">
-            It can, especially if it isn't disclosed.
+<p class="mt-4 text-gray-700 leading-8"> It can, especially if it isn't disclosed.
             An undisclosed refusal is often viewed more critically than the refusal itself.
         </p>
 </details>
 <!-- FAQ 4 -->
 <details class="group bg-white rounded-xl shadow-md border border-gray-200 p-5">
-<summary class="cursor-pointer font-semibold text-lg text-blue-950 flex justify-between items-center">
-            How long should I wait before reapplying?
+<summary class="cursor-pointer font-semibold text-lg text-blue-950 flex justify-between items-center"> How long should I wait before reapplying?
             <span class="group-open:rotate-180 transition">▼</span>
 </summary>
-<p class="mt-4 text-gray-700 leading-8">
-            It depends on the country and visa type.
+<p class="mt-4 text-gray-700 leading-8"> It depends on the country and visa type.
             Some allow you to reapply right away, while others require a waiting period.
         </p>
 </details>
 <!-- FAQ 5 -->
 <details class="group bg-white rounded-xl shadow-md border border-gray-200 p-5">
-<summary class="cursor-pointer font-semibold text-lg text-blue-950 flex justify-between items-center">
-            Should I apply on my own, or use a consultant?
+<summary class="cursor-pointer font-semibold text-lg text-blue-950 flex justify-between items-center"> Should I apply on my own, or use a consultant?
             <span class="group-open:rotate-180 transition">▼</span>
 </summary>
-<p class="mt-4 text-gray-700 leading-8">
-            Many applicants manage it successfully on their own.
+<p class="mt-4 text-gray-700 leading-8"> Many applicants manage it successfully on their own.
             For complex cases or first-time applicants, having a consultant review
             your documents and SOP can help identify issues before submission.
         </p>
@@ -789,11 +761,9 @@ None
 </svg>
 </div>
 <h3 class="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
-<p class="text-sm text-gray-600 mb-6">
-            Your inquiry has been successfully submitted. Our global expert team will contact you shortly.
+<p class="text-sm text-gray-600 mb-6"> Your inquiry has been successfully submitted. Our global expert team will contact you shortly.
         </p>
-<button class="w-full bg-green-600 text-white font-bold py-2.5 px-4 rounded-lg shadow hover:bg-green-700 transition duration-200" onclick="closePopup()">
-            Okay, Close
+<button class="w-full bg-green-600 text-white font-bold py-2.5 px-4 rounded-lg shadow hover:bg-green-700 transition duration-200" onclick="closePopup()"> Okay, Close
         </button>
 </div>
 </div>
