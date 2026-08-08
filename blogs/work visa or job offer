@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Best Overseas Job Consultancy Chennai | Global Gateway Internationals</title>
+<meta content="Global Gateway Internationals is one of the best overseas job consultancy in Chennai offering Europe jobs, Singapore jobs, Gulf jobs, work visa assistance and international recruitment services." name="description"/>
+<!-- à®‰à®™à¯à®• à®ªà¯à®¤à®¿à®¯ à®²à¯‹à®•à¯‹à®µà®¿à®±à¯à®•à®¾à®© à®•à¯‹à®Ÿà¯ à®‡à®¤à¯à®¤à®¾à®©à¯ -->
+<link href="https://www.globalgatewayinternationals.com/logo.jpeg" rel="icon" sizes="48x48" type="image/x-icon"/>
+<!-- AOS Library CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- AOS Library JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+        // Smooth Page Routing Script
+       function showPage(pageId) {
+    const pages = document.querySelectorAll('.app-page');
+    pages.forEach(page => page.classList.add('hidden'));
+
+    const activePage = document.getElementById(pageId);
+    if (activePage) {
+        // 1. à®…à®¨à¯à®¤à®ªà¯ à®ªà®•à¯à®•à®¤à¯à®¤à®¿à®²à¯ à®‰à®³à¯à®³ à®ªà®´à¯ˆà®¯ AOS à®…à®©à®¿à®®à¯‡à®·à®©à¯ à®•à®¿à®³à®¾à®¸à¯à®•à®³à¯ˆ à®®à¯Šà®¤à¯à®¤à®®à®¾à®• à®°à¯€à®šà¯†à®Ÿà¯ à®šà¯†à®¯à¯à®•à®¿à®±à¯‹à®®à¯
+        const animatedElements = activePage.querySelectorAll('[data-aos]');
+        animatedElements.forEach(el => {
+            el.classList.remove('aos-animate');
+        });
+
+        // 2. à®ªà®•à¯à®•à®¤à¯à®¤à¯ˆà®•à¯ à®•à®£à¯à®£à¯à®•à¯à®•à¯à®¤à¯ à®¤à¯†à®°à®¿à®¯ à®µà¯ˆà®•à¯à®•à®¿à®±à¯‹à®®à¯
+        activePage.classList.remove('hidden');
+         history.pushState({ page: pageId }, "", "#" + pageId);
+    }
+            
+    // à®Ÿà®¿à®°à®¾à®ªà¯à®Ÿà®µà¯à®©à¯à®•à®³à¯ˆ à®®à¯‚à®Ÿà¯à®µà®¤à¯
+    if(document.getElementById('workDropdownMenu')) document.getElementById('workDropdownMenu').classList.add('hidden');
+    if(document.getElementById('studyDropdownMenu')) document.getElementById('studyDropdownMenu').classList.add('hidden');
+    if(document.getElementById('migrateDropdownMenu')) document.getElementById('migrateDropdownMenu').classList.add('hidden');
+    if(document.getElementById('visitDropdownMenu')) document.getElementById('visitDropdownMenu').classList.add('hidden');
+    if(document.getElementById('dependentDropdownMenu')) document.getElementById('dependentDropdownMenu').classList.add('hidden');
+            
+    window.scrollTo({top: 0, behavior: 'smooth'});
+
+    // 3. à®ªà®•à¯à®•à®®à¯ à®²à¯‹à®Ÿà®¾à®©à®¤à¯à®®à¯ à®…à®©à®¿à®®à¯‡à®·à®©à¯ˆ à®µà®²à¯à®•à¯à®•à®Ÿà¯à®Ÿà®¾à®¯à®®à®¾à®• à®°à¯€-à®¸à¯à®Ÿà®¾à®°à¯à®Ÿà¯ (Force Restart) à®šà¯†à®¯à¯à®•à®¿à®±à¯‹à®®à¯
+    setTimeout(function() {
+        AOS.refreshHard();
+    }, 100);
+}
+        // ================= RELIABLE DROPDOWN CONTROL (mouseenter/mouseleave) =================
+        function closeAllNavDropdowns() {
+            ['migrateDropdownMenu','workDropdownMenu','studyDropdownMenu'].forEach(function(id){
+                var el = document.getElementById(id);
+                if (el) el.classList.add('hidden');
+            });
+        }
+        function showNavDropdown(id) {
+            closeAllNavDropdowns();
+            var el = document.getElementById(id);
+            if (el) el.classList.remove('hidden');
+        }
+        function hideNavDropdown(id) {
+            var el = document.getElementById(id);
+            if (el) el.classList.add('hidden');
+        }
+        // ========================================================
+        // ================= PASTE PANNAPATTA IDAM =================
+        function handleMigrateClick(event) {
+            event.stopPropagation();
+            
+            // 1. Dropdown click panna udane Migrate Main Page open aagum
+            
+            // 2. Madha ellam dropdown-aium close panradhu
+            if(document.getElementById('workDropdownMenu')) document.getElementById('workDropdownMenu').classList.add('hidden');
+            if(document.getElementById('studyDropdownMenu')) document.getElementById('studyDropdownMenu').classList.add('hidden');
+            if(document.getElementById('visitDropdownMenu')) document.getElementById('visitDropdownMenu').classList.add('hidden');
+            if(document.getElementById('dependentDropdownMenu')) document.getElementById('dependentDropdownMenu').classList.add('hidden');
+            
+            // 3. Migrate dropdown menu-va toggle (open/close) panradhu
+            document.getElementById('migrateDropdownMenu').classList.toggle('hidden');
+        }
+        // ========================================================
+        function handleWorkVisaClick(event) {
+            event.stopPropagation();
+            document.getElementById('studyDropdownMenu').classList.add('hidden');
+            document.getElementById('workDropdownMenu').classList.toggle('hidden');
+        }
+        function handleStudyVisaClick(event) {
+            event.stopPropagation();
+            document.getElementById('workDropdownMenu').classList.add('hidden');
+            document.getElementById('studyDropdownMenu').classList.toggle('hidden');
+        }
+       function handleVisitVisaClick(event) {
+    event.stopPropagation();
+    
+    // 1. Click panna udane direct-ah Visit Visa Main Page open aagum
+    location.href='../visit-visa.html';
+    
+    // 2. Madha ellam active dropdowns-aium close panradhu
+    if(document.getElementById('workDropdownMenu')) document.getElementById('workDropdownMenu').classList.add('hidden');
+    if(document.getElementById('studyDropdownMenu')) document.getElementById('studyDropdownMenu').classList.add('hidden');
+    if(document.getElementById('migrateDropdownMenu')) document.getElementById('migrateDropdownMenu').classList.add('hidden');
+}
+function handleDependentClick(event) {
+    event.stopPropagation();
+    
+    // 1. Click panna udane direct-ah Dependent Visa Main Page open aagum
+    location.href='../dependent-visa.html';
+    
+    // 2. Madha ellam active dropdowns-aium close panradhu
+    if(document.getElementById('workDropdownMenu')) document.getElementById('workDropdownMenu').classList.add('hidden');
+    if(document.getElementById('studyDropdownMenu')) document.getElementById('studyDropdownMenu').classList.add('hidden');
+    if(document.getElementById('migrateDropdownMenu')) document.getElementById('migrateDropdownMenu').classList.add('hidden');
+}
+
+        // Web3Forms AJAX Form Submission (Standard JSON Mode)
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            const submitBtn = form.querySelector('button[type="submit"]');
+            
+            // Button loading state
+            submitBtn.disabled = true;
+            submitBtn.innerText = "SENDING...";
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    // Success Popup Modal open aagum
+                    const popup = document.getElementById('successPopup');
+                    popup.classList.remove('hidden');
+                    popup.classList.add('flex');
+                    form.reset(); // Form clear seiya
+                } else {
+                    alert("Something went wrong: " + json.message);
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                alert("Form submission failed! Please check your internet connection.");
+            })
+            .then(() => {
+                // Button text reset
+                submitBtn.disabled = false;
+                submitBtn.innerText = "SUBMIT";
+            });
+        }
+
+        function closePopup() {
+            const popup = document.getElementById('successPopup');
+            popup.classList.add('hidden');
+            popup.classList.remove('flex');
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                document.getElementById('workDropdownMenu').classList.add('hidden');
+                document.getElementById('studyDropdownMenu').classList.add('hidden');
+                if(document.getElementById('migrateDropdownMenu')) {
+            document.getElementById('migrateDropdownMenu').classList.add('hidden');
+        }
+        if(document.getElementById('visitDropdownMenu')) document.getElementById('visitDropdownMenu').classList.add('hidden');
+        if(document.getElementById('dependentDropdownMenu')) document.getElementById('dependentDropdownMenu').classList.add('hidden');
+            }
+        }
+       // AOS Initialization & Page Reset
+document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+        duration: 800,
+        once: true     
+    });
+
+    const allAnimatedElements = document.querySelectorAll('[data-aos]');
+    allAnimatedElements.forEach(el => {
+        el.classList.remove('aos-animate');
+    });
+
+    setTimeout(function() {
+        AOS.refreshHard();
+    }, 200);
+});
+window.onpopstate = function (event) {
+    if (event.state && event.state.page) {
+        showPage(event.state.page);
+    } else {
+        showPage("homePage");
+    }
+};
+    </script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RM08RH5J8D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RM08RH5J8D');
+</script>
+<link href="https://www.globalgatewayinternationals.com/" rel="canonical"/>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col m-0 p-0 overflow-x-hidden">
+<nav class="bg-white text-blue-900 sticky top-0 z-50 shadow-md border-b border-gray-200 md:mb-0 mb-8" style="overflow: visible !important; height: 80px;">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+<div class="flex items-center justify-between h-full">
+<!-- ðŸ¢ à®²à¯‹à®•à¯‹ à®®à®±à¯à®±à¯à®®à¯ à®•à®®à¯à®ªà¯†à®©à®¿ à®ªà¯†à®¯à®°à¯ à®‡à®Ÿà®¤à¯ à®ªà®•à¯à®•à®®à¯ à®¨à®•à®°à¯à®¤à¯à®¤à®ªà¯à®ªà®Ÿà¯à®Ÿ à®šà¯†à®•à¯à®·à®©à¯ -->
+<div class="flex-shrink-0 cursor-pointer flex items-center gap-3 -ml-3 md:ml-0" onclick="location.href='../index.html'">
+<!-- Logo Size Medium-ku Perusu Panniyachu (h-16) -->
+<img alt="Global Gateway Logo" class="h-16 w-auto object-contain rounded shadow-sm" src="../logo.jpeg"/>
+<div style="font-family: 'Times New Roman', Times, serif;">
+<!-- Company Name "GLOBAL GATEWAY" Perusaakiyachu (text-xl from text-lg) -->
+<span class="font-bold text-xl md:text-2xl tracking-wider text-blue-950 block leading-tight">GLOBAL GATEWAY</span>
+<!-- Subtitle "INTERNATIONALS" Size-um Ratio-ku thandha madhiri perusaakiyachu -->
+<span class="block text-[11px] md:text-sm font-bold tracking-widest text-gray-600">INTERNATIONALS</span>
+</div>
+</div>
+<div class="hidden md:flex space-x-2 md:space-x-4 ml-auto items-center">
+<button class="px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors" onclick="location.href='../index.html'">Home</button>
+<div class="relative inline-block text-left" onmouseenter="showNavDropdown('migrateDropdownMenu')" onmouseleave="hideNavDropdown('migrateDropdownMenu')">
+<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="location.href='../migrate.html'"> Migrate <span class="text-xs"> â–¼ </span>
+</button>
+<div class="hidden absolute right-0 mt-0 pt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="migrateDropdownMenu">
+<div class="py-1">
+<button class="w-full text-left px-4 py-2.5 text-sm text-blue-900 font-bold hover:bg-amber-50 border-b border-gray-200" onclick="location.href='../migrate.html'"> All Migrate Options</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../migrate/canada.html'"> Canada</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../migrate/australia.html'"> Australia</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../migrate/uk.html'"> United Kingdom</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../migrate/new-zealand.html'"> New Zealand</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium" onclick="location.href='../migrate/europe.html'"> Germany / Europe</button>
+</div>
+</div>
+</div>
+<div class="relative inline-block text-left" onmouseenter="showNavDropdown('workDropdownMenu')" onmouseleave="hideNavDropdown('workDropdownMenu')">
+<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="location.href='../work-visa.html'"> Work <span class="text-xs">â–¼</span>
+</button>
+<div class="hidden absolute right-0 mt-0 pt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="workDropdownMenu">
+<div class="py-1">
+<button class="w-full text-left px-4 py-2.5 text-sm text-blue-900 font-bold hover:bg-amber-50 border-b border-gray-200" onclick="location.href='../work-visa.html'"> All Work Visa Options</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/canada.html'"> Canada</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/australia.html'"> Australia</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/europe.html'"> Europe</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/uk.html'"> United Kingdom</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/new-zealand.html'"> New Zealand</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/singapore.html'"> Singapore</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium" onclick="location.href='../work/gulf.html'"> The Gulf</button>
+</div>
+</div>
+</div>
+<div class="relative inline-block text-left" onmouseenter="showNavDropdown('studyDropdownMenu')" onmouseleave="hideNavDropdown('studyDropdownMenu')">
+<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="location.href='../study-visa.html'"> Study <span class="text-xs">â–¼</span>
+</button>
+<div class="hidden absolute right-0 mt-0 pt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="studyDropdownMenu">
+<div class="py-1">
+<button class="w-full text-left px-4 py-2.5 text-sm text-blue-900 font-bold hover:bg-amber-50 border-b border-gray-200" onclick="location.href='../study-visa.html'"> All Study Visa Options</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/canada.html'"> Canada</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/australia.html'"> Australia</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/europe.html'"> Europe</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/uk.html'"> United Kingdom</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/new-zealand.html'"> New Zealand</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/singapore.html'"> Singapore</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium" onclick="location.href='../study/gulf.html'"> The Gulf</button>
+</div>
+</div>
+</div>
+<button class="text-blue-900 hover:text-amber-500 font-semibold px-3 py-2 text-sm transition-colors duration-200" onclick="location.href='../visit-visa.html'">Visit</button>
+<button class="text-blue-900 hover:text-amber-500 font-semibold px-3 py-2 text-sm transition-colors duration-200" onclick="handleDependentClick(event)">Dependent-Family</button>
+<button class="px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors" onclick="location.href='../contact.html'">Contact Us</button>
+</div>
+<div class="md:hidden flex items-center ml-auto">
+<!-- â˜° à®®à¯†à®©à¯ à®šà®¿à®®à¯à®ªà®²à¯ à®•à®šà¯à®šà®¿à®¤à®®à®¾à®© à®®à¯€à®Ÿà®¿à®¯à®®à¯ à®šà¯ˆà®¸à¯à®•à¯à®•à¯ à®®à®¾à®±à¯à®±à®ªà¯à®ªà®Ÿà¯à®Ÿà¯à®³à¯à®³à®¤à¯ -->
+<button class="text-blue-900 focus:outline-none p-2 border-0 bg-transparent font-bold text-xl z-50" id="myMobileMenuBtn" onclick="toggleMyMobileMenu(event)">
+        â˜°
+    </button>
+</div>
+</div>
+</div>
+<div class="md:hidden bg-white border-b border-gray-300 px-4 py-3 shadow-2xl w-full left-0 absolute z-[999] max-h-[calc(100vh-80px)] overflow-y-auto" id="myMobileMenuDropdown" style="display: none !important; flex-direction: column; gap: 2px; top: 80px;">
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm" onclick="closeMobileMenuFull(); location.href='../index.html'">Home</button>
+<div>
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm flex justify-between items-center" onclick="toggleSubMenu(event, 'subMigrate')">
+                â–¶ Migrate <span class="text-xs text-gray-400" id="arrow-subMigrate">â–¼</span>
+</button>
+<div class="bg-gray-50 pl-6 flex flex-col border-b border-gray-100" id="subMigrate" style="display: none;">
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../migrate/canada.html'">Canada</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../migrate/australia.html'">Australia</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../migrate/uk.html'">UK</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../migrate/new-zealand.html'">NZ</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../migrate/europe.html'">Europe</button>
+</div>
+</div>
+<div>
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm flex justify-between items-center" onclick="toggleSubMenu(event, 'subWork')">
+                â–¶ Work Visa <span class="text-xs text-gray-400" id="arrow-subWork">â–¼</span>
+</button>
+<div class="bg-gray-50 pl-6 flex flex-col border-b border-gray-100" id="subWork" style="display: none;">
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../work/canada.html'">Canada</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../work/australia.html'">Australia</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../work/europe.html'">Europe</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../work/uk.html'">UK</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../work/new-zealand.html'">NZ</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../work/singapore.html'">Singapore</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../work/gulf.html'">Gulf</button>
+</div>
+</div>
+<div>
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm flex justify-between items-center" onclick="toggleSubMenu(event, 'subStudy')">
+                â–¶ Study Visa <span class="text-xs text-gray-400" id="arrow-subStudy">â–¼</span>
+</button>
+<div class="bg-gray-50 pl-6 flex flex-col border-b border-gray-100" id="subStudy" style="display: none;">
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../study/canada.html'">Canada</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../study/australia.html'">Australia</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../study/europe.html'">Europe</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../study/uk.html'">UK</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../study/new-zealand.html'">NZ</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../study/singapore.html'">Singapore</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../study/gulf.html'">The Gulf</button>
+</div>
+</div>
+<!-- Visit Visa -->
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm block" onclick="closeMobileMenuFull(); location.href='../visit-visa.html'"> Visit Visa
+</button>
+<!-- Dependent-Family -->
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm block" onclick="closeMobileMenuFull(); handleDependentClick(event)"> Dependent-Family
+</button>
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded text-sm" onclick="closeMobileMenuFull(); location.href='../contact.html'">Contact</button>
+</div>
+</nav>
+<script>
+    window.toggleMyMobileMenu = function(e) {
+        if (e) e.stopPropagation();
+        var menuBtn = document.getElementById('myMobileMenuBtn');
+        var menuDropdown = document.getElementById('myMobileMenuDropdown');
+        
+        if (menuDropdown && menuBtn) {
+            if (menuDropdown.style.getPropertyValue('display') === 'none' || menuDropdown.style.display === 'none' || menuDropdown.style.display === '') {
+                menuDropdown.style.setProperty('display', 'flex', 'important');
+                menuBtn.innerHTML = 'âœ•'; // à®®à¯†à®©à¯ à®“à®ªà®©à¯ à®†à®•à¯à®®à¯à®ªà¯‹à®¤à¯ à®ªà®Ÿà¯à®Ÿà®©à¯ à®®à®¾à®±à¯à®®à¯
+            } else {
+                closeMobileMenuFull();
+            }
+        }
+    }
+
+    window.toggleSubMenu = function(e, subId) {
+        if (e) e.stopPropagation();
+        var subMenu = document.getElementById(subId);
+        var arrow = document.getElementById('arrow-' + subId);
+        
+        if (subMenu) {
+            if (subMenu.style.display === 'none' || subMenu.style.display === '') {
+                subMenu.style.display = 'flex';
+                subMenu.style.flexDirection = 'column';
+                if(arrow) arrow.innerHTML = 'â–²'; // à®…à®®à¯à®ªà¯ à®•à¯à®±à®¿ à®®à¯‡à®²à¯‡ à®®à®¾à®±à¯à®®à¯
+            } else {
+                subMenu.style.display = 'none';
+                if(arrow) arrow.innerHTML = 'â–¼'; // à®…à®®à¯à®ªà¯ à®•à¯à®±à®¿ à®•à¯€à®´à¯‡ à®®à®¾à®±à¯à®®à¯
+            }
+        }
+    }
+
+    window.closeMobileMenuFull = function() {
+        var menuDropdown = document.getElementById('myMobileMenuDropdown');
+        var menuBtn = document.getElementById('myMobileMenuBtn');
+        
+        if (menuDropdown) {
+            menuDropdown.style.setProperty('display', 'none', 'important'); // à®®à¯†à®©à¯à®µà¯ˆ à®®à¯‚à®Ÿà®¿à®µà®¿à®Ÿà¯à®®à¯
+        }
+        if (menuBtn) {
+            menuBtn.innerHTML = 'â˜°';
+        }
+        
+        // à®‰à®³à¯ à®®à¯†à®©à¯à®•à¯à®•à®³à¯ à®…à®©à¯ˆà®¤à¯à®¤à¯ˆà®¯à¯à®®à¯ à®°à¯€à®šà¯†à®Ÿà¯ à®šà¯†à®¯à¯à®¯à¯à®®à¯
+        var subMenus = ['subMigrate', 'subWork', 'subStudy'];
+        subMenus.forEach(function(id) {
+            var sub = document.getElementById(id);
+            var arrow = document.getElementById('arrow-' + id);
+            if(sub) sub.style.display = 'none';
+            if(arrow) arrow.innerHTML = 'â–¼';
+        });
+    }
+</script>
+<div class="bg-white min-h-screen" id="blogWorkVisaVsJobOffer">
+<!-- Blog Content -->
+<section class="bg-gradient-to-r from-blue-950 via-blue-900 to-blue-950 py-16">
+<div class="max-w-5xl mx-auto px-6">
+<!-- Back Button -->
+<button class="text-amber-300 hover:text-white transition mb-6 font-medium" onclick="location.href='../blogs.html'">
+            â† Back to Latest Blogs
+        </button>
+<!-- Category -->
+<div class="mb-5">
+<span class="inline-block bg-amber-400 text-blue-950 px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider"> Work Visa
+            </span>
+</div>
+<!-- Title -->
+<h1 class="text-white text-4xl md:text-6xl font-extrabold leading-tight">
+            Work Visa vs Job Offer
+        </h1>
+<!-- Subtitle -->
+<p class="text-gray-200 text-2xl mt-4">
+            What Comes First When Planning to Work Abroad?
+        </p>
+<!-- Meta -->
+<div class="flex flex-wrap gap-8 mt-8 text-gray-300 text-base">
+<span>ðŸ“… August 2026</span>
+<span>â± 5 min read</span>
+<span>âœ Global Gateway Internationals</span>
+</div>
+</div>
+</section>
+<!-- Remaining Blog Content -->
+<section class="max-w-5xl mx-auto px-6 py-12">
+<div class="mt-10 mb-10">
+<img alt="Work Visa vs Job Offer" class="w-full rounded-3xl shadow-xl" src="../workvisa.png"/>
+</div>
+<!-- ================= INTRODUCTION ================= -->
+<div class="mt-12">
+<p class="text-lg text-gray-700 leading-9 mb-6"> If you've started looking into working overseas, you've probably run into this chicken-and-egg question pretty quickly: do you need a job offer before you can get a work visa, or do you need a visa before anyone will even consider hiring you?
+    </p>
+<p class="text-lg text-gray-700 leading-9"> It's confusing, and honestly, a lot of people waste months (sometimes years) going down the wrong path simply because nobody explained this clearly to them. So let's break it down properly.
+    </p>
+</div>
+<!-- ================= SHORT ANSWER ================= -->
+<div class="mt-16">
+<h2 class="text-3xl font-bold text-blue-950 mb-6"> The Short Answer: It Depends on the Country
+    </h2>
+<div class="bg-blue-50 border-l-4 border-blue-900 rounded-2xl p-8 shadow-md">
+<p class="text-lg text-gray-700 leading-9"> There's no single rule that applies everywhere. Different countries structure their immigration systems differently, and where you're headed changes the entire order of operations.
+        </p>
+<p class="text-lg text-gray-700 leading-9 mt-6"> <strong>In most cases, the job offer comes first.</strong> Countries like the UK, USA, Singapore, and much of the Middle East require an employer to sponsor your work visa. No employer, no sponsorship, no visa. Simple as that.
+        </p>
+<p class="text-lg text-gray-700 leading-9 mt-6"> <strong>But some countries flip the order.</strong> Places like Canada and Australia run points-based immigration systems. You can apply for a work permit or skilled visa based on your qualifications, experience, and age â€” and only look for a job once you're already eligible to work there, or even after you land.
+        </p>
+<p class="text-lg text-gray-700 leading-9 mt-6"> So the real first step isn't "get a visa" or "get a job." It's figuring out <strong>which system your destination country uses.</strong>
+        </p>
+</div>
+</div>
+<!-- ================= EMPLOYER SPONSORED ================= -->
+<div class="mt-20">
+<h2 class="text-4xl font-bold text-blue-950">
+        Employer-Sponsored Visas: Job Offer First
+    </h2>
+<div class="w-28 h-1 bg-amber-400 rounded-full mt-3 mb-10"></div>
+</div>
+<div class="bg-white rounded-2xl shadow-md border-l-4 border-amber-400 p-8 mb-8 hover:shadow-xl transition">
+<p class="text-gray-700 leading-8 mb-6"> This is the route most people end up on, especially if you're eyeing the UK, USA, UAE, Saudi Arabia, or Singapore. Here's what it actually looks like in practice:
+    </p>
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 flex-shrink-0 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold">1</div>
+<p class="text-gray-700 leading-8 pt-1"> You land a job offer from a company based in that country.</p>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 flex-shrink-0 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold">2</div>
+<p class="text-gray-700 leading-8 pt-1"> That employer takes it from there â€” they're the ones who file for your work permit or sponsor your visa. You're not doing this part alone.</p>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 flex-shrink-0 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold">3</div>
+<p class="text-gray-700 leading-8 pt-1"> Once it's approved, the visa lands in your hands and you're free to travel.</p>
+</div>
+</div>
+<p class="text-gray-700 leading-8 mt-8"> Sounds straightforward, right? Here's the part nobody tells you upfront: <strong>getting that job offer is the hard bit.</strong> Employers abroad aren't exactly rushing to sponsor someone without relevant experience or a skill they actually need â€” sponsoring a foreign hire costs them time and money, so they want to be sure it's worth it.
+    </p>
+<p class="text-gray-700 leading-8 mt-6"> This is exactly why so many people get stuck sending out resume after resume with zero replies. It's not that they're unqualified â€” it's that they're applying to the wrong companies, or companies that don't sponsor visas at all. A good recruitment or immigration consultancy skips that entire guessing game. They already know which employers abroad are actively hiring international talent, so instead of you shouting into the void, you're introduced directly to people who are looking to hire.
+    </p>
+</div>
+<!-- ================= POINTS BASED ================= -->
+<div class="mt-16">
+<h2 class="text-3xl font-bold text-blue-950 mb-6"> Points-Based &amp; Skilled Migration Visas: Visa First
+    </h2>
+<div class="bg-blue-50 border-l-4 border-blue-900 rounded-2xl p-8 shadow-md">
+<p class="text-lg text-gray-700 leading-9"> Canada's Express Entry, Australia's Skilled Independent Visa, and similar programs work differently. These don't require a job offer at all (though having one can boost your score).
+        </p>
+<p class="text-lg text-gray-700 leading-9 mt-6"> Instead, you're assessed on factors like:
+        </p>
+<ul class="list-disc pl-6 mt-4 space-y-2 text-lg text-gray-700 leading-8">
+<li>Age</li>
+<li>Education</li>
+<li>Work experience</li>
+<li>Language proficiency (English or French, depending on the country)</li>
+<li>Adaptability factors</li>
+</ul>
+<p class="text-lg text-gray-700 leading-9 mt-6"> If you score well enough, you get invited to apply for permanent residency or a work visa â€” and the job search can happen after you arrive, or in parallel.
+        </p>
+<p class="text-lg text-gray-700 leading-9 mt-6"> This path takes longer to prepare for since there's paperwork, language tests, and skill assessments involved, but it gives you far more flexibility once you're in the country.
+        </p>
+</div>
+</div>
+<!-- ================= WHAT SHOULD YOU DO ================= -->
+<div class="mt-20">
+<h2 class="text-4xl font-bold text-blue-950">
+        So What Should You Actually Do First?
+    </h2>
+<div class="w-28 h-1 bg-amber-400 rounded-full mt-3 mb-10"></div>
+</div>
+<p class="text-gray-700 leading-8 mb-8"> Instead of asking "visa or job first," ask yourself these three questions:
+    </p>
+<!-- Q1 -->
+<div class="bg-white rounded-2xl shadow-md border-l-4 border-amber-400 p-8 mb-8 hover:shadow-xl transition">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold text-xl">
+            01
+        </div>
+<h3 class="text-xl font-bold text-blue-950">Which country am I targeting?</h3>
+</div>
+<p class="text-gray-700 leading-8"> This alone tells you which system you're dealing with.
+    </p>
+</div>
+<!-- Q2 -->
+<div class="bg-white rounded-2xl shadow-md border-l-4 border-amber-400 p-8 mb-8 hover:shadow-xl transition">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold text-xl">
+            02
+        </div>
+<h3 class="text-xl font-bold text-blue-950">Do I have in-demand skills or experience?</h3>
+</div>
+<p class="text-gray-700 leading-8"> If yes, the job-offer route can move quickly. If you're just starting out, a skilled migration pathway (where eligible) might suit you better.
+    </p>
+</div>
+<!-- Q3 -->
+<div class="bg-white rounded-2xl shadow-md border-l-4 border-amber-400 p-8 mb-8 hover:shadow-xl transition">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold text-xl">
+            03
+        </div>
+<h3 class="text-xl font-bold text-blue-950">Am I working with the right guidance?</h3>
+</div>
+<p class="text-gray-700 leading-8"> This is where most people go wrong. They either apply for visas without understanding eligibility, or they send hundreds of job applications to companies that don't sponsor foreign workers at all. Both routes waste time and money.
+    </p>
+</div>
+<!-- ================= REAL SHORTCUT ================= -->
+<div class="mt-16">
+<h2 class="text-3xl font-bold text-blue-950 mb-6"> The Real Shortcut: Get Assessed Before You Apply Anywhere
+    </h2>
+<div class="bg-blue-50 border-l-4 border-blue-900 rounded-2xl p-8 shadow-md">
+<p class="text-lg text-gray-700 leading-9 mb-4"> Whether it's a job offer or a visa application, the smartest first move is getting a proper eligibility assessment done. This tells you:
+        </p>
+<ul class="list-disc pl-6 space-y-2 text-lg text-gray-700 leading-8">
+<li>Which countries you actually qualify for</li>
+<li>Whether you need a job offer or can apply independently</li>
+<li>What documents, tests, or certifications you're missing</li>
+<li>A realistic timeline instead of guesswork</li>
+</ul>
+<p class="text-lg text-gray-700 leading-9 mt-6"> <strong>At Global Gateway Internationals, that's exactly where we start â€” with you, not a template.</strong> We take the time to actually understand your profile first, then map out the fastest, most reliable path that fits your situation, instead of pushing everyone through the same generic process.
+        </p>
+</div>
+</div>
+<!-- ================= FINAL WORD ================= -->
+<div class="mt-16 bg-white rounded-3xl shadow-lg p-8 border border-gray-200">
+<h2 class="text-2xl font-bold text-blue-950 mb-4">
+        Final Word
+    </h2>
+<p class="text-lg text-gray-700 leading-9 mb-4"> There's no universal first step for working abroad â€” it genuinely depends on the country and the visa category. What matters is knowing which system you're entering <em>before</em> you start spending time, money, and hope on applications.
+    </p>
+<p class="text-lg text-gray-700 leading-9"> If you're serious about working overseas and want clarity on whether you need a job offer or a visa first, reach out to us. We'll walk you through your specific case instead of giving you a one-size-fits-all answer.
+    </p>
+</div>
+<!-- CTA -->
+<div class="mt-16 bg-blue-950 rounded-3xl p-10 text-center shadow-xl">
+<h3 class="text-2xl md:text-3xl font-bold text-white mb-4"> Not Sure Which Path Fits You?</h3>
+<p class="text-gray-300 text-lg mb-6"> Get a free eligibility assessment and find out whether you need a job offer or a visa first for your target country.</p>
+<button class="bg-amber-400 hover:bg-amber-300 text-blue-950 font-bold px-8 py-3 rounded-xl transition" onclick="location.href='../contact.html'"> Get Free Counselling â†’
+        </button>
+</div>
+</section>
+</div>
+<div class="fixed bottom-5 right-5 flex flex-col gap-5 z-50">
+<a class="text-green-500 text-4xl hover:text-green-600 transition-all drop-shadow-md" href="https://wa.me/918939688699?text=Hi, I need assistance." target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+<a class="text-blue-600 text-4xl hover:text-blue-700 transition-all drop-shadow-md" href="tel:+918939688699">
+<i class="fas fa-phone-alt"></i>
+</a>
+<a class="text-gray-700 text-4xl hover:text-gray-800 transition-all drop-shadow-md" href="sms:+918939688699?body=Hello, I have a query.">
+<i class="fas fa-envelope"></i>
+</a>
+</div>
+<div class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 items-center justify-center p-4" id="successPopup">
+<div class="bg-white rounded-xl shadow-2xl p-8 max-w-sm w-full text-center transform transition-all duration-300 scale-100 border-t-4 border-green-500">
+<div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-4 animate-bounce">
+<svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
+<p class="text-sm text-gray-600 mb-6"> Your inquiry has been successfully submitted. Our global expert team will contact you shortly.
+        </p>
+<button class="w-full bg-green-600 text-white font-bold py-2.5 px-4 rounded-lg shadow hover:bg-green-700 transition duration-200" onclick="closePopup()"> Okay, Close
+        </button>
+</div>
+</div>
+<script>
+function handleFormSubmit(event) {
+    event.preventDefault(); // Page white screen-aa redirect aagadhuri thadukkum
+    
+    const form = document.getElementById('leadContactForm');
+    const submitButton = form.querySelector('button[type="submit"]');
+    
+    // Button-ai disable panni Sending status-ku maathuvom
+    submitButton.disabled = true;
+    submitButton.innerText = "Sending...";
+
+    const formData = new FormData(form);
+
+    // Unga Google Web App URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw4XZVMD0Y5iZVaat_taYVrJjM16eeb_amxH1QklK3MncazYxMKwaEzpIv9sIdzHWAL/exec';
+
+    // CORS error thavirkka mode: 'no-cors' sethu data-vai anuppugirom
+    fetch(scriptURL, { 
+        method: 'POST', 
+        mode: 'no-cors', 
+        body: formData 
+    });
+
+    // Google Sheet-la data store aaguradhala, response block-kaga wait pannaama 
+    // direct-aa 1 second delay-la popup-ai trigger seigirom
+    setTimeout(() => {
+        submitButton.disabled = false;
+        submitButton.innerText = "Submit";
+        
+        // Success popup card-ai screen-la kaattum
+        const popup = document.getElementById('successPopup');
+        if (popup) {
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
+        } else {
+            alert('Successfully Submitted!');
+        }
+        
+        form.reset(); // Form fields-ai clear pannum
+    }, 1000); 
+}
+
+// Popup-ai close panna unga website-le vachirukku function
+function closePopup() {
+    document.getElementById('successPopup').classList.remove('flex');
+    document.getElementById('successPopup').classList.add('hidden');
+}
+</script>
+</body>
+</html>
