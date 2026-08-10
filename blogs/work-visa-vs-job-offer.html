@@ -5,7 +5,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Best Overseas Job Consultancy Chennai | Global Gateway Internationals</title>
 <meta content="Global Gateway Internationals is one of the best overseas job consultancy in Chennai offering Europe jobs, Singapore jobs, Gulf jobs, work visa assistance and international recruitment services." name="description"/>
-<!-- à®‰à®™à¯à®• à®ªà¯à®¤à®¿à®¯ à®²à¯‹à®•à¯‹à®µà®¿à®±à¯à®•à®¾à®© à®•à¯‹à®Ÿà¯ à®‡à®¤à¯à®¤à®¾à®©à¯ -->
+<!-- Logo icon link -->
 <link href="https://www.globalgatewayinternationals.com/logo.jpeg" rel="icon" sizes="48x48" type="image/x-icon"/>
 <!-- AOS Library CSS -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
@@ -21,18 +21,15 @@
 
     const activePage = document.getElementById(pageId);
     if (activePage) {
-        // 1. à®…à®¨à¯à®¤à®ªà¯ à®ªà®•à¯à®•à®¤à¯à®¤à®¿à®²à¯ à®‰à®³à¯à®³ à®ªà®´à¯ˆà®¯ AOS à®…à®©à®¿à®®à¯‡à®·à®©à¯ à®•à®¿à®³à®¾à®¸à¯à®•à®³à¯ˆ à®®à¯Šà®¤à¯à®¤à®®à®¾à®• à®°à¯€à®šà¯†à®Ÿà¯ à®šà¯†à®¯à¯à®•à®¿à®±à¯‹à®®à¯
         const animatedElements = activePage.querySelectorAll('[data-aos]');
         animatedElements.forEach(el => {
             el.classList.remove('aos-animate');
         });
 
-        // 2. à®ªà®•à¯à®•à®¤à¯à®¤à¯ˆà®•à¯ à®•à®£à¯à®£à¯à®•à¯à®•à¯à®¤à¯ à®¤à¯†à®°à®¿à®¯ à®µà¯ˆà®•à¯à®•à®¿à®±à¯‹à®®à¯
         activePage.classList.remove('hidden');
          history.pushState({ page: pageId }, "", "#" + pageId);
     }
             
-    // à®Ÿà®¿à®°à®¾à®ªà¯à®Ÿà®µà¯à®©à¯à®•à®³à¯ˆ à®®à¯‚à®Ÿà¯à®µà®¤à¯
     if(document.getElementById('workDropdownMenu')) document.getElementById('workDropdownMenu').classList.add('hidden');
     if(document.getElementById('studyDropdownMenu')) document.getElementById('studyDropdownMenu').classList.add('hidden');
     if(document.getElementById('migrateDropdownMenu')) document.getElementById('migrateDropdownMenu').classList.add('hidden');
@@ -41,12 +38,10 @@
             
     window.scrollTo({top: 0, behavior: 'smooth'});
 
-    // 3. à®ªà®•à¯à®•à®®à¯ à®²à¯‹à®Ÿà®¾à®©à®¤à¯à®®à¯ à®…à®©à®¿à®®à¯‡à®·à®©à¯ˆ à®µà®²à¯à®•à¯à®•à®Ÿà¯à®Ÿà®¾à®¯à®®à®¾à®• à®°à¯€-à®¸à¯à®Ÿà®¾à®°à¯à®Ÿà¯ (Force Restart) à®šà¯†à®¯à¯à®•à®¿à®±à¯‹à®®à¯
     setTimeout(function() {
         AOS.refreshHard();
     }, 100);
 }
-        // ================= RELIABLE DROPDOWN CONTROL (mouseenter/mouseleave) =================
         function closeAllNavDropdowns() {
             ['migrateDropdownMenu','workDropdownMenu','studyDropdownMenu'].forEach(function(id){
                 var el = document.getElementById(id);
@@ -62,23 +57,16 @@
             var el = document.getElementById(id);
             if (el) el.classList.add('hidden');
         }
-        // ========================================================
-        // ================= PASTE PANNAPATTA IDAM =================
         function handleMigrateClick(event) {
             event.stopPropagation();
             
-            // 1. Dropdown click panna udane Migrate Main Page open aagum
-            
-            // 2. Madha ellam dropdown-aium close panradhu
             if(document.getElementById('workDropdownMenu')) document.getElementById('workDropdownMenu').classList.add('hidden');
             if(document.getElementById('studyDropdownMenu')) document.getElementById('studyDropdownMenu').classList.add('hidden');
             if(document.getElementById('visitDropdownMenu')) document.getElementById('visitDropdownMenu').classList.add('hidden');
             if(document.getElementById('dependentDropdownMenu')) document.getElementById('dependentDropdownMenu').classList.add('hidden');
             
-            // 3. Migrate dropdown menu-va toggle (open/close) panradhu
             document.getElementById('migrateDropdownMenu').classList.toggle('hidden');
         }
-        // ========================================================
         function handleWorkVisaClick(event) {
             event.stopPropagation();
             document.getElementById('studyDropdownMenu').classList.add('hidden');
@@ -92,10 +80,8 @@
        function handleVisitVisaClick(event) {
     event.stopPropagation();
     
-    // 1. Click panna udane direct-ah Visit Visa Main Page open aagum
     location.href='../visit-visa.html';
     
-    // 2. Madha ellam active dropdowns-aium close panradhu
     if(document.getElementById('workDropdownMenu')) document.getElementById('workDropdownMenu').classList.add('hidden');
     if(document.getElementById('studyDropdownMenu')) document.getElementById('studyDropdownMenu').classList.add('hidden');
     if(document.getElementById('migrateDropdownMenu')) document.getElementById('migrateDropdownMenu').classList.add('hidden');
@@ -103,16 +89,13 @@
 function handleDependentClick(event) {
     event.stopPropagation();
     
-    // 1. Click panna udane direct-ah Dependent Visa Main Page open aagum
     location.href='../dependent-visa.html';
     
-    // 2. Madha ellam active dropdowns-aium close panradhu
     if(document.getElementById('workDropdownMenu')) document.getElementById('workDropdownMenu').classList.add('hidden');
     if(document.getElementById('studyDropdownMenu')) document.getElementById('studyDropdownMenu').classList.add('hidden');
     if(document.getElementById('migrateDropdownMenu')) document.getElementById('migrateDropdownMenu').classList.add('hidden');
 }
 
-        // Web3Forms AJAX Form Submission (Standard JSON Mode)
         function handleFormSubmit(event) {
             event.preventDefault();
             const form = event.target;
@@ -121,7 +104,6 @@ function handleDependentClick(event) {
             const json = JSON.stringify(object);
             const submitBtn = form.querySelector('button[type="submit"]');
             
-            // Button loading state
             submitBtn.disabled = true;
             submitBtn.innerText = "SENDING...";
 
@@ -136,11 +118,10 @@ function handleDependentClick(event) {
             .then(async (response) => {
                 let json = await response.json();
                 if (response.status == 200) {
-                    // Success Popup Modal open aagum
                     const popup = document.getElementById('successPopup');
                     popup.classList.remove('hidden');
                     popup.classList.add('flex');
-                    form.reset(); // Form clear seiya
+                    form.reset();
                 } else {
                     alert("Something went wrong: " + json.message);
                 }
@@ -150,7 +131,6 @@ function handleDependentClick(event) {
                 alert("Form submission failed! Please check your internet connection.");
             })
             .then(() => {
-                // Button text reset
                 submitBtn.disabled = false;
                 submitBtn.innerText = "SUBMIT";
             });
@@ -173,7 +153,6 @@ function handleDependentClick(event) {
         if(document.getElementById('dependentDropdownMenu')) document.getElementById('dependentDropdownMenu').classList.add('hidden');
             }
         }
-       // AOS Initialization & Page Reset
 document.addEventListener('DOMContentLoaded', function() {
     AOS.init({
         duration: 800,
@@ -212,21 +191,17 @@ window.onpopstate = function (event) {
 <nav class="bg-white text-blue-900 sticky top-0 z-50 shadow-md border-b border-gray-200 md:mb-0 mb-8" style="overflow: visible !important; height: 80px;">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
 <div class="flex items-center justify-between h-full">
-<!-- ðŸ¢ à®²à¯‹à®•à¯‹ à®®à®±à¯à®±à¯à®®à¯ à®•à®®à¯à®ªà¯†à®©à®¿ à®ªà¯†à®¯à®°à¯ à®‡à®Ÿà®¤à¯ à®ªà®•à¯à®•à®®à¯ à®¨à®•à®°à¯à®¤à¯à®¤à®ªà¯à®ªà®Ÿà¯à®Ÿ à®šà¯†à®•à¯à®·à®©à¯ -->
 <div class="flex-shrink-0 cursor-pointer flex items-center gap-3 -ml-3 md:ml-0" onclick="location.href='../index.html'">
-<!-- Logo Size Medium-ku Perusu Panniyachu (h-16) -->
 <img alt="Global Gateway Logo" class="h-16 w-auto object-contain rounded shadow-sm" src="../logo.jpeg"/>
 <div style="font-family: 'Times New Roman', Times, serif;">
-<!-- Company Name "GLOBAL GATEWAY" Perusaakiyachu (text-xl from text-lg) -->
 <span class="font-bold text-xl md:text-2xl tracking-wider text-blue-950 block leading-tight">GLOBAL GATEWAY</span>
-<!-- Subtitle "INTERNATIONALS" Size-um Ratio-ku thandha madhiri perusaakiyachu -->
 <span class="block text-[11px] md:text-sm font-bold tracking-widest text-gray-600">INTERNATIONALS</span>
 </div>
 </div>
 <div class="hidden md:flex space-x-2 md:space-x-4 ml-auto items-center">
 <button class="px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors" onclick="location.href='../index.html'">Home</button>
 <div class="relative inline-block text-left" onmouseenter="showNavDropdown('migrateDropdownMenu')" onmouseleave="hideNavDropdown('migrateDropdownMenu')">
-<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="location.href='../migrate.html'"> Migrate <span class="text-xs"> â–¼ </span>
+<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="location.href='../migrate.html'"> Migrate <span class="text-xs">&#9660;</span>
 </button>
 <div class="hidden absolute right-0 mt-0 pt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="migrateDropdownMenu">
 <div class="py-1">
@@ -240,7 +215,7 @@ window.onpopstate = function (event) {
 </div>
 </div>
 <div class="relative inline-block text-left" onmouseenter="showNavDropdown('workDropdownMenu')" onmouseleave="hideNavDropdown('workDropdownMenu')">
-<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="location.href='../work-visa.html'"> Work <span class="text-xs">â–¼</span>
+<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="location.href='../work-visa.html'"> Work <span class="text-xs">&#9660;</span>
 </button>
 <div class="hidden absolute right-0 mt-0 pt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="workDropdownMenu">
 <div class="py-1">
@@ -256,7 +231,7 @@ window.onpopstate = function (event) {
 </div>
 </div>
 <div class="relative inline-block text-left" onmouseenter="showNavDropdown('studyDropdownMenu')" onmouseleave="hideNavDropdown('studyDropdownMenu')">
-<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="location.href='../study-visa.html'"> Study <span class="text-xs">â–¼</span>
+<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="location.href='../study-visa.html'"> Study <span class="text-xs">&#9660;</span>
 </button>
 <div class="hidden absolute right-0 mt-0 pt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="studyDropdownMenu">
 <div class="py-1">
@@ -276,9 +251,8 @@ window.onpopstate = function (event) {
 <button class="px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors" onclick="location.href='../contact.html'">Contact Us</button>
 </div>
 <div class="md:hidden flex items-center ml-auto">
-<!-- â˜° à®®à¯†à®©à¯ à®šà®¿à®®à¯à®ªà®²à¯ à®•à®šà¯à®šà®¿à®¤à®®à®¾à®© à®®à¯€à®Ÿà®¿à®¯à®®à¯ à®šà¯ˆà®¸à¯à®•à¯à®•à¯ à®®à®¾à®±à¯à®±à®ªà¯à®ªà®Ÿà¯à®Ÿà¯à®³à¯à®³à®¤à¯ -->
 <button class="text-blue-900 focus:outline-none p-2 border-0 bg-transparent font-bold text-xl z-50" id="myMobileMenuBtn" onclick="toggleMyMobileMenu(event)">
-        â˜°
+        &#9776;
     </button>
 </div>
 </div>
@@ -287,7 +261,7 @@ window.onpopstate = function (event) {
 <button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm" onclick="closeMobileMenuFull(); location.href='../index.html'">Home</button>
 <div>
 <button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm flex justify-between items-center" onclick="toggleSubMenu(event, 'subMigrate')">
-                â–¶ Migrate <span class="text-xs text-gray-400" id="arrow-subMigrate">â–¼</span>
+                &#9654; Migrate <span class="text-xs text-gray-400" id="arrow-subMigrate">&#9660;</span>
 </button>
 <div class="bg-gray-50 pl-6 flex flex-col border-b border-gray-100" id="subMigrate" style="display: none;">
 <button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../migrate/canada.html'">Canada</button>
@@ -299,7 +273,7 @@ window.onpopstate = function (event) {
 </div>
 <div>
 <button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm flex justify-between items-center" onclick="toggleSubMenu(event, 'subWork')">
-                â–¶ Work Visa <span class="text-xs text-gray-400" id="arrow-subWork">â–¼</span>
+                &#9654; Work Visa <span class="text-xs text-gray-400" id="arrow-subWork">&#9660;</span>
 </button>
 <div class="bg-gray-50 pl-6 flex flex-col border-b border-gray-100" id="subWork" style="display: none;">
 <button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../work/canada.html'">Canada</button>
@@ -313,7 +287,7 @@ window.onpopstate = function (event) {
 </div>
 <div>
 <button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm flex justify-between items-center" onclick="toggleSubMenu(event, 'subStudy')">
-                â–¶ Study Visa <span class="text-xs text-gray-400" id="arrow-subStudy">â–¼</span>
+                &#9654; Study Visa <span class="text-xs text-gray-400" id="arrow-subStudy">&#9660;</span>
 </button>
 <div class="bg-gray-50 pl-6 flex flex-col border-b border-gray-100" id="subStudy" style="display: none;">
 <button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../study/canada.html'">Canada</button>
@@ -325,10 +299,8 @@ window.onpopstate = function (event) {
 <button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../study/gulf.html'">The Gulf</button>
 </div>
 </div>
-<!-- Visit Visa -->
 <button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm block" onclick="closeMobileMenuFull(); location.href='../visit-visa.html'"> Visit Visa
 </button>
-<!-- Dependent-Family -->
 <button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm block" onclick="closeMobileMenuFull(); handleDependentClick(event)"> Dependent-Family
 </button>
 <button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded text-sm" onclick="closeMobileMenuFull(); location.href='../contact.html'">Contact</button>
@@ -343,7 +315,7 @@ window.onpopstate = function (event) {
         if (menuDropdown && menuBtn) {
             if (menuDropdown.style.getPropertyValue('display') === 'none' || menuDropdown.style.display === 'none' || menuDropdown.style.display === '') {
                 menuDropdown.style.setProperty('display', 'flex', 'important');
-                menuBtn.innerHTML = 'âœ•'; // à®®à¯†à®©à¯ à®“à®ªà®©à¯ à®†à®•à¯à®®à¯à®ªà¯‹à®¤à¯ à®ªà®Ÿà¯à®Ÿà®©à¯ à®®à®¾à®±à¯à®®à¯
+                menuBtn.innerHTML = '&#10005;';
             } else {
                 closeMobileMenuFull();
             }
@@ -359,10 +331,10 @@ window.onpopstate = function (event) {
             if (subMenu.style.display === 'none' || subMenu.style.display === '') {
                 subMenu.style.display = 'flex';
                 subMenu.style.flexDirection = 'column';
-                if(arrow) arrow.innerHTML = 'â–²'; // à®…à®®à¯à®ªà¯ à®•à¯à®±à®¿ à®®à¯‡à®²à¯‡ à®®à®¾à®±à¯à®®à¯
+                if(arrow) arrow.innerHTML = '&#9650;';
             } else {
                 subMenu.style.display = 'none';
-                if(arrow) arrow.innerHTML = 'â–¼'; // à®…à®®à¯à®ªà¯ à®•à¯à®±à®¿ à®•à¯€à®´à¯‡ à®®à®¾à®±à¯à®®à¯
+                if(arrow) arrow.innerHTML = '&#9660;';
             }
         }
     }
@@ -372,19 +344,18 @@ window.onpopstate = function (event) {
         var menuBtn = document.getElementById('myMobileMenuBtn');
         
         if (menuDropdown) {
-            menuDropdown.style.setProperty('display', 'none', 'important'); // à®®à¯†à®©à¯à®µà¯ˆ à®®à¯‚à®Ÿà®¿à®µà®¿à®Ÿà¯à®®à¯
+            menuDropdown.style.setProperty('display', 'none', 'important');
         }
         if (menuBtn) {
-            menuBtn.innerHTML = 'â˜°';
+            menuBtn.innerHTML = '&#9776;';
         }
         
-        // à®‰à®³à¯ à®®à¯†à®©à¯à®•à¯à®•à®³à¯ à®…à®©à¯ˆà®¤à¯à®¤à¯ˆà®¯à¯à®®à¯ à®°à¯€à®šà¯†à®Ÿà¯ à®šà¯†à®¯à¯à®¯à¯à®®à¯
         var subMenus = ['subMigrate', 'subWork', 'subStudy'];
         subMenus.forEach(function(id) {
             var sub = document.getElementById(id);
             var arrow = document.getElementById('arrow-' + id);
             if(sub) sub.style.display = 'none';
-            if(arrow) arrow.innerHTML = 'â–¼';
+            if(arrow) arrow.innerHTML = '&#9660;';
         });
     }
 </script>
@@ -394,7 +365,7 @@ window.onpopstate = function (event) {
 <div class="max-w-5xl mx-auto px-6">
 <!-- Back Button -->
 <button class="text-amber-300 hover:text-white transition mb-6 font-medium" onclick="location.href='../blogs.html'">
-            â† Back to Latest Blogs
+            &#8592; Back to Latest Blogs
         </button>
 <!-- Category -->
 <div class="mb-5">
@@ -411,9 +382,9 @@ window.onpopstate = function (event) {
         </p>
 <!-- Meta -->
 <div class="flex flex-wrap gap-8 mt-8 text-gray-300 text-base">
-<span>ðŸ“… August 2026</span>
-<span>â± 5 min read</span>
-<span>âœ Global Gateway Internationals</span>
+<span>&#128197; August 2026</span>
+<span>&#9201; 5 min read</span>
+<span>&#9997; Global Gateway Internationals</span>
 </div>
 </div>
 </section>
@@ -438,7 +409,7 @@ window.onpopstate = function (event) {
         </p>
 <p class="text-lg text-gray-700 leading-9 mt-6"> <strong>In most cases, the job offer comes first.</strong> Countries like the UK, USA, Singapore, and much of the Middle East require an employer to sponsor your work visa. No employer, no sponsorship, no visa. Simple as that.
         </p>
-<p class="text-lg text-gray-700 leading-9 mt-6"> <strong>But some countries flip the order.</strong> Places like Canada and Australia run points-based immigration systems. You can apply for a work permit or skilled visa based on your qualifications, experience, and age â€” and only look for a job once you're already eligible to work there, or even after you land.
+<p class="text-lg text-gray-700 leading-9 mt-6"> <strong>But some countries flip the order.</strong> Places like Canada and Australia run points-based immigration systems. You can apply for a work permit or skilled visa based on your qualifications, experience, and age &#8212; and only look for a job once you're already eligible to work there, or even after you land.
         </p>
 <p class="text-lg text-gray-700 leading-9 mt-6"> So the real first step isn't "get a visa" or "get a job." It's figuring out <strong>which system your destination country uses.</strong>
         </p>
@@ -461,16 +432,16 @@ window.onpopstate = function (event) {
 </div>
 <div class="flex items-start gap-4">
 <div class="w-10 h-10 flex-shrink-0 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold">2</div>
-<p class="text-gray-700 leading-8 pt-1"> That employer takes it from there â€” they're the ones who file for your work permit or sponsor your visa. You're not doing this part alone.</p>
+<p class="text-gray-700 leading-8 pt-1"> That employer takes it from there &#8212; they're the ones who file for your work permit or sponsor your visa. You're not doing this part alone.</p>
 </div>
 <div class="flex items-start gap-4">
 <div class="w-10 h-10 flex-shrink-0 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold">3</div>
 <p class="text-gray-700 leading-8 pt-1"> Once it's approved, the visa lands in your hands and you're free to travel.</p>
 </div>
 </div>
-<p class="text-gray-700 leading-8 mt-8"> Sounds straightforward, right? Here's the part nobody tells you upfront: <strong>getting that job offer is the hard bit.</strong> Employers abroad aren't exactly rushing to sponsor someone without relevant experience or a skill they actually need â€” sponsoring a foreign hire costs them time and money, so they want to be sure it's worth it.
+<p class="text-gray-700 leading-8 mt-8"> Sounds straightforward, right? Here's the part nobody tells you upfront: <strong>getting that job offer is the hard bit.</strong> Employers abroad aren't exactly rushing to sponsor someone without relevant experience or a skill they actually need &#8212; sponsoring a foreign hire costs them time and money, so they want to be sure it's worth it.
     </p>
-<p class="text-gray-700 leading-8 mt-6"> This is exactly why so many people get stuck sending out resume after resume with zero replies. It's not that they're unqualified â€” it's that they're applying to the wrong companies, or companies that don't sponsor visas at all. A good recruitment or immigration consultancy skips that entire guessing game. They already know which employers abroad are actively hiring international talent, so instead of you shouting into the void, you're introduced directly to people who are looking to hire.
+<p class="text-gray-700 leading-8 mt-6"> This is exactly why so many people get stuck sending out resume after resume with zero replies. It's not that they're unqualified &#8212; it's that they're applying to the wrong companies, or companies that don't sponsor visas at all. A good recruitment or immigration consultancy skips that entire guessing game. They already know which employers abroad are actively hiring international talent, so instead of you shouting into the void, you're introduced directly to people who are looking to hire.
     </p>
 </div>
 <!-- ================= POINTS BASED ================= -->
@@ -489,7 +460,7 @@ window.onpopstate = function (event) {
 <li>Language proficiency (English or French, depending on the country)</li>
 <li>Adaptability factors</li>
 </ul>
-<p class="text-lg text-gray-700 leading-9 mt-6"> If you score well enough, you get invited to apply for permanent residency or a work visa â€” and the job search can happen after you arrive, or in parallel.
+<p class="text-lg text-gray-700 leading-9 mt-6"> If you score well enough, you get invited to apply for permanent residency or a work visa &#8212; and the job search can happen after you arrive, or in parallel.
         </p>
 <p class="text-lg text-gray-700 leading-9 mt-6"> This path takes longer to prepare for since there's paperwork, language tests, and skill assessments involved, but it gives you far more flexibility once you're in the country.
         </p>
@@ -550,7 +521,7 @@ window.onpopstate = function (event) {
 <li>What documents, tests, or certifications you're missing</li>
 <li>A realistic timeline instead of guesswork</li>
 </ul>
-<p class="text-lg text-gray-700 leading-9 mt-6"> <strong>At Global Gateway Internationals, that's exactly where we start â€” with you, not a template.</strong> We take the time to actually understand your profile first, then map out the fastest, most reliable path that fits your situation, instead of pushing everyone through the same generic process.
+<p class="text-lg text-gray-700 leading-9 mt-6"> <strong>At Global Gateway Internationals, that's exactly where we start &#8212; with you, not a template.</strong> We take the time to actually understand your profile first, then map out the fastest, most reliable path that fits your situation, instead of pushing everyone through the same generic process.
         </p>
 </div>
 </div>
@@ -559,7 +530,7 @@ window.onpopstate = function (event) {
 <h2 class="text-2xl font-bold text-blue-950 mb-4">
         Final Word
     </h2>
-<p class="text-lg text-gray-700 leading-9 mb-4"> There's no universal first step for working abroad â€” it genuinely depends on the country and the visa category. What matters is knowing which system you're entering <em>before</em> you start spending time, money, and hope on applications.
+<p class="text-lg text-gray-700 leading-9 mb-4"> There's no universal first step for working abroad &#8212; it genuinely depends on the country and the visa category. What matters is knowing which system you're entering <em>before</em> you start spending time, money, and hope on applications.
     </p>
 <p class="text-lg text-gray-700 leading-9"> If you're serious about working overseas and want clarity on whether you need a job offer or a visa first, reach out to us. We'll walk you through your specific case instead of giving you a one-size-fits-all answer.
     </p>
@@ -568,7 +539,7 @@ window.onpopstate = function (event) {
 <div class="mt-16 bg-blue-950 rounded-3xl p-10 text-center shadow-xl">
 <h3 class="text-2xl md:text-3xl font-bold text-white mb-4"> Not Sure Which Path Fits You?</h3>
 <p class="text-gray-300 text-lg mb-6"> Get a free eligibility assessment and find out whether you need a job offer or a visa first for your target country.</p>
-<button class="bg-amber-400 hover:bg-amber-300 text-blue-950 font-bold px-8 py-3 rounded-xl transition" onclick="location.href='../contact.html'"> Get Free Counselling â†’
+<button class="bg-amber-400 hover:bg-amber-300 text-blue-950 font-bold px-8 py-3 rounded-xl transition" onclick="location.href='../contact.html'"> Get Free Counselling &#8594;
         </button>
 </div>
 </section>
@@ -600,34 +571,28 @@ window.onpopstate = function (event) {
 </div>
 <script>
 function handleFormSubmit(event) {
-    event.preventDefault(); // Page white screen-aa redirect aagadhuri thadukkum
+    event.preventDefault();
     
     const form = document.getElementById('leadContactForm');
     const submitButton = form.querySelector('button[type="submit"]');
     
-    // Button-ai disable panni Sending status-ku maathuvom
     submitButton.disabled = true;
     submitButton.innerText = "Sending...";
 
     const formData = new FormData(form);
 
-    // Unga Google Web App URL
     const scriptURL = 'https://script.google.com/macros/s/AKfycbw4XZVMD0Y5iZVaat_taYVrJjM16eeb_amxH1QklK3MncazYxMKwaEzpIv9sIdzHWAL/exec';
 
-    // CORS error thavirkka mode: 'no-cors' sethu data-vai anuppugirom
     fetch(scriptURL, { 
         method: 'POST', 
         mode: 'no-cors', 
         body: formData 
     });
 
-    // Google Sheet-la data store aaguradhala, response block-kaga wait pannaama 
-    // direct-aa 1 second delay-la popup-ai trigger seigirom
     setTimeout(() => {
         submitButton.disabled = false;
         submitButton.innerText = "Submit";
         
-        // Success popup card-ai screen-la kaattum
         const popup = document.getElementById('successPopup');
         if (popup) {
             popup.classList.remove('hidden');
@@ -636,11 +601,10 @@ function handleFormSubmit(event) {
             alert('Successfully Submitted!');
         }
         
-        form.reset(); // Form fields-ai clear pannum
+        form.reset();
     }, 1000); 
 }
 
-// Popup-ai close panna unga website-le vachirukku function
 function closePopup() {
     document.getElementById('successPopup').classList.remove('flex');
     document.getElementById('successPopup').classList.add('hidden');
