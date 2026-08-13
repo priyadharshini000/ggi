@@ -278,7 +278,7 @@ window.onpopstate = function (event) {
 <div class="md:hidden flex items-center ml-auto">
 <!-- â˜° à®®à¯†à®©à¯ à®šà®¿à®®à¯à®ªà®²à¯ à®•à®šà¯à®šà®¿à®¤à®®à®¾à®© à®®à¯€à®Ÿà®¿à®¯à®®à¯ à®šà¯ˆà®¸à¯à®•à¯à®•à¯ à®®à®¾à®±à¯à®±à®ªà¯à®ªà®Ÿà¯à®Ÿà¯à®³à¯à®³à®¤à¯ -->
 <button class="text-blue-900 focus:outline-none p-2 border-0 bg-transparent font-bold text-xl z-50" id="myMobileMenuBtn" onclick="toggleMyMobileMenu(event)">
-        â˜°
+        ☰
     </button>
 </div>
 </div>
@@ -343,7 +343,7 @@ window.onpopstate = function (event) {
         if (menuDropdown && menuBtn) {
             if (menuDropdown.style.getPropertyValue('display') === 'none' || menuDropdown.style.display === 'none' || menuDropdown.style.display === '') {
                 menuDropdown.style.setProperty('display', 'flex', 'important');
-                menuBtn.innerHTML = 'âœ•'; // à®®à¯†à®©à¯ à®“à®ªà®©à¯ à®†à®•à¯à®®à¯à®ªà¯‹à®¤à¯ à®ªà®Ÿà¯à®Ÿà®©à¯ à®®à®¾à®±à¯à®®à¯
+                menuBtn.innerHTML = '✕'; // à®®à¯†à®©à¯ à®“à®ªà®©à¯ à®†à®•à¯à®®à¯à®ªà¯‹à®¤à¯ à®ªà®Ÿà¯à®Ÿà®©à¯ à®®à®¾à®±à¯à®®à¯
             } else {
                 closeMobileMenuFull();
             }
@@ -359,7 +359,7 @@ window.onpopstate = function (event) {
             if (subMenu.style.display === 'none' || subMenu.style.display === '') {
                 subMenu.style.display = 'flex';
                 subMenu.style.flexDirection = 'column';
-                if(arrow) arrow.innerHTML = 'â–²'; // à®…à®®à¯à®ªà¯ à®•à¯à®±à®¿ à®®à¯‡à®²à¯‡ à®®à®¾à®±à¯à®®à¯
+                if(arrow) arrow.innerHTML = '▲'; // à®…à®®à¯à®ªà¯ à®•à¯à®±à®¿ à®®à¯‡à®²à¯‡ à®®à®¾à®±à¯à®®à¯
             } else {
                 subMenu.style.display = 'none';
                 if(arrow) arrow.innerHTML = '▼'; // à®…à®®à¯à®ªà¯ à®•à¯à®±à®¿ à®•à¯€à®´à¯‡ à®®à®¾à®±à¯à®®à¯
@@ -375,7 +375,7 @@ window.onpopstate = function (event) {
             menuDropdown.style.setProperty('display', 'none', 'important'); // à®®à¯†à®©à¯à®µà¯ˆ à®®à¯‚à®Ÿà®¿à®µà®¿à®Ÿà¯à®®à¯
         }
         if (menuBtn) {
-            menuBtn.innerHTML = 'â˜°';
+            menuBtn.innerHTML = '☰';
         }
         
         // à®‰à®³à¯ à®®à¯†à®©à¯à®•à¯à®•à®³à¯ à®…à®©à¯ˆà®¤à¯à®¤à¯ˆà®¯à¯à®®à¯ à®°à¯€à®šà¯†à®Ÿà¯ à®šà¯†à®¯à¯à®¯à¯à®®à¯
