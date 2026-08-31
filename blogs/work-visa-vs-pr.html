@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Work Visa vs PR: Which Is the Right Option for You? | Global Gateway Internationals</title>
+<meta content="Confused between a Work Visa and PR? See the real difference, which countries let you move from work visa to PR, and how to decide what's right for you." name="description"/>
+<!-- Logo icon link -->
+<link href="https://www.globalgatewayinternationals.com/logo.jpeg" rel="icon" sizes="48x48" type="image/x-icon"/>
+<!-- AOS Library CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- AOS Library JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+        // Smooth Page Routing Script
+       function showPage(pageId) {
+    const pages = document.querySelectorAll('.app-page');
+    pages.forEach(page => page.classList.add('hidden'));
+
+    const activePage = document.getElementById(pageId);
+    if (activePage) {
+        const animatedElements = activePage.querySelectorAll('[data-aos]');
+        animatedElements.forEach(el => {
+            el.classList.remove('aos-animate');
+        });
+
+        activePage.classList.remove('hidden');
+         history.pushState({ page: pageId }, "", "#" + pageId);
+    }
+            
+    if(document.getElementById('workDropdownMenu')) document.getElementById('workDropdownMenu').classList.add('hidden');
+    if(document.getElementById('studyDropdownMenu')) document.getElementById('studyDropdownMenu').classList.add('hidden');
+    if(document.getElementById('migrateDropdownMenu')) document.getElementById('migrateDropdownMenu').classList.add('hidden');
+    if(document.getElementById('visitDropdownMenu')) document.getElementById('visitDropdownMenu').classList.add('hidden');
+    if(document.getElementById('dependentDropdownMenu')) document.getElementById('dependentDropdownMenu').classList.add('hidden');
+            
+    window.scrollTo({top: 0, behavior: 'smooth'});
+
+    setTimeout(function() {
+        if (typeof AOS !== 'undefined') { AOS.refreshHard(); }
+    }, 100);
+}
+        function closeAllNavDropdowns() {
+            ['migrateDropdownMenu','workDropdownMenu','studyDropdownMenu'].forEach(function(id){
+                var el = document.getElementById(id);
+                if (el) el.classList.add('hidden');
+            });
+        }
+        function showNavDropdown(id) {
+            closeAllNavDropdowns();
+            var el = document.getElementById(id);
+            if (el) el.classList.remove('hidden');
+        }
+        function hideNavDropdown(id) {
+            var el = document.getElementById(id);
+            if (el) el.classList.add('hidden');
+        }
+        function handleMigrateClick(event) {
+            event.stopPropagation();
+            
+            if(document.getElementById('workDropdownMenu')) document.getElementById('workDropdownMenu').classList.add('hidden');
+            if(document.getElementById('studyDropdownMenu')) document.getElementById('studyDropdownMenu').classList.add('hidden');
+            if(document.getElementById('visitDropdownMenu')) document.getElementById('visitDropdownMenu').classList.add('hidden');
+            if(document.getElementById('dependentDropdownMenu')) document.getElementById('dependentDropdownMenu').classList.add('hidden');
+            
+            document.getElementById('migrateDropdownMenu').classList.toggle('hidden');
+        }
+        function handleWorkVisaClick(event) {
+            event.stopPropagation();
+            document.getElementById('studyDropdownMenu').classList.add('hidden');
+            document.getElementById('workDropdownMenu').classList.toggle('hidden');
+        }
+        function handleStudyVisaClick(event) {
+            event.stopPropagation();
+            document.getElementById('workDropdownMenu').classList.add('hidden');
+            document.getElementById('studyDropdownMenu').classList.toggle('hidden');
+        }
+       function handleVisitVisaClick(event) {
+    event.stopPropagation();
+    
+    location.href='../visit-visa.html';
+    
+    if(document.getElementById('workDropdownMenu')) document.getElementById('workDropdownMenu').classList.add('hidden');
+    if(document.getElementById('studyDropdownMenu')) document.getElementById('studyDropdownMenu').classList.add('hidden');
+    if(document.getElementById('migrateDropdownMenu')) document.getElementById('migrateDropdownMenu').classList.add('hidden');
+}
+function handleDependentClick(event) {
+    event.stopPropagation();
+    
+    location.href='../dependent-visa.html';
+    
+    if(document.getElementById('workDropdownMenu')) document.getElementById('workDropdownMenu').classList.add('hidden');
+    if(document.getElementById('studyDropdownMenu')) document.getElementById('studyDropdownMenu').classList.add('hidden');
+    if(document.getElementById('migrateDropdownMenu')) document.getElementById('migrateDropdownMenu').classList.add('hidden');
+}
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            const submitBtn = form.querySelector('button[type="submit"]');
+            
+            submitBtn.disabled = true;
+            submitBtn.innerText = "SENDING...";
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    const popup = document.getElementById('successPopup');
+                    popup.classList.remove('hidden');
+                    popup.classList.add('flex');
+                    form.reset();
+                } else {
+                    alert("Something went wrong: " + json.message);
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                alert("Form submission failed! Please check your internet connection.");
+            })
+            .then(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerText = "SUBMIT";
+            });
+        }
+
+        function closePopup() {
+            const popup = document.getElementById('successPopup');
+            popup.classList.add('hidden');
+            popup.classList.remove('flex');
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                document.getElementById('workDropdownMenu').classList.add('hidden');
+                document.getElementById('studyDropdownMenu').classList.add('hidden');
+                if(document.getElementById('migrateDropdownMenu')) {
+            document.getElementById('migrateDropdownMenu').classList.add('hidden');
+        }
+        if(document.getElementById('visitDropdownMenu')) document.getElementById('visitDropdownMenu').classList.add('hidden');
+        if(document.getElementById('dependentDropdownMenu')) document.getElementById('dependentDropdownMenu').classList.add('hidden');
+            }
+        }
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            once: true     
+        });
+    }
+
+    const allAnimatedElements = document.querySelectorAll('[data-aos]');
+    allAnimatedElements.forEach(el => {
+        el.classList.remove('aos-animate');
+    });
+
+    setTimeout(function() {
+        if (typeof AOS !== 'undefined') { AOS.refreshHard(); }
+    }, 200);
+});
+window.onpopstate = function (event) {
+    if (event.state && event.state.page) {
+        showPage(event.state.page);
+    } else {
+        showPage("homePage");
+    }
+};
+    </script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RM08RH5J8D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RM08RH5J8D');
+</script>
+<link href="https://www.globalgatewayinternationals.com/" rel="canonical"/>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col m-0 p-0 overflow-x-hidden">
+<nav class="bg-white text-blue-900 sticky top-0 z-50 shadow-md border-b border-gray-200 md:mb-0 mb-8" style="overflow: visible !important; height: 80px;">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+<div class="flex items-center justify-between h-full">
+<div class="flex-shrink-0 cursor-pointer flex items-center gap-3 -ml-3 md:ml-0" onclick="location.href='../index.html'">
+<img alt="Global Gateway Logo" class="h-16 w-auto object-contain rounded shadow-sm" src="../logo.jpeg"/>
+<div style="font-family: 'Times New Roman', Times, serif;">
+<span class="font-bold text-xl md:text-2xl tracking-wider text-blue-950 block leading-tight">GLOBAL GATEWAY</span>
+<span class="block text-[11px] md:text-sm font-bold tracking-widest text-gray-600">INTERNATIONALS</span>
+</div>
+</div>
+<div class="hidden md:flex space-x-2 md:space-x-4 ml-auto items-center">
+<button class="px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors" onclick="location.href='../index.html'">Home</button>
+<div class="relative inline-block text-left" onmouseenter="showNavDropdown('migrateDropdownMenu')" onmouseleave="hideNavDropdown('migrateDropdownMenu')">
+<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="location.href='../migrate.html'"> Migrate <span class="text-xs">&#9660;</span>
+</button>
+<div class="hidden absolute right-0 mt-0 pt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="migrateDropdownMenu">
+<div class="py-1">
+<button class="w-full text-left px-4 py-2.5 text-sm text-blue-900 font-bold hover:bg-amber-50 border-b border-gray-200" onclick="location.href='../migrate.html'"> All Migrate Options</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../migrate/canada.html'"> Canada</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../migrate/australia.html'"> Australia</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../migrate/uk.html'"> United Kingdom</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../migrate/new-zealand.html'"> New Zealand</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium" onclick="location.href='../migrate/europe.html'"> Germany / Europe</button>
+</div>
+</div>
+</div>
+<div class="relative inline-block text-left" onmouseenter="showNavDropdown('workDropdownMenu')" onmouseleave="hideNavDropdown('workDropdownMenu')">
+<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="location.href='../work-visa.html'"> Work <span class="text-xs">&#9660;</span>
+</button>
+<div class="hidden absolute right-0 mt-0 pt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="workDropdownMenu">
+<div class="py-1">
+<button class="w-full text-left px-4 py-2.5 text-sm text-blue-900 font-bold hover:bg-amber-50 border-b border-gray-200" onclick="location.href='../work-visa.html'"> All Work Visa Options</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/canada.html'"> Canada</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/australia.html'"> Australia</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/europe.html'"> Europe</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/uk.html'"> United Kingdom</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/new-zealand.html'"> New Zealand</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../work/singapore.html'"> Singapore</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium" onclick="location.href='../work/gulf.html'"> The Gulf</button>
+</div>
+</div>
+</div>
+<div class="relative inline-block text-left" onmouseenter="showNavDropdown('studyDropdownMenu')" onmouseleave="hideNavDropdown('studyDropdownMenu')">
+<button class="dropbtn px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors flex items-center gap-1" onclick="location.href='../study-visa.html'"> Study <span class="text-xs">&#9660;</span>
+</button>
+<div class="hidden absolute right-0 mt-0 pt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50" id="studyDropdownMenu">
+<div class="py-1">
+<button class="w-full text-left px-4 py-2.5 text-sm text-blue-900 font-bold hover:bg-amber-50 border-b border-gray-200" onclick="location.href='../study-visa.html'"> All Study Visa Options</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/canada.html'"> Canada</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/australia.html'"> Australia</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/europe.html'"> Europe</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/uk.html'"> United Kingdom</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/new-zealand.html'"> New Zealand</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium border-b border-gray-100" onclick="location.href='../study/singapore.html'"> Singapore</button>
+<button class="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-blue-900 font-medium" onclick="location.href='../study/gulf.html'"> The Gulf</button>
+</div>
+</div>
+</div>
+<button class="text-blue-900 hover:text-amber-500 font-semibold px-3 py-2 text-sm transition-colors duration-200" onclick="location.href='../visit-visa.html'">Visit</button>
+<button class="text-blue-900 hover:text-amber-500 font-semibold px-3 py-2 text-sm transition-colors duration-200" onclick="handleDependentClick(event)">Dependent-Family</button>
+<button class="px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors" onclick="location.href='../contact.html'">Contact Us</button>
+</div>
+<div class="md:hidden flex items-center ml-auto">
+<button class="text-blue-900 focus:outline-none p-2 border-0 bg-transparent font-bold text-xl z-50" id="myMobileMenuBtn" onclick="toggleMyMobileMenu(event)">
+        &#9776;
+    </button>
+</div>
+</div>
+</div>
+<div class="md:hidden bg-white border-b border-gray-300 px-4 py-3 shadow-2xl w-full left-0 absolute z-[999] max-h-[calc(100vh-80px)] overflow-y-auto" id="myMobileMenuDropdown" style="display: none !important; flex-direction: column; gap: 2px; top: 80px;">
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm" onclick="closeMobileMenuFull(); location.href='../index.html'">Home</button>
+<div>
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm flex justify-between items-center" onclick="toggleSubMenu(event, 'subMigrate')">
+                &#9654; Migrate <span class="text-xs text-gray-400" id="arrow-subMigrate">&#9660;</span>
+</button>
+<div class="bg-gray-50 pl-6 flex flex-col border-b border-gray-100" id="subMigrate" style="display: none;">
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../migrate/canada.html'">Canada</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../migrate/australia.html'">Australia</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../migrate/uk.html'">UK</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../migrate/new-zealand.html'">NZ</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../migrate/europe.html'">Europe</button>
+</div>
+</div>
+<div>
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm flex justify-between items-center" onclick="toggleSubMenu(event, 'subWork')">
+                &#9654; Work Visa <span class="text-xs text-gray-400" id="arrow-subWork">&#9660;</span>
+</button>
+<div class="bg-gray-50 pl-6 flex flex-col border-b border-gray-100" id="subWork" style="display: none;">
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../work/canada.html'">Canada</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../work/australia.html'">Australia</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../work/europe.html'">Europe</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../work/uk.html'">UK</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../work/new-zealand.html'">NZ</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../work/singapore.html'">Singapore</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../work/gulf.html'">Gulf</button>
+</div>
+</div>
+<div>
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm flex justify-between items-center" onclick="toggleSubMenu(event, 'subStudy')">
+                &#9654; Study Visa <span class="text-xs text-gray-400" id="arrow-subStudy">&#9660;</span>
+</button>
+<div class="bg-gray-50 pl-6 flex flex-col border-b border-gray-100" id="subStudy" style="display: none;">
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../study/canada.html'">Canada</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../study/australia.html'">Australia</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../study/europe.html'">Europe</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../study/uk.html'">UK</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../study/new-zealand.html'">NZ</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../study/singapore.html'">Singapore</button>
+<button class="text-left py-2 px-4 text-gray-700 font-semibold text-xs hover:text-amber-500" onclick="closeMobileMenuFull(); location.href='../study/gulf.html'">The Gulf</button>
+</div>
+</div>
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm block" onclick="closeMobileMenuFull(); location.href='../visit-visa.html'"> Visit Visa
+</button>
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded border-b border-gray-50 text-sm block" onclick="closeMobileMenuFull(); handleDependentClick(event)"> Dependent-Family
+</button>
+<button class="w-full text-left py-2.5 px-4 text-blue-900 font-bold hover:bg-amber-50 rounded text-sm" onclick="closeMobileMenuFull(); location.href='../contact.html'">Contact</button>
+</div>
+</nav>
+<script>
+    window.toggleMyMobileMenu = function(e) {
+        if (e) e.stopPropagation();
+        var menuBtn = document.getElementById('myMobileMenuBtn');
+        var menuDropdown = document.getElementById('myMobileMenuDropdown');
+        
+        if (menuDropdown && menuBtn) {
+            if (menuDropdown.style.getPropertyValue('display') === 'none' || menuDropdown.style.display === 'none' || menuDropdown.style.display === '') {
+                menuDropdown.style.setProperty('display', 'flex', 'important');
+                menuBtn.innerHTML = '&#10005;';
+            } else {
+                closeMobileMenuFull();
+            }
+        }
+    }
+
+    window.toggleSubMenu = function(e, subId) {
+        if (e) e.stopPropagation();
+        var subMenu = document.getElementById(subId);
+        var arrow = document.getElementById('arrow-' + subId);
+        
+        if (subMenu) {
+            if (subMenu.style.display === 'none' || subMenu.style.display === '') {
+                subMenu.style.display = 'flex';
+                subMenu.style.flexDirection = 'column';
+                if(arrow) arrow.innerHTML = '&#9650;';
+            } else {
+                subMenu.style.display = 'none';
+                if(arrow) arrow.innerHTML = '&#9660;';
+            }
+        }
+    }
+
+    window.closeMobileMenuFull = function() {
+        var menuDropdown = document.getElementById('myMobileMenuDropdown');
+        var menuBtn = document.getElementById('myMobileMenuBtn');
+        
+        if (menuDropdown) {
+            menuDropdown.style.setProperty('display', 'none', 'important');
+        }
+        if (menuBtn) {
+            menuBtn.innerHTML = '&#9776;';
+        }
+        
+        var subMenus = ['subMigrate', 'subWork', 'subStudy'];
+        subMenus.forEach(function(id) {
+            var sub = document.getElementById(id);
+            var arrow = document.getElementById('arrow-' + id);
+            if(sub) sub.style.display = 'none';
+            if(arrow) arrow.innerHTML = '&#9660;';
+        });
+    }
+</script>
+<div class="bg-white min-h-screen" id="blogWorkVisaVsPR">
+<!-- Blog Content -->
+<section class="bg-gradient-to-r from-blue-950 via-blue-900 to-blue-950 py-16">
+<div class="max-w-5xl mx-auto px-6">
+<!-- Back Button -->
+<button class="text-amber-300 hover:text-white transition mb-6 font-medium" onclick="location.href='../blogs.html'">
+            &#8592; Back to Latest Blogs
+        </button>
+<!-- Category -->
+<div class="mb-5">
+<span class="inline-block bg-amber-400 text-blue-950 px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider"> WORK VISA / PR
+            </span>
+</div>
+<!-- Title -->
+<h1 class="text-white text-4xl md:text-6xl font-extrabold leading-tight">
+            Work Visa vs PR
+        </h1>
+<!-- Subtitle -->
+<p class="text-gray-200 text-2xl mt-4">
+            Which Is the Right Option for You?
+        </p>
+<!-- Meta -->
+<div class="flex flex-wrap gap-8 mt-8 text-gray-300 text-base">
+<span>&#128197; August 2026</span>
+<span>&#9201; 6 min read</span>
+<span>&#9997; Global Gateway Internationals</span>
+</div>
+</div>
+</section>
+<!-- Remaining Blog Content -->
+<section class="max-w-5xl mx-auto px-6 py-12">
+<div class="mt-10 mb-10">
+<img alt="Work Visa vs PR" class="w-full rounded-3xl shadow-xl" src="../Permit.png"/>
+</div>
+<!-- ================= INTRODUCTION ================= -->
+<div class="mt-12">
+<p class="text-lg text-gray-700 leading-9 mb-6"> If you're planning to move abroad, this is one of the first questions you'll face &#8212; should you go for a Work Visa, or should you aim for PR (Permanent Residency) directly?
+    </p>
+<p class="text-lg text-gray-700 leading-9"> A lot of people don't even know this is a choice until someone explains it to them. Some of you already have a job offer and just want to know what visa comes with it. Others are still figuring out where to even start. Either way, let's make this simple.
+    </p>
+</div>
+<!-- ================= WHAT'S THE DIFFERENCE ================= -->
+<div class="mt-16">
+<h2 class="text-3xl font-bold text-blue-950 mb-6"> What's the Difference?
+    </h2>
+<div class="bg-blue-50 border-l-4 border-blue-900 rounded-2xl p-8 shadow-md">
+<p class="text-lg text-gray-700 leading-9"> A <strong>Work Visa</strong> is tied to your job. Many work visas are linked to a specific employer or job, which means your ability to stay and work may depend on your visa conditions. However, this varies by country and visa type.
+        </p>
+<p class="text-lg text-gray-700 leading-9 mt-6"> <strong>PR</strong> is different. Once you get PR, you don't need to depend on one company anymore. You can change jobs, start your own business, bring your family, and stay in that country for a long time &#8212; almost like a local.
+        </p>
+<p class="text-lg text-gray-700 leading-9 mt-6"> There's no "better" one here. It depends on what you need right now.
+        </p>
+</div>
+</div>
+<!-- ================= WHY WORK VISA FIRST ================= -->
+<div class="mt-20">
+<h2 class="text-4xl font-bold text-blue-950">
+        Why Most People Choose Work Visa First
+    </h2>
+<div class="w-28 h-1 bg-amber-400 rounded-full mt-3 mb-10"></div>
+</div>
+<div class="bg-white rounded-2xl shadow-md border-l-4 border-amber-400 p-8 mb-8 hover:shadow-xl transition">
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 flex-shrink-0 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold">1</div>
+<p class="text-gray-700 leading-8 pt-1"> <strong>It's faster.</strong> You can get a work visa in a few months. PR usually takes much longer &#8212; sometimes a year or more.</p>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 flex-shrink-0 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold">2</div>
+<p class="text-gray-700 leading-8 pt-1"> <strong>It costs less to start.</strong> PR needs more paperwork, more fees, and more waiting time.</p>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 flex-shrink-0 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold">3</div>
+<p class="text-gray-700 leading-8 pt-1"> <strong>You start earning sooner.</strong> If your main goal is to go abroad and start working quickly, work visa is the fastest way.</p>
+</div>
+</div>
+<p class="text-gray-700 leading-8 mt-8"> This is why places like the Gulf and parts of Europe are popular &#8212; the process is quick and simple.
+    </p>
+</div>
+<!-- ================= WHY PEOPLE LATER THINK ABOUT PR ================= -->
+<div class="mt-16">
+<h2 class="text-3xl font-bold text-blue-950 mb-6"> Why People Later Think About PR
+    </h2>
+<div class="bg-blue-50 border-l-4 border-blue-900 rounded-2xl p-8 shadow-md">
+<p class="text-lg text-gray-700 leading-9"> The problem with a work visa is &#8212; it doesn't last forever. After a year or two working abroad, many people start wanting something more stable.
+        </p>
+<p class="text-lg text-gray-700 leading-9 mt-6"> PR gives you that stability:
+        </p>
+<ul class="list-disc pl-6 mt-4 space-y-2 text-lg text-gray-700 leading-8">
+<li>If you lose your job, you don't lose your right to stay.</li>
+<li>You can bring your spouse, kids, and sometimes even parents.</li>
+<li>In many countries, PR can later lead to citizenship.</li>
+<li>Banks, landlords, and even some companies treat PR holders better.</li>
+</ul>
+<p class="text-lg text-gray-700 leading-9 mt-6"> If your real goal is to settle abroad long-term, PR is what you're actually aiming for. Work visa is just the first step to reach there.
+        </p>
+</div>
+</div>
+<!-- ================= WHICH COUNTRIES LET YOU GO FROM WORK VISA TO PR ================= -->
+<div class="mt-16">
+<h2 class="text-3xl font-bold text-blue-950 mb-6"> Which Countries Let You Go From Work Visa to PR
+    </h2>
+<div class="bg-white rounded-2xl shadow-md border-l-4 border-amber-400 p-8 hover:shadow-xl transition">
+<p class="text-lg text-gray-700 leading-9 mb-4"> <strong>Canada, Australia, New Zealand</strong> &#8212; These countries are made for this path. Work visa first, then PR later, based on your skills and points. This is very common and well-known here.
+        </p>
+<p class="text-lg text-gray-700 leading-9 mb-4"> <strong>United Kingdom</strong> &#8212; Also has a similar path, but you usually need to work continuously for a longer time before PR (called "settlement" there) becomes possible.
+        </p>
+<p class="text-lg text-gray-700 leading-9 mb-4"> <strong>Gulf countries (UAE, Qatar, Saudi Arabia, etc.)</strong> &#8212; Here's the honest truth: these countries usually don't give PR. Your visa stays connected to your job always. People still go here because the money is good and the process is fast &#8212; just don't expect PR from this route.
+        </p>
+<p class="text-lg text-gray-700 leading-9"> <strong>Singapore</strong> &#8212; PR is possible here, but it's not guaranteed like Canada or Australia. It depends case by case.
+        </p>
+</div>
+<p class="text-lg text-gray-700 leading-9 mt-8"> So the real answer to "Will I get PR one day?" depends completely on which country you start with. Some countries are built for it. Some are not &#8212; no matter how many years you work there.
+    </p>
+</div>
+<!-- ================= HOW TO DECIDE ================= -->
+<div class="mt-16">
+<h2 class="text-3xl font-bold text-blue-950 mb-6"> So, Work Visa or PR &#8212; How to Decide
+    </h2>
+<div class="bg-blue-50 border-l-4 border-blue-900 rounded-2xl p-8 shadow-md">
+<p class="text-lg text-gray-700 leading-9 mb-4"> Ask yourself these simple questions:
+        </p>
+<ul class="list-disc pl-6 space-y-3 text-lg text-gray-700 leading-8">
+<li><strong>Do you want to start working abroad quickly?</strong> Go for Work Visa. It's faster, and for places like the Gulf or Singapore, this is your only real option anyway.</li>
+<li><strong>Do you want to settle abroad long-term with your family?</strong> Then PR should be your real target. Canada, Australia, or New Zealand are the best countries for this. A work visa there can be your first step toward PR.</li>
+<li><strong>Not sure yet?</strong> That's completely normal &#8212; most people feel this way. In that case, choose a Work Visa in a country that also offers PR later. This way, you get income now, and the option to settle later too.</li>
+</ul>
+</div>
+</div>
+<!-- ================= THE COMMON MISTAKE ================= -->
+<div class="mt-16 bg-white rounded-3xl shadow-lg p-8 border border-gray-200">
+<h2 class="text-2xl font-bold text-blue-950 mb-4">
+        The Common Mistake People Make
+    </h2>
+<p class="text-lg text-gray-700 leading-9 mb-4"> Many people think every work visa will "automatically" turn into PR one day if they just wait long enough. That's not true. PR depends on the country's rules, your visa type, your points, and sometimes even changes in immigration policy.
+    </p>
+<p class="text-lg text-gray-700 leading-9"> If PR matters to you, plan for it from day one &#8212; don't just hope it happens later. Choosing the right country at the start matters more than anything you do after you land there.
+    </p>
+</div>
+<!-- ================= BOTTOM LINE ================= -->
+<div class="mt-16 bg-white rounded-3xl shadow-lg p-8 border border-gray-200">
+<h2 class="text-2xl font-bold text-blue-950 mb-4">
+        Bottom Line
+    </h2>
+<p class="text-lg text-gray-700 leading-9 mb-4"> There's no single right answer between Work Visa and PR. It depends on what you need &#8212; right now, and in the future. Want to start earning quickly? Work visa is your fastest way in. Want to build a long-term life abroad with your family? Start with a plan that actually leads to PR.
+    </p>
+<p class="text-lg text-gray-700 leading-9"> Before choosing between "Work Visa or PR," first ask yourself &#8212; where do you want to be in five years? The right choice becomes clear once you know that answer.
+    </p>
+</div>
+<!-- ================= FAQ ================= -->
+<div class="mt-20">
+<h2 class="text-4xl font-bold text-blue-950">
+        FAQ
+    </h2>
+<div class="w-28 h-1 bg-amber-400 rounded-full mt-3 mb-10"></div>
+</div>
+<div class="bg-white rounded-2xl shadow-md border-l-4 border-amber-400 p-8 mb-6 hover:shadow-xl transition">
+<h3 class="text-xl font-bold text-blue-950 mb-3">Does every Work Visa turn into PR eventually?</h3>
+<p class="text-gray-700 leading-8"> No. It depends on the country. Canada, Australia, New Zealand, and the UK have clear paths from work visa to PR. Gulf countries usually don't offer this at all &#8212; your visa stays connected to your employer.
+    </p>
+</div>
+<div class="bg-white rounded-2xl shadow-md border-l-4 border-amber-400 p-8 mb-6 hover:shadow-xl transition">
+<h3 class="text-xl font-bold text-blue-950 mb-3">Which is faster &#8212; Work Visa or PR?</h3>
+<p class="text-gray-700 leading-8"> Work Visa, almost always. It can take a few weeks to a few months. PR usually takes a year or longer, since it needs more documents and, in some countries, a points-based system.
+    </p>
+</div>
+<div class="bg-white rounded-2xl shadow-md border-l-4 border-amber-400 p-8 mb-6 hover:shadow-xl transition">
+<h3 class="text-xl font-bold text-blue-950 mb-3">If I want PR, should I still start with a Work Visa?</h3>
+<p class="text-gray-700 leading-8"> Yes, in most cases. Very few people get PR directly. A Work Visa in a country like Canada or Australia is usually the real first step toward PR, not a separate path.
+    </p>
+</div>
+<div class="bg-white rounded-2xl shadow-md border-l-4 border-amber-400 p-8 mb-6 hover:shadow-xl transition">
+<h3 class="text-xl font-bold text-blue-950 mb-3">Can I bring my family on a Work Visa, or do I need PR for that?</h3>
+<p class="text-gray-700 leading-8"> It depends on the visa type and country. Some work visas allow family; others don't, or have conditions. PR usually makes bringing family much easier.
+    </p>
+</div>
+<div class="bg-white rounded-2xl shadow-md border-l-4 border-amber-400 p-8 mb-6 hover:shadow-xl transition">
+<h3 class="text-xl font-bold text-blue-950 mb-3">Is it still worth choosing a Gulf job even without PR?</h3>
+<p class="text-gray-700 leading-8"> Yes, for many people. Especially if you want quick income, no English test, and lower cost to start. Just be clear that PR is not part of this route, so you don't plan around something that won't happen.
+    </p>
+</div>
+<div class="bg-white rounded-2xl shadow-md border-l-4 border-amber-400 p-8 mb-6 hover:shadow-xl transition">
+<h3 class="text-xl font-bold text-blue-950 mb-3">What happens if I lose my job on a Work Visa?</h3>
+<p class="text-gray-700 leading-8"> In most countries, your visa depends on that job, so losing it can affect your stay. This is one of the biggest differences from PR, where your status doesn't depend on one employer.
+    </p>
+</div>
+<!-- CTA -->
+<div class="mt-16 bg-blue-950 rounded-3xl p-10 text-center shadow-xl">
+<h3 class="text-2xl md:text-3xl font-bold text-white mb-4"> Still Not Sure Which Option Fits You?</h3>
+<p class="text-gray-300 text-lg mb-6"> Talk to our team at Global Gateway Internationals &#8212; we'll help you find the right path based on your profile, not guesswork.</p>
+<button class="bg-amber-400 hover:bg-amber-300 text-blue-950 font-bold px-8 py-3 rounded-xl transition" onclick="location.href='../contact.html'"> Get Free Counselling &#8594;
+        </button>
+</div>
+</section>
+</div>
+<div class="fixed bottom-5 right-5 flex flex-col gap-5 z-50">
+<a class="text-green-500 text-4xl hover:text-green-600 transition-all drop-shadow-md" href="https://wa.me/918939688699?text=Hi, I need assistance." target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+<a class="text-blue-600 text-4xl hover:text-blue-700 transition-all drop-shadow-md" href="tel:+918939688699">
+<i class="fas fa-phone-alt"></i>
+</a>
+<a class="text-gray-700 text-4xl hover:text-gray-800 transition-all drop-shadow-md" href="sms:+918939688699?body=Hello, I have a query.">
+<i class="fas fa-envelope"></i>
+</a>
+</div>
+<div class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 items-center justify-center p-4" id="successPopup">
+<div class="bg-white rounded-xl shadow-2xl p-8 max-w-sm w-full text-center transform transition-all duration-300 scale-100 border-t-4 border-green-500">
+<div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-4 animate-bounce">
+<svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
+<p class="text-sm text-gray-600 mb-6"> Your inquiry has been successfully submitted. Our global expert team will contact you shortly.
+        </p>
+<button class="w-full bg-green-600 text-white font-bold py-2.5 px-4 rounded-lg shadow hover:bg-green-700 transition duration-200" onclick="closePopup()"> Okay, Close
+        </button>
+</div>
+</div>
+<script>
+function handleFormSubmit(event) {
+    event.preventDefault();
+    
+    const form = document.getElementById('leadContactForm');
+    const submitButton = form.querySelector('button[type="submit"]');
+    
+    submitButton.disabled = true;
+    submitButton.innerText = "Sending...";
+
+    const formData = new FormData(form);
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw4XZVMD0Y5iZVaat_taYVrJjM16eeb_amxH1QklK3MncazYxMKwaEzpIv9sIdzHWAL/exec';
+
+    fetch(scriptURL, { 
+        method: 'POST', 
+        mode: 'no-cors', 
+        body: formData 
+    });
+
+    setTimeout(() => {
+        submitButton.disabled = false;
+        submitButton.innerText = "Submit";
+        
+        const popup = document.getElementById('successPopup');
+        if (popup) {
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
+        } else {
+            alert('Successfully Submitted!');
+        }
+        
+        form.reset();
+    }, 1000); 
+}
+
+function closePopup() {
+    document.getElementById('successPopup').classList.remove('flex');
+    document.getElementById('successPopup').classList.add('hidden');
+}
+</script>
+</body>
+</html>
