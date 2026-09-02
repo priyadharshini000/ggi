@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Best Overseas Job Consultancy Chennai | Global Gateway Internationals</title>
-<meta content="Global Gateway Internationals is one of the best overseas job consultancy in Chennai offering Europe jobs, Singapore jobs, Gulf jobs, work visa assistance and international recruitment services." name="description"/>
-<!-- à®‰à®™à¯à®• à®ªà¯à®¤à®¿à®¯ à®²à¯‹à®•à¯‹à®µà®¿à®±à¯à®•à®¾à®© à®•à¯‹à®Ÿà¯ à®‡à®¤à¯à®¤à®¾à®©à¯ -->
+<title>Canada Work Visa Consultants in Chennai | Global Gateway Internationals</title>
+<meta content="Get expert help with Canada work permits, Express Entry pathways and job placement. Trusted Canada work visa consultants in Chennai for skilled professionals." name="description"/>
+<!-- உங்க புதிய லோகோவிற்கான கோட் இதுதான் -->
 <link href="https://www.globalgatewayinternationals.com/logo.jpeg" rel="icon" sizes="48x48" type="image/x-icon"/>
 <!-- AOS Library CSS -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
@@ -21,18 +21,18 @@
 
     const activePage = document.getElementById(pageId);
     if (activePage) {
-        // 1. à®…à®¨à¯à®¤à®ªà¯ à®ªà®•à¯à®•à®¤à¯à®¤à®¿à®²à¯ à®‰à®³à¯à®³ à®ªà®´à¯ˆà®¯ AOS à®…à®©à®¿à®®à¯‡à®·à®©à¯ à®•à®¿à®³à®¾à®¸à¯à®•à®³à¯ˆ à®®à¯Šà®¤à¯à®¤à®®à®¾à®• à®°à¯€à®šà¯†à®Ÿà¯ à®šà¯†à®¯à¯à®•à®¿à®±à¯‹à®®à¯
+        // 1. அந்தப் பக்கத்தில் உள்ள பழைய AOS அனிமேஷன் கிளாஸ்களை மொத்தமாக ரீசெட் செய்கிறோம்
         const animatedElements = activePage.querySelectorAll('[data-aos]');
         animatedElements.forEach(el => {
             el.classList.remove('aos-animate');
         });
 
-        // 2. à®ªà®•à¯à®•à®¤à¯à®¤à¯ˆà®•à¯ à®•à®£à¯à®£à¯à®•à¯à®•à¯à®¤à¯ à®¤à¯†à®°à®¿à®¯ à®µà¯ˆà®•à¯à®•à®¿à®±à¯‹à®®à¯
+        // 2. பக்கத்தை கண்ணுக்கு தெரிய வைக்கிறோம்
         activePage.classList.remove('hidden');
          history.pushState({ page: pageId }, "", "#" + pageId);
     }
             
-    // à®Ÿà®¿à®°à®¾à®ªà¯à®Ÿà®µà¯à®©à¯à®•à®³à¯ˆ à®®à¯‚à®Ÿà¯à®µà®¤à¯
+    // டிராப்டவுன்களை மூடுவது
     if(document.getElementById('workDropdownMenu')) document.getElementById('workDropdownMenu').classList.add('hidden');
     if(document.getElementById('studyDropdownMenu')) document.getElementById('studyDropdownMenu').classList.add('hidden');
     if(document.getElementById('migrateDropdownMenu')) document.getElementById('migrateDropdownMenu').classList.add('hidden');
@@ -41,9 +41,9 @@
             
     window.scrollTo({top: 0, behavior: 'smooth'});
 
-    // 3. à®ªà®•à¯à®•à®®à¯ à®²à¯‹à®Ÿà®¾à®©à®¤à¯à®®à¯ à®…à®©à®¿à®®à¯‡à®·à®©à¯ˆ à®µà®²à¯à®•à¯à®•à®Ÿà¯à®Ÿà®¾à®¯à®®à®¾à®• à®°à¯€-à®¸à¯à®Ÿà®¾à®°à¯à®Ÿà¯ (Force Restart) à®šà¯†à®¯à¯à®•à®¿à®±à¯‹à®®à¯
+    // 3. பக்கம் லோடானதும் அனிமேஷனை வலுக்கட்டாயமாக ரீ-ஸ்டார்ட் (Force Restart) செய்கிறோம்
     setTimeout(function() {
-        AOS.refreshHard();
+        if (typeof AOS !== 'undefined') AOS.refreshHard();
     }, 100);
 }
         // ================= RELIABLE DROPDOWN CONTROL (mouseenter/mouseleave) =================
@@ -175,6 +175,11 @@ function handleDependentClick(event) {
         }
        // AOS Initialization & Page Reset
 document.addEventListener('DOMContentLoaded', function() {
+    if (typeof AOS === 'undefined') {
+        console.warn('AOS library failed to load from CDN — skipping animations.');
+        return;
+    }
+
     AOS.init({
         duration: 800,
         once: true     
@@ -186,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     setTimeout(function() {
-        AOS.refreshHard();
+        if (typeof AOS !== 'undefined') AOS.refreshHard();
     }, 200);
 });
 window.onpopstate = function (event) {
@@ -212,7 +217,7 @@ window.onpopstate = function (event) {
 <nav class="bg-white text-blue-900 sticky top-0 z-50 shadow-md border-b border-gray-200 md:mb-0 mb-8" style="overflow: visible !important; height: 80px;">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
 <div class="flex items-center justify-between h-full">
-<!-- ðŸ¢ à®²à¯‹à®•à¯‹ à®®à®±à¯à®±à¯à®®à¯ à®•à®®à¯à®ªà¯†à®©à®¿ à®ªà¯†à®¯à®°à¯ à®‡à®Ÿà®¤à¯ à®ªà®•à¯à®•à®®à¯ à®¨à®•à®°à¯à®¤à¯à®¤à®ªà¯à®ªà®Ÿà¯à®Ÿ à®šà¯†à®•à¯à®·à®©à¯ -->
+<!-- 🏢 லோகோ மற்றும் கம்பெனி பெயர் இடத் பக்கம் நகர்த்தப்பட்ட செக்ஷன் -->
 <div class="flex-shrink-0 cursor-pointer flex items-center gap-3 -ml-3 md:ml-0" onclick="location.href='../index.html'">
 <!-- Logo Size Medium-ku Perusu Panniyachu (h-16) -->
 <img alt="Global Gateway Logo" class="h-16 w-auto object-contain rounded shadow-sm" src="../logo.jpeg"/>
@@ -276,7 +281,7 @@ window.onpopstate = function (event) {
 <button class="px-3 py-2 rounded-md text-sm font-semibold text-blue-900 hover:text-amber-500 transition-colors" onclick="location.href='../contact.html'">Contact Us</button>
 </div>
 <div class="md:hidden flex items-center ml-auto">
-<!-- â˜° à®®à¯†à®©à¯ à®šà®¿à®®à¯à®ªà®²à¯ à®•à®šà¯à®šà®¿à®¤à®®à®¾à®© à®®à¯€à®Ÿà®¿à®¯à®®à¯ à®šà¯ˆà®¸à¯à®•à¯à®•à¯ à®®à®¾à®±à¯à®±à®ªà¯à®ªà®Ÿà¯à®Ÿà¯à®³à¯à®³à®¤à¯ -->
+<!-- ☰ மென் சிம்பல் கச்சிதமான மீடியம் சைஸ்க்கு மாற்றப்பட்டுள்ளது -->
 <button class="text-blue-900 focus:outline-none p-2 border-0 bg-transparent font-bold text-xl z-50" id="myMobileMenuBtn" onclick="toggleMyMobileMenu(event)">
          ☰
     </button>
@@ -343,7 +348,7 @@ window.onpopstate = function (event) {
         if (menuDropdown && menuBtn) {
             if (menuDropdown.style.getPropertyValue('display') === 'none' || menuDropdown.style.display === 'none' || menuDropdown.style.display === '') {
                 menuDropdown.style.setProperty('display', 'flex', 'important');
-                menuBtn.innerHTML = '✕'; // à®®à¯†à®©à¯ à®“à®ªà®©à¯ à®†à®•à¯à®®à¯à®ªà¯‹à®¤à¯ à®ªà®Ÿà¯à®Ÿà®©à¯ à®®à®¾à®±à¯à®®à¯
+                menuBtn.innerHTML = '✕'; // மென் ஓபன் ஆக்ம்போது பட்டன் மாற்றும்
             } else {
                 closeMobileMenuFull();
             }
@@ -359,10 +364,10 @@ window.onpopstate = function (event) {
             if (subMenu.style.display === 'none' || subMenu.style.display === '') {
                 subMenu.style.display = 'flex';
                 subMenu.style.flexDirection = 'column';
-                if(arrow) arrow.innerHTML = '▲'; // à®…à®®à¯à®ªà¯ à®•à¯à®±à®¿ à®®à¯‡à®²à¯‡ à®®à®¾à®±à¯à®®à¯
+                if(arrow) arrow.innerHTML = '▲'; // அம்பு குறி மேலே மாற்றும்
             } else {
                 subMenu.style.display = 'none';
-                if(arrow) arrow.innerHTML = '▼'; // à®…à®®à¯à®ªà¯ à®•à¯à®±à®¿ à®•à¯€à®´à¯‡ à®®à®¾à®±à¯à®®à¯
+                if(arrow) arrow.innerHTML = '▼'; // அம்பு குறி கீழே மாற்றும்
             }
         }
     }
@@ -372,13 +377,13 @@ window.onpopstate = function (event) {
         var menuBtn = document.getElementById('myMobileMenuBtn');
         
         if (menuDropdown) {
-            menuDropdown.style.setProperty('display', 'none', 'important'); // à®®à¯†à®©à¯à®µà¯ˆ à®®à¯‚à®Ÿà®¿à®µà®¿à®Ÿà¯à®®à¯
+            menuDropdown.style.setProperty('display', 'none', 'important'); // மென்வை மூடிவிடும்
         }
         if (menuBtn) {
             menuBtn.innerHTML = ' ☰';
         }
         
-        // à®‰à®³à¯ à®®à¯†à®©à¯à®•à¯à®•à®³à¯ à®…à®©à¯ˆà®¤à¯à®¤à¯ˆà®¯à¯à®®à¯ à®°à¯€à®šà¯†à®Ÿà¯ à®šà¯†à®¯à¯à®¯à¯à®®à¯
+        // உள் மென்க்கள் அனைத்தையும் ரீசெட் செய்யும்
         var subMenus = ['subMigrate', 'subWork', 'subStudy'];
         subMenus.forEach(function(id) {
             var sub = document.getElementById(id);
@@ -389,7 +394,7 @@ window.onpopstate = function (event) {
     }
 </script>
 <div class="relative w-full min-h-screen bg-gray-50" id="canadaPage">
-<!-- Header Section with Background Image (fade-down à®…à®©à®¿à®®à¯‡à®·à®©à¯) -->
+<!-- Header Section with Background Image (fade-down அனிமேஷன்) -->
 <div class="relative w-full h-[400px] flex items-center justify-center" data-aos="fade-down" data-aos-duration="1000">
 <img class="absolute inset-0 w-full h-full object-cover" src="../istockphoto-1443432280-612x612.jpg"/>
 <!-- Overlay -->
@@ -417,6 +422,12 @@ window.onpopstate = function (event) {
 <li>Language: IELTS General Training</li>
 </ul>
 </div>
+<!-- Popular Job Roles Section -->
+<div class="mt-8" data-aos="fade-up" data-aos-delay="650">
+<h3 class="text-2xl font-bold mb-4" style="color: #E31D2B;">In-Demand Job Roles for Canada Work Visa</h3>
+<p class="text-justify"> Unlike migrating for permanent residency, a Canada work visa lets you start earning almost immediately once your employer's LMIA and job offer are approved. High-demand roles currently include registered nurses, truck drivers, welders, cooks, software developers, and construction supervisors. Global Gateway Internationals works directly with LMIA-approved Canadian employers to match your skills and experience to the right job offer, handling documentation, visa filing, and pre-departure orientation on your behalf.
+                </p>
+</div>
 <!-- Apply Button -->
 <button class="mt-8 w-full text-white font-bold py-4 rounded-xl hover:opacity-90 transition transform hover:scale-[1.02] duration-300 shadow-lg" data-aos="zoom-in" data-aos-delay="700" onclick="location.href='../contact.html'" style="background-color: #E31D2B;"> Apply for Canada Work Visa
                 </button>
@@ -424,7 +435,6 @@ window.onpopstate = function (event) {
 </div>
 </div>
 </div>
-None
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 <div class="fixed bottom-5 right-5 flex flex-col gap-5 z-50">
 <a class="text-green-500 text-4xl hover:text-green-600 transition-all drop-shadow-md" href="https://wa.me/918939688699?text=Hi, I need assistance." target="_blank">
