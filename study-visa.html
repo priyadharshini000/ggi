@@ -3,8 +3,15 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Best Overseas Job Consultancy Chennai | Global Gateway Internationals</title>
-<meta content="Global Gateway Internationals is one of the best overseas job consultancy in Chennai offering Europe jobs, Singapore jobs, Gulf jobs, work visa assistance and international recruitment services." name="description"/>
+<title>Study Abroad Consultants in Chennai | Student Visa Assistance | Global Gateway Internationals</title>
+<meta content="Study abroad with Global Gateway Internationals, Chennai. Expert student visa assistance, university admissions and visa documentation for Canada, Australia, UK, Europe, New Zealand, Singapore and the Gulf." name="description"/>
+<meta content="study abroad consultants in Chennai, overseas education consultants Chennai, student visa consultants Chennai, study visa assistance, study in Canada, study in Australia, study in UK, study in Germany, study in Europe, study in New Zealand, study in Singapore, study in Dubai, university admission abroad, student visa documentation, best study abroad consultancy in Chennai" name="keywords"/>
+<meta content="index, follow" name="robots"/>
+<meta content="Study Abroad Consultants in Chennai | Student Visa Assistance" property="og:title"/>
+<meta content="University admissions and student visa support for Canada, Australia, UK, Europe, New Zealand, Singapore and the Gulf from Chennai." property="og:description"/>
+<meta content="https://www.globalgatewayinternationals.com/study-visa.html" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.globalgatewayinternationals.com/logo.jpeg" property="og:image"/>
 <!-- உங்க புதிய லோகோவிற்கான கோடு இதுதான் -->
 <link href="https://www.globalgatewayinternationals.com/logo.jpeg" rel="icon" sizes="48x48" type="image/x-icon"/>
 <!-- AOS Library CSS -->
@@ -43,7 +50,7 @@
 
     // 3. பக்கம் லோடானதும் அனிமேஷனை வலுக்கட்டாயமாக ரீ-ஸ்டார்ட் (Force Restart) செய்கிறோம்
     setTimeout(function() {
-        AOS.refreshHard();
+        if (typeof AOS !== 'undefined') AOS.refreshHard();
     }, 100);
 }
         // ================= RELIABLE DROPDOWN CONTROL (mouseenter/mouseleave) =================
@@ -112,73 +119,19 @@ function handleDependentClick(event) {
     if(document.getElementById('migrateDropdownMenu')) document.getElementById('migrateDropdownMenu').classList.add('hidden');
 }
 
-        // Web3Forms AJAX Form Submission (Standard JSON Mode)
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            const form = event.target;
-            const formData = new FormData(form);
-            const object = Object.fromEntries(formData);
-            const json = JSON.stringify(object);
-            const submitBtn = form.querySelector('button[type="submit"]');
-            
-            // Button loading state
-            submitBtn.disabled = true;
-            submitBtn.innerText = "SENDING...";
-
-            fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: json
-            })
-            .then(async (response) => {
-                let json = await response.json();
-                if (response.status == 200) {
-                    // Success Popup Modal open aagum
-                    const popup = document.getElementById('successPopup');
-                    popup.classList.remove('hidden');
-                    popup.classList.add('flex');
-                    form.reset(); // Form clear seiya
-                } else {
-                    alert("Something went wrong: " + json.message);
-                }
-            })
-            .catch(error => {
-                console.log(error);
-                alert("Form submission failed! Please check your internet connection.");
-            })
-            .then(() => {
-                // Button text reset
-                submitBtn.disabled = false;
-                submitBtn.innerText = "SUBMIT";
-            });
-        }
-
-        function closePopup() {
-            const popup = document.getElementById('successPopup');
-            popup.classList.add('hidden');
-            popup.classList.remove('flex');
-        }
-
         window.onclick = function(event) {
-            if (!event.target.matches('.dropbtn')) {
-                document.getElementById('workDropdownMenu').classList.add('hidden');
-                document.getElementById('studyDropdownMenu').classList.add('hidden');
-                if(document.getElementById('migrateDropdownMenu')) {
-            document.getElementById('migrateDropdownMenu').classList.add('hidden');
-        }
-        if(document.getElementById('visitDropdownMenu')) document.getElementById('visitDropdownMenu').classList.add('hidden');
-        if(document.getElementById('dependentDropdownMenu')) document.getElementById('dependentDropdownMenu').classList.add('hidden');
+            if (!event.target.closest || !event.target.closest('.dropbtn')) {
+                closeAllNavDropdowns();
             }
         }
        // AOS Initialization & Page Reset
 document.addEventListener('DOMContentLoaded', function() {
-    AOS.init({
-        duration: 800,
-        once: true     
-    });
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    }
 
     const allAnimatedElements = document.querySelectorAll('[data-aos]');
     allAnimatedElements.forEach(el => {
@@ -186,14 +139,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     setTimeout(function() {
-        AOS.refreshHard();
+        if (typeof AOS !== 'undefined') AOS.refreshHard();
     }, 200);
 });
 window.onpopstate = function (event) {
-    if (event.state && event.state.page) {
+    if (event.state && event.state.page && document.getElementById(event.state.page)) {
         showPage(event.state.page);
-    } else {
-        showPage("homePage");
     }
 };
     </script>
@@ -206,7 +157,30 @@ window.onpopstate = function (event) {
 
   gtag('config', 'G-RM08RH5J8D');
 </script>
-<link href="https://www.globalgatewayinternationals.com/" rel="canonical"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Global Gateway Internationals",
+  "url": "https://www.globalgatewayinternationals.com/",
+  "logo": "https://www.globalgatewayinternationals.com/logo.jpeg",
+  "telephone": "+918939688699",
+  "address": {"@type": "PostalAddress", "addressLocality": "Chennai", "addressCountry": "IN"},
+  "description": "Study abroad consultants in Chennai offering university admissions and student visa assistance."
+}
+</script>
+<link href="https://www.globalgatewayinternationals.com/study-visa.html" rel="canonical"/>
+<noscript><style>[data-aos]{opacity:1 !important;transform:none !important;}</style></noscript>
+<script>
+  // AOS load aagala-na content invisible-a irukkama kaatta
+  window.addEventListener('load', function () {
+    if (typeof AOS === 'undefined') {
+      document.querySelectorAll('[data-aos]').forEach(function (el) {
+        el.style.opacity = 1; el.style.transform = 'none';
+      });
+    }
+  });
+</script>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col m-0 p-0 overflow-x-hidden">
 <nav class="bg-white text-blue-900 sticky top-0 z-50 shadow-md border-b border-gray-200 md:mb-0 mb-8" style="overflow: visible !important; height: 80px;">
@@ -215,7 +189,7 @@ window.onpopstate = function (event) {
 <!-- 🏢 லோகோ மற்றும் கம்பெனி பெயர் இடது பக்கம் நகர்த்தப்பட்ட செக்ஷன் -->
 <div class="flex-shrink-0 cursor-pointer flex items-center gap-3 -ml-3 md:ml-0" onclick="location.href='index.html'">
 <!-- Logo Size Medium-ku Perusu Panniyachu (h-16) -->
-<img alt="Global Gateway Logo" class="h-16 w-auto object-contain rounded shadow-sm" src="logo.jpeg"/>
+<img alt="Global Gateway Internationals - Study Abroad Consultants Chennai" class="h-16 w-auto object-contain rounded shadow-sm" src="logo.jpeg"/>
 <div style="font-family: 'Times New Roman', Times, serif;">
 <!-- Company Name "GLOBAL GATEWAY" Perusaakiyachu (text-xl from text-lg) -->
 <span class="font-bold text-xl md:text-2xl tracking-wider text-blue-950 block leading-tight">GLOBAL GATEWAY</span>
@@ -394,7 +368,7 @@ window.onpopstate = function (event) {
 <div class="max-w-4xl mx-auto">
 <span class="text-amber-400 font-bold tracking-widest text-sm uppercase block mb-2" data-aos="fade-up" data-aos-delay="200"> The Foundation for Your Global Future
             </span>
-<h1 class="text-3xl md:text-5xl font-extrabold mb-6" data-aos="fade-up" data-aos-delay="400"> Expert Visa Guidance for Your Global Education
+<h1 class="text-3xl md:text-5xl font-extrabold mb-6" data-aos="fade-up" data-aos-delay="400"> Expert Study Visa Guidance for Your Global Education from Chennai
             </h1>
 <!-- P tag-il text-justify serkkappattadhu -->
 <p class="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8 text-justify" data-aos="fade-up" data-aos-delay="600"> Don’t let complicated visa rules delay your education. We bridge the gap between your academic talents and global opportunities with an efficient, hassle-free process. Step into your international future with peace of mind today.
@@ -407,16 +381,32 @@ window.onpopstate = function (event) {
 <!-- Content Section (White card style) - (கீழிருந்து மேலாகத் தோன்றும்) -->
 <section class="py-16 px-6 max-w-5xl mx-auto">
 <div class="bg-white p-8 md:p-12 rounded-xl shadow-md border border-gray-100" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-<h2 class="text-3xl font-bold text-blue-900 mb-6">Study Visa Services</h2>
+<h2 class="text-3xl font-bold text-blue-900 mb-6">Study Visa Services &amp; Study Abroad Consultancy</h2>
 <!-- P tag-galil text-justify serkkappattadhu -->
-<p class="text-gray-600 leading-relaxed text-lg mb-6 text-justify"> We provide end-to-end support for students aiming to transition from world-class education into successful global careers. From university placements to visa documentation, we simplify the journey to your international future.
+<p class="text-gray-600 leading-relaxed text-lg mb-6 text-justify"> As trusted study abroad consultants in Chennai, we provide end-to-end support for students aiming to transition from world-class education into successful global careers. From university placements to visa documentation, we simplify the journey to your international future.
             </p>
 <p class="text-gray-600 leading-relaxed text-lg text-justify"> Our team ensures that your application is processed with precision, helping you secure your admission and student visa without unnecessary stress.
             </p>
 </div>
 </section>
+<!-- Countries We Cover (SEO) -->
+<section class="pb-16 px-6 max-w-5xl mx-auto">
+<div class="bg-white p-8 md:p-12 rounded-xl shadow-md border border-gray-100" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+<h2 class="text-3xl font-bold text-blue-900 mb-6">Countries You Can Study In</h2>
+<ul class="text-gray-600 leading-relaxed text-lg space-y-3">
+<li><strong class="text-blue-900">Study in Canada:</strong> University and college admissions with student visa support.</li>
+<li><strong class="text-blue-900">Study in Australia:</strong> Course selection, admission and student visa documentation.</li>
+<li><strong class="text-blue-900">Study in the UK:</strong> University applications and student visa guidance.</li>
+<li><strong class="text-blue-900">Study in Europe (Germany &amp; more):</strong> Admissions and student visa assistance for European universities.</li>
+<li><strong class="text-blue-900">Study in New Zealand:</strong> Admission and visa support for international students.</li>
+<li><strong class="text-blue-900">Study in Singapore:</strong> Course placement and student pass assistance.</li>
+<li><strong class="text-blue-900">Study in the Gulf (UAE &amp; more):</strong> University admissions and student visa guidance.</li>
+</ul>
+<p class="text-gray-600 leading-relaxed text-lg mt-6 text-justify"> Looking for the best study abroad consultancy in Chennai? Our team guides you through course and university shortlisting, application filing, student visa documentation and pre-departure support.
+            </p>
 </div>
-None
+</section>
+</div>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 <div class="fixed bottom-5 right-5 flex flex-col gap-5 z-50">
 <a class="text-green-500 text-4xl hover:text-green-600 transition-all drop-shadow-md" href="https://wa.me/918939688699?text=Hi, I need assistance." target="_blank">
@@ -432,7 +422,7 @@ None
 <div class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 items-center justify-center p-4" id="successPopup">
 <div class="bg-white rounded-xl shadow-2xl p-8 max-w-sm w-full text-center transform transition-all duration-300 scale-100 border-t-4 border-green-500">
 <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-4 animate-bounce">
-<svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 </div>
@@ -448,6 +438,7 @@ function handleFormSubmit(event) {
     event.preventDefault(); // Page white screen-aa redirect aagadhuri thadukkum
     
     const form = document.getElementById('leadContactForm');
+    if (!form) return;
     const submitButton = form.querySelector('button[type="submit"]');
     
     // Button-ai disable panni Sending status-ku maathuvom
