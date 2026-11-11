@@ -33,7 +33,7 @@
     window.scrollTo({top: 0, behavior: 'smooth'});
 
     setTimeout(function() {
-        AOS.refreshHard();
+        if (typeof AOS !== 'undefined') { AOS.refreshHard(); }
     }, 100);
 }
         function closeAllNavDropdowns() {
@@ -142,10 +142,12 @@ function handleDependentClick(event) {
             }
         }
 document.addEventListener('DOMContentLoaded', function() {
-    AOS.init({
-        duration: 800,
-        once: true     
-    });
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    }
 
     const allAnimatedElements = document.querySelectorAll('[data-aos]');
     allAnimatedElements.forEach(el => {
@@ -153,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     setTimeout(function() {
-        AOS.refreshHard();
+        if (typeof AOS !== 'undefined') { AOS.refreshHard(); }
     }, 200);
 });
 window.onpopstate = function (event) {
@@ -443,8 +445,8 @@ onclick="location.href='blogs/singapore-visa.html'">
   <div class="grid md:grid-cols-2 md:h-[420px]">
 
 <!-- Blog Image -->
-<div class="h-64 md:h-full">
-<img alt="Easiest Countries to Get PR in Europe for Indians Blog" class="w-full h-full object-cover" src="easy_pr.png"/>
+<div class="h-64 md:h-full bg-white">
+<img alt="Easiest Countries to Get PR in Europe for Indians Blog" class="w-full h-full object-contain" src="easy_pr.png"/>
 </div>
 
 <!-- Blog Content -->
@@ -483,8 +485,8 @@ onclick="location.href='blogs/pr_europe_easiest.html'">
   <div class="grid md:grid-cols-2 md:h-[420px]">
 
 <!-- Blog Image -->
-<div class="h-64 md:h-full">
-<img alt="Reasons for European Work Permit Refusal Blog" class="w-full h-full object-cover" src="work-permit.png"/>
+<div class="h-64 md:h-full bg-white">
+<img alt="Reasons for European Work Permit Refusal Blog" class="w-full h-full object-contain" src="work-permit.png"/>
 </div>
 
 <!-- Blog Content -->
@@ -523,8 +525,8 @@ onclick="location.href='blogs/pr_refusal.html'">
   <div class="grid md:grid-cols-2 md:h-[420px]">
 
 <!-- Blog Image -->
-<div class="h-64 md:h-full">
-<img alt="Work Visa vs PR Blog" class="w-full h-full object-cover" src="Permit.png"/>
+<div class="h-64 md:h-full bg-white">
+<img alt="Work Visa vs PR Blog" class="w-full h-full object-contain" src="Permit.png"/>
 </div>
 
 <!-- Blog Content -->
@@ -565,8 +567,8 @@ onclick="location.href='blogs/work-visa-vs-pr.html'">
   <div class="grid md:grid-cols-2 md:h-[420px]">
 
 <!-- Blog Image -->
-<div class="h-64 md:h-full">
-<img alt="IELTS PTE vs No English Test Countries Blog" class="w-full h-full object-cover" src="ielts-vs-no-english-test.png"/>
+<div class="h-64 md:h-full bg-white">
+<img alt="IELTS PTE vs No English Test Countries Blog" class="w-full h-full object-contain" src="ielts-vs-no-english-test.png"/>
 </div>
 
 <!-- Blog Content -->
@@ -605,8 +607,8 @@ onclick="location.href='blogs/ielts-vs-no-english-test.html'">
   <div class="grid md:grid-cols-2 md:h-[420px]">
 
 <!-- Blog Image -->
-<div class="h-64 md:h-full">
-<img alt="Work Visa vs Job Offer Blog" class="w-full h-full object-cover" src="workvisa.png"/>
+<div class="h-64 md:h-full bg-white">
+<img alt="Work Visa vs Job Offer Blog" class="w-full h-full object-contain" src="workvisa.png"/>
 </div>
 
 <!-- Blog Content -->
@@ -644,8 +646,8 @@ onclick="location.href='blogs/work-visa-vs-job-offer.html'">
 <div class="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 mt-10">
   <div class="grid md:grid-cols-2 md:h-[420px]">
 <!-- Blog Image -->
-<div class="h-64 md:h-full">
-<img alt="Visa Mistakes Blog" class="w-full h-full object-cover" src="Picture1.jpg"/>
+<div class="h-64 md:h-full bg-white">
+<img alt="Visa Mistakes Blog" class="w-full h-full object-contain" src="Picture1.jpg"/>
 </div>
 <!-- Blog Content -->
 <div class="p-8 flex flex-col justify-center overflow-y-auto">
